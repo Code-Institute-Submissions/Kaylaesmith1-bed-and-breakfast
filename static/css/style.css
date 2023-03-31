@@ -1,0 +1,114 @@
+body {
+    background-color: #EFE8E1;
+}
+
+
+/* NAV BAR */
+.navbar {
+    padding: 1rem 1.5rem;
+}
+
+
+.navbar-toggler:hover {
+    background-color: #C9B5B4;
+}
+
+
+img.logo-image {
+    /* height: 160px; */
+    height: 145px;
+}
+
+/* LANDING PAGE */
+.hero-text-outer {
+    background-color: #C9B5B4;
+    min-height: 200px;
+}
+
+.hero-text {
+    /* font-family: 'Playfair Display', serif; */
+    font-size: 45px;
+    color: #5F233F;
+}
+
+.book-now {
+    padding: 40px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #5F233F;
+}
+
+.sign-up {
+    background-color: #5F233F;
+    border: 2px solid #5F233F;
+    color: #C9B5B4;
+}
+
+.sign-up:hover {
+    color: #5F233F;
+    border: 2px solid #5F233F;
+    background-color: #C9B5B4;
+}
+
+.offers-image,
+.offers-title,
+.offers-text {
+    text-align: center;
+    color: #5F233F;
+}
+
+/* FOOTER */
+.footer-container,
+.page-break {
+    border-top: 2px #5F233F solid;
+}
+
+.socials {
+    text-align: center;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.socials li {
+    display: inline;
+}
+
+.socials i {
+    font-size: 180%;
+    padding: 0 30px;
+    color: #5F233F;
+}
+
+.socials i:hover {
+    /* color: #C9B5B4; */
+    color: #EEB6C2;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1000px) {
+    .hero-text {
+    font-size: 30px;
+    }
+    .book-now {
+    font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    
+    img.logo-image {
+        height: 120px;
+    }
+    /* .book-now {
+        font-size: 30px;
+    } */
+
+}
+
+@media screen and (max-width: 550px) {
+    
+    img.logo-image {
+        height: 85px;
+    }
+}
