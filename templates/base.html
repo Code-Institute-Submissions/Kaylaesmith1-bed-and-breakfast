@@ -31,14 +31,16 @@
         <header>
             <!-- NAVIGATION BAR -->
             <nav class="navbar navbar-expand-lg navbar-light">
-                <!-- <div class="container"> -->
+                <!-- original logo: https://res.cloudinary.com/kesmith/image/upload/v1680279774/logo_transparent_if85kb.png -->
+                <!-- second logo (transparent): https://res.cloudinary.com/kesmith/image/upload/v1680379164/new-logo_pjzb6e.png -->
+
                 <a href="{% url 'home' %}">
                     <img class="logo-image"
-                        src="https://res.cloudinary.com/kesmith/image/upload/v1680279774/logo_transparent_if85kb.png"
+                        src="https://res.cloudinary.com/kesmith/image/upload/v1680379507/logoNew_nqxasp.png"
                         alt="bnblogo">
                 </a>
 
-<!-- HAMBURGER DROPDOWN MENU -->
+                <!-- HAMBURGER DROPDOWN MENU -->
                 <button class="navbar-light navbar-toggler ml-auto" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -47,11 +49,11 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item ">
+                        <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">About</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'about' %}">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{% url 'contact_us' %}">Contact Us</a>
@@ -74,7 +76,7 @@
                     </ul>
                 </div>
 
-<!-- MY ACCOUNT DROP DOWN START -->
+                <!-- MY ACCOUNT DROP DOWN START -->
 
                 <div class="d-none d-lg-block">
                     <ul class="navbar-nav mb-2 mb-lg-0">
@@ -106,12 +108,11 @@
                 </div>
                 <!-- MY ACCOUNT DROP DOWN END -->
 
-                <!-- </div> -->
             </nav>
         </header>
         <!-- HEADER END -->
     </div>
-   
+
     <section>
         {% block content %}
         {% endblock content %}
