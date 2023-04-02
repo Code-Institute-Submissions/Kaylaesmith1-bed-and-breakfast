@@ -56,13 +56,15 @@ img.logo-image {
     color: #5F233F;
 }
 
-.sign-up {
+.sign-up,
+.contact-submit {
     background-color: #5F233F;
     border: 2px solid #5F233F;
     color: #C9B5B4;
 }
 
-.sign-up:hover {
+.sign-up:hover,
+.contact-submit:hover {
     color: #5F233F;
     border: 2px solid #5F233F;
     background-color: #C9B5B4;
@@ -90,6 +92,8 @@ img.logo-image {
     opacity: .78;
   }
 
+
+/* ABOUT PAGE */
 .about-banner {
     background: url('../media/images/about-banner-dark.png') no-repeat center center / cover;
     text-align: center;

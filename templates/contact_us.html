@@ -21,27 +21,17 @@
             </div>
         </div>
 
-        <div class="col-md-6 col-lg-6 p-0 pl-md-6 align-self-center">
+            <!-- CONTACT FORM START -->
+        <div class="col-md-6 col-lg-6 p-0 pl-md-6 align-self-center contact-form">
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
 
-    <!-- CONTACT FORM START -->
-
-    <div style="margin:80px">
-		<h1>Contact</h1>
-		<h4>Contact us directly if you have any questions</h4>
-		<p>
-			Please write your name, email address and a message below if you have any questions.
-			One of our staff members will be happy to contact you directly and answer your questions as soon as possible. 
-		</p>
-		<form method="post" novalidate>
-		    {% csrf_token %}
-		    {{form|crispy}}
-
-		    <button type="submit">Submit</button>
-		</form>
-		</div>
-
-    <!-- CONTACT FORM END -->
+        <button type="submit" class="btn btn-primary contact-submit">Submit</button>
+    </form>
         </div>
+            <!-- CONTACT FORM END -->
+
 
 
     <!-- <div class="row flex-md-row-reverse py-3 m-0"> -->
