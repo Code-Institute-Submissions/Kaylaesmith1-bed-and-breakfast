@@ -7,6 +7,10 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+h3 {
+    text-align: center;
+}
+
 
 /* NAV BAR */
 .navbar {
@@ -104,6 +108,17 @@ img.logo-image {
     padding: 4rem 1.5rem;
     opacity: .78;
     
+}
+
+.card-body {
+    border: 1px solid #dadada;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background-color is lighter version of #307473 */
+    background-color: #9bb9b8;
 }
 
 /* NO BACKGROUND IMAGE */
