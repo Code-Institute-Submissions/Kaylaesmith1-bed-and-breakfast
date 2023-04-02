@@ -7,8 +7,19 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-h3 {
+h4 {
     text-align: center;
+}
+
+.card-body,
+.bnb-vineyard-image,
+.hero-text-outer {
+    /* border: 1px solid #dadada; */
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -111,25 +122,16 @@ img.logo-image {
 }
 
 .card-body {
-    border: 1px solid #dadada;
-    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
     /* background-color is lighter version of #307473 */
-    background-color: #9bb9b8;
+    /* background-color: #9bb9b8; */
+    background-color: #b9c9c7;
 }
 
-/* NO BACKGROUND IMAGE */
-/* .banner {
-    background-color: #C9B5B4;
+.star-reviews {
+    color: #317372;
+    font-size: 2.5rem;
     text-align: center;
-    font-size: 3em;
-    font-weight: 600;
-    color: #5f233f;
-    padding: 2rem 1.5rem;
-} */
+}
 
 /* FOOTER */
 .footer-container,
@@ -162,11 +164,12 @@ img.logo-image {
 /* MEDIA QUERIES */
 @media screen and (max-width: 1000px) {
     .hero-text {
-    font-size: 30px;
+    font-size: 28px;
     }
+
     .book-now {
-    font-size: 20px;
-    }
+        font-size: 25px;
+        }
 }
 
 @media screen and (max-width: 830px) {
@@ -178,10 +181,6 @@ img.logo-image {
     .banner {
         font-size: 4em;
     }
-    /* .book-now {
-        font-size: 30px;
-    } */
-
 }
 
 @media screen and (max-width: 550px) {
