@@ -63,14 +63,14 @@
                             <a class="nav-link" href="#">My Bookings</a>
                         </li>
                         <li class="nav-item d-block d-lg-none">
-                            <a class="nav-link" href="#">Logout</a>
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item d-block d-lg-none">
-                            <a class="nav-link" href="#">Log in</a>
+                            <a class="nav-link" href="{% url 'account_login' %}">Log in</a>
                         </li>
                         <li class="nav-item d-block d-lg-none">
-                            <a class="nav-link" href="#">Sign up</a>
+                            <a class="nav-link" href="{% url 'account_signup' %}">Sign up</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -82,14 +82,14 @@
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            <a class="nav-link" href="{% url 'account_logout' %}" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
-                                <span><i class="fas fa-user profile-icon"></i>{{ user.username }}</span>
+                                <span><i class="fas fa-user profile-icon"></i> {{ user.username }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">My bookings</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                             </div>
                         </li>
                         {% else %}
@@ -99,8 +99,8 @@
                                 <span>My Account</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Sign up</a>
-                                <a class="dropdown-item" href="#">Log in</a>
+                                <a class="dropdown-item" href="{% url 'account_signup' %}">Sign up</a>
+                                <a class="dropdown-item" href="{% url 'account_login' %}">Log in</a>
                             </div>
                         </li>
                         {% endif %}
@@ -117,6 +117,7 @@
         {% block content %}
         {% endblock content %}
     </section>
+
 
     <!-- FOOTER START -->
     <footer>

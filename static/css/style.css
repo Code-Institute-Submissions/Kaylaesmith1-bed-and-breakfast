@@ -1,7 +1,7 @@
 /* LOOK AT OTHER FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Raleway:wght@400;600&display=swap');
 
-
+/* GLOBAL STYLING */
 body {
     background-color: #EFE8E1;
     font-family: 'Raleway', sans-serif;
@@ -22,6 +22,13 @@ h4 {
     flex-direction: column;
 }
 
+.page-title {
+    padding-top: 5px;
+    color: #5F233F;
+    font-weight: 300;
+    text-align: center;
+}
+
 
 /* NAV BAR */
 .navbar {
@@ -36,8 +43,8 @@ h4 {
 .navbar-light .navbar-nav .nav-link:hover {
     /* color: #3F826D; */
     color: #307473;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 
@@ -45,6 +52,11 @@ h4 {
     background-color: #C9B5B4;
     /* background-color: #3F826D; */
 }
+
+/* NAVBAR DROPDOWN MENU */
+/* .navbar-nav .dropdown-menu {
+
+} */
 
 
 img.logo-image {
@@ -94,7 +106,7 @@ img.logo-image {
 
 /* CONTACT US */
 
-/* BACKGROUND IMAGE, id=contact-banner / about-banner but class=banner */
+/* BACKGROUND IMAGE - id=contact-banner / about-banner but class=banner */
 .contact-banner {
     /* https://res.cloudinary.com/kesmith/image/upload/v1680361989/redbanner-dark_xfuxmf.png */
     background: url('../media/images/contact-page-banner.png') no-repeat center center / cover;
@@ -131,6 +143,38 @@ img.logo-image {
     color: #317372;
     font-size: 2.5rem;
     text-align: center;
+}
+
+/* ALL AUTH PAGES */
+.login {
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 2%;
+    border: 1px solid #5F233F;
+    margin-top: 1em;
+}
+
+.login input {
+    width: 90%;
+    border: 1px solid #5F233F;
+    padding: 5px;
+    margin: 5px 0 10px 0;
+} 
+
+.login label {
+    display: block;
+    text-align: center;
+    /* color: #442E10; */
+    font-weight: bold;
+}
+
+.login label[for="id_remember"] {
+    display: inline;
+}
+
+.login #id_remember {
+    width: 20px;
+    display: inline;
 }
 
 /* FOOTER */
