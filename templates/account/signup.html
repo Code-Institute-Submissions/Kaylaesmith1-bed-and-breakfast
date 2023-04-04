@@ -1,21 +1,33 @@
-{% extends "account/base.html" %}
-
+{% extends "base.html" %}
+{% block title %}The Wine Garden BnB | Sign up{% endblock %}
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<!-- SIGN UP FORM START -->
+<div class="container">
+  <h1 class="page-title">{% trans "Sign up" %}</h1>
+  <hr class="page-break">
+  <br>
+  <p class="text-center mt-3">{% blocktrans %}Already have an account? <a href="{{ login_url }}" class="text-dark"><u>Log in</u></a>{% endblocktrans %}
+<div class="row justify-content-center">
+  <!-- <div class="col-11 col-md-6 col-lg-4 mt-3 mb-3"> -->
+    <div class="col-12 col-md-9 col-lg-6 mt-3 mb-3">
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+<form class="login" method="POST" action="{% url 'account_signup' %}">
   {% csrf_token %}
   {{ form.as_p }}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+  <button class="btn btn-outline-dark submit" type="submit">{% trans "Sign Up" %}</button>
 </form>
+</div>
+</div>
+</div>
+<!-- SIGN UP FORM END -->
 
 {% endblock %}
+

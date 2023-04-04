@@ -31,6 +31,7 @@
         <header>
             <!-- NAVIGATION BAR -->
             <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
                 <!-- original logo: https://res.cloudinary.com/kesmith/image/upload/v1680279774/logo_transparent_if85kb.png -->
                 <!-- second logo (transparent): https://res.cloudinary.com/kesmith/image/upload/v1680379164/new-logo_pjzb6e.png -->
 
@@ -82,8 +83,8 @@
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="{% url 'account_logout' %}" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link" href="{% url 'account_logout' %}" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
                                 <span><i class="fas fa-user profile-icon"></i> {{ user.username }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -107,17 +108,17 @@
                     </ul>
                 </div>
                 <!-- MY ACCOUNT DROP DOWN END -->
+            </div>
 
             </nav>
         </header>
         <!-- HEADER END -->
+
+        <section>
+            {% block content %}
+            {% endblock content %}
+        </section>
     </div>
-
-    <section>
-        {% block content %}
-        {% endblock content %}
-    </section>
-
 
     <!-- FOOTER START -->
     <footer>
