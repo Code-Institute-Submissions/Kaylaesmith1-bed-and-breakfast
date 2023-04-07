@@ -32,21 +32,22 @@ def create_customer(request):
     form = CustomerForm()
     return render(request, 'contact_us.html', {'form': form})
 
-# POST A REVIEW OF THE BNB - from Django blog walkthrough?
-# class PostDetail(View):
 
-#     def get(self, request, slug, *args, **kwargs):
-#         queryset = Post.objects.filter(status=1)
-#         review = get_object_or404(queryset, slug=slug).order_by('created_on')
-#         liked = False
-#         if post.likes.filter(id=self.request.user.id).exists():
-#             liked = True
+def contactView(request):
+    if request.method == "GET":
+        form = CustomerForm()
+    else:
+        form = CustomerForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data["subject"]
+            from_email = form.cleaned_data["from_email"]
+            message = form.cleaned_data['message']
+            try:
+                send_mail(subject, message, from_email, ["kaylaesmith1@gmail.com"])
+            except BadHeaderError:
+                return HttpResponse("Invalid header found.")
+            return redirect("success")
+    return render(request, 'contact_us.html', {'form': form})
 
-#         return render (
-#             request,
-#             "about.html",
-#             {
-#                 "review": review,
-#                 "liked": liked
-#             },
-#         )
+def successView(request):
+    return HttpResponse("Success! Thank you for your message.")

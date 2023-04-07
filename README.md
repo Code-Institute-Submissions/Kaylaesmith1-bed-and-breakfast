@@ -1,65 +1,76 @@
 # The Wine Garden BnB
 
-The Wine Garden BnB is a Bed & Breakfast website that shows users and potential guests the tranquility of staying at a BnB located in a picturesque Midwest vineyard. 
 
-The site is targeted towards users wanting to spend a few days away from home but not necessarily in a cookie-cutter hotel. Site visitors can learn a bit about the BnB history, the amenities it offers, view / sumbit reviews and book a room. Users can also contact us with any questions or comments.
+The Wine Garden BnB is a Bed & Breakfast website that gives users and potential guests a glimpse of the tranquility of staying at a BnB located in a picturesque Midwest vineyard.
+
+
+The site is targets users wanting to spend a few days away from home but not necessarily in a cookie-cutter hotel. Visitors to the site can learn about the history of the BnB, view the amenities it offers, and book a room. Users can also contact us with any questions or comments.
+
 
 A link to the live site can be found here - [The Wine Garden BnB](https://wine-garden-bnb.herokuapp.com/)
 
-![Color Scheme](documentation/readme_images/color-scheme.png)
+
+![Responsive site design]("")
+
 
 ## Table of Contents
 
+
 - [The Wine Garden BnB](#the-wine-garden-bnb)
-  * [User Experience (UX)](#user-experience-ux)
-    + [User Stories](#user-stories)
-    + [Design](#design)
-      - [Color Scheme](#color-scheme)
-      - [Imagse](#images)
-      - [Fonts](#fonts)
-      - [Wireframes](#wireframes)
-  * [Agile Methodology](#agile-methodology)
-  * [Data Model](#data-model)
-  * [Testing](#testing)
-  * [Security Features and Defensive Design](#security-features-and-defensive-design)
-    + [User Authentication](#user-authentication)
-    + [Form Validation](#form-validation)
-    + [Database Security](#database-security)
-    + [Custom error pages:](#custom-error-pages-)
-  * [Features](#features)
-    + [Header](#header)
-    + [Footer](#footer)
-    + [Home Page](#home-page)
-    + [User Account Pages](#user-account-pages)
-    + [Browse Recipes](#browse-recipes)
-    + [Recipe Detail Page](#recipe-detail-page)
-    + [Add Recipe Form](#add-recipe-form)
-    + [Update Recipe Form](#update-recipe-form)
-    + [Delete Recipe](#delete-recipe)
-    + [My Meal Plan](#my-meal-plan)
-    + [My Recipes Page](#my-recipes-page)
-    + [My Bookmarks Page](#my-bookmarks-page)
-    + [Error Pages](#error-pages)
-    + [Future Features](#future-features)
-  * [Deployment - Heroku](#deployment---heroku)
-  * [Forking this repository](#forking-this-repository)
-  * [Cloning this repository](#cloning-this-repository)
-  * [Languages](#languages)
-  * [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
-  * [Credits](#credits)
-  * [Acknowledgments](#acknowledgments)
+ * [User Experience (UX)](#user-experience-ux)
+   + [User Stories](#user-stories)
+   + [Design](#design)
+     - [Color Scheme](#color-scheme)
+     - [Imagse](#images)
+     - [Fonts](#fonts)
+     - [Wireframes](#wireframes)
+ * [Agile Methodology](#agile-methodology)
+ * [Data Model](#data-model)
+ * [Testing](#testing)
+ * [Security Features and Defensive Design](#security-features-and-defensive-design)
+   + [User Authentication](#user-authentication)
+   + [Form Validation](#form-validation)
+   + [Database Security](#database-security)
+   + [Custom error pages:](#custom-error-pages-)
+ * [Features](#features)
+   + [Header](#header)
+   + [Footer](#footer)
+   + [Home Page](#home-page)
+   + [User Account Pages](#user-account-pages)
+   + [Browse Recipes](#browse-recipes)
+   + [Recipe Detail Page](#recipe-detail-page)
+   + [Add Recipe Form](#add-recipe-form)
+   + [Update Recipe Form](#update-recipe-form)
+   + [Delete Recipe](#delete-recipe)
+   + [My Meal Plan](#my-meal-plan)
+   + [My Recipes Page](#my-recipes-page)
+   + [My Bookmarks Page](#my-bookmarks-page)
+   + [Error Pages](#error-pages)
+   + [Future Features](#future-features)
+ * [Deployment - Heroku](#deployment---heroku)
+ * [Forking this repository](#forking-this-repository)
+ * [Cloning this repository](#cloning-this-repository)
+ * [Languages](#languages)
+ * [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
+ * [Credits](#credits)
+ * [Acknowledgments](#acknowledgments)
+
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 ## User Experience (UX)
 
-A visitor to Easy Eater would be someone who is most likely an adult who enjoys their food and trying new recipes but also wants to save time and effort when deciding what to cook for dinner every night of the week.
 
-### User Stories
+A visitor The Wine Garden BnB website would likely be an adult looking to spend time away but whow would also want all the amenities of home. This website provides information about a family-run business that meets those needs.
+
+
+### User Stories -- DO THESE
+
 
 #### EPIC | User Profile
 - As a Site User I can register an account so that I can add/edit/delete my recipes and comment on and bookmark other people's recipes and add recipes to my meal planner.
 - As a Site User, I can log in or log out of my account so that I can keep my account secure.
 - As a Site User I can see my login status so that I know if I'm logged in or out.
+
 
 #### EPIC | User Navigation
 - As a Site User I can immediately understand the purpose of the site so that I can decide if it meets my needs.
@@ -67,49 +78,59 @@ A visitor to Easy Eater would be someone who is most likely an adult who enjoys 
 - As a Site User, I can view a paginated list of recipes so that I can select a recipe to view.
 - As a Site User, I can click on a recipe so that I can read the full recipe, ingredients required and view comments left by users.
 
+
 #### EPIC | Recipe Management
 - As a Site User, I can input my favourite recipes onto the app through an easy to use interface so that I can share them with other users.
 - As a Site User, I can edit and delete recipes that I have created so that I can easily make changes without having to start over.
 - As a Site User I can view my recipes so that I can see and manage all recipes I have created in the one location.
 - As a Site User I can view my bookmarked recipes so I can find them easily in the one location.
 
+
 #### EPIC | Recipe Interaction
 - As a Site User, I can save other user's recipes to my bookmarks so that I can find them easily at a later date.
 - As a Site User, I can comment on other people's recipes so I can give my feedback.
 - As a Site User, I can edit and delete comments that I have created so that I can easily make changes if I have made a mistake.
 
+
 #### EPIC | Mealplan Management
 - As a Site User, I can add/delete recipes to my meal planner for a particular day of the week so that I can create a meal plan for the week ahead.
 - As a Site User, I can view my meal plan for the week when I log into my account so that I can plan for the week ahead.
 
+
 #### EPIC | Site Administration
 - As a Site Administrator, I can create, read, update and delete recipes, comments and meal plan items so that I can manage the app content.
 
-#### User stories not yet implemented
+#### User stories not yet implemented -- ARE THERE ANY ??
 
-The following user stories were scoped out of the project due to time constraints and labelled as "Won't Have" on the project board on Github. It is intended that these user stories will be implemented at a later date. 
+The following user stories were not included within the scope of Portfolio Project 4. They are intended to be implemented in the future.
 
-- As a Site User, I can export the ingredients from the recipes on my meal plan to a shopping list and remove the ones that are not necessary so that I can have all my required ingredients for the week in one place.
-- As a Site User, I can search and filter recipes so that I can find the one I want.
+### Design -- DONE
 
-### Design
+The website design is set in simple, paragraph form, which is intended to make it easier for the reader to navigate. The navigation bar is clear on each page, as is the footer and the pages are labelled with a 'banner' format thus ensuring users know where they are at all times. 
 
-The site has a very simple and clean design which was purposely chosen in order to keep in theme with the site's goal. i.e. invoking a sense of calm in the user and reducing stress when it comes to everyday cooking. 
 
-#### Colour Scheme
-Colour palette from Coolors
+The color scheme was chosen to reflect a 'red wine' color and incorporate rich, earthy tones to encompass the vineyard theme.
 
-![Colour Palette](docs/readme_images/colour_scheme.png)
 
-The colour scheme of the site is mainly pale cream, pink and brown with thin gold borders. The colours chosen are quite neutral and calming. 
+#### Color Scheme -- DONE
+The color palette was created using the palette generator [Coolers](https://coolors.co/).
 
-Great care was taken to establish a good contrast between background colours and text at all times to ensure maximum user accessibility. 
 
-#### Imagery
-There is only one static image on the site depicting a family dinner on the home page. The rest of the imagery will be uploaded by users for their individual recipes. 
+The background of all site pages is the lightest color, a shade of beige, alowing for a stark contrast with the burgundy color when used as an accent. Shades of the green are used to accent other pages or as background for text or as a hover color. The darker beige color was used mainly as a visual cue to the user when links or buttons were hovered over.
 
-#### Fonts
-The Montserrat font is the main font used for the body of the website with the Playfair Display font used for the main headings on the home page. These fonts were imported via Google Fonts. Sans Serif is the backup font, in case for any reason the main font isn't being imported into the site correctly.
+
+All combinations of the colors used illustrate a contrast between background and text to ensure maximum user accessibility.
+
+
+![Color Palette](/documentation/readme_images/color-palette.png)
+
+
+#### Imagery -- DONE
+Two different static images are included on the site depicting a homestead in a vineyard. Other images are used as the banner backgrounds on the About, Contact Us and other pages.
+ 
+
+#### Fonts -- DONE
+The 'Quicksand' font is the main font used on the page, while Montserrat in a bolder weight was used for the navbar and other accent areas. The 'Sans-serif' font is noted as a backup and will be used in the event that the main fonts aren't imported correctly to the site. These font style were chosen for their ease of legibility and general letter spacing and were imported from [Google Fonts](https://fonts.google.com/).
 
 #### Wireframes
 
@@ -117,45 +138,47 @@ The Montserrat font is the main font used for the body of the website with the P
 
  <summary>Landing Page</summary>
 
-![Landing Page](docs/wireframes/landing_wireframe.png)
+![Landing Page](documentation/wire_frames/landing.png)
 </details>
 
 <details>
 
-<summary>Browse Recipes</summary>
+<summary>About</summary>
 
-![Browse Recipes](docs/wireframes/browse_wireframe.png)
+![About](documentation/wire_frames/about.png)
 </details>
 
 
 <details>
 
-<summary>Add Recipe</summary>
+<summary>Contact Us</summary>
 
-![Add Recipe](docs/wireframes/addrecipe_wireframe.png)
+![Contact Us](documentation/wire_frames/contact-us.png)
 </details>
 
 <details>
 
-<summary>My Recipes</summary>
+<summary>XX My Bookings XX</summary>
 
-![My Recipes](docs/wireframes/myrecipes_wireframe.png)
+![My Bookings](XX)
 </details>
 
 <details>
 
-<summary>My Bookmarks</summary>
+<summary>XX My Menu XX</summary>
 
-![My Bookmarks](docs/wireframes/mybookmarks_wireframe.png)
+![My Menu](XX)
 </details>
 
-## Agile Methodology
+## Agile Methodology -- DONE
 
-Github projects was used to manage the development process using an agile approach. Please see link to project board [here](https://github.com/AliOKeeffe/PP4_My_Meal_Planner/projects/2)
+The agile methodology was used throughout project development. EPICS, user stories and the steps of the process are shown on [GitHub projects](https://github.com/users/Kaylaesmith1/projects/2/views/1).
 
-The 6 Epics listed above were documented within the Github project as Milestones. A Github Issue was created for each User Story which was then allocated to a milestone(Epic). Each User Story has defined acceptance criteria to make it clear when the User Story has been completed. The acceptance criteria are further broken down into tasks to facilitate the User Story's execution.
+In total, there were 9 EPICs that encompassed all user stories, depending on subject matter. Each user story was created as an 'issue' that outlined the goal to implement and the acceptance criteria. Once these criteria were developed and fully met, the user story moved through the process to the 'done' column. When all user stories specfic to an EPIC were completed, the EPIC itself was moved to the 'done' column. 
 
-## Data Model
+Creating EPICs and user stories for this project facilitated a smooth working environment where both general and specific goals were visualized and therefore more easily tackled and brought to fruition. 
+
+## Data Model -- START HERE
 I used principles of Object-Oriented Programming throughout this project and Django’s Class-Based Generic Views.  
 
 Django AllAuth was used for the user authentication system.

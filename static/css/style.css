@@ -1,5 +1,5 @@
-/* LOOK AT OTHER FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Raleway:wght@400;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400&family=Lato&family=Montserrat:wght@400&family=Poppins:wght@200&family=Quicksand:wght@300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Quicksand:wght@300&display=swap');
 
 /* GLOBAL STYLING */
 .content {
@@ -9,7 +9,7 @@
 
 body {
     background-color: #EFE8E1;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 h4 {
@@ -43,6 +43,7 @@ h4 {
 .navbar-light .navbar-nav .nav-link {
     color:#5F233F;
     font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -112,8 +113,7 @@ img.logo-image {
 /* CONTACT US */
 
 /* BACKGROUND IMAGE - id=contact-banner / about-banner but class=banner */
-.contact-banner {
-    /* https://res.cloudinary.com/kesmith/image/upload/v1680361989/redbanner-dark_xfuxmf.png */
+/* .contact-banner {
     background: url('../media/images/contact-page-banner.png') no-repeat center center / cover;
     text-align: center;
     font-size: 5em;
@@ -122,11 +122,11 @@ img.logo-image {
     color: #fefefe;
     padding: 4rem 1.5rem;
     opacity: .78;
-  }
+  } */
 
 
 /* ABOUT PAGE */
-.about-banner {
+/* .about-banner {
     background: url('../media/images/about-banner-dark.png') no-repeat center center / cover;
     text-align: center;
     font-size: 5em;
@@ -136,7 +136,7 @@ img.logo-image {
     padding: 4rem 1.5rem;
     opacity: .78;
     
-}
+} */
 
 .card-body {
     /* background-color is lighter version of #307473 */
