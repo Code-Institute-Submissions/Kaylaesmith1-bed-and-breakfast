@@ -1,5 +1,5 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400&family=Lato&family=Montserrat:wght@400&family=Poppins:wght@200&family=Quicksand:wght@300&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Lato&family=Montserrat:wght@400&family=Poppins:wght@200&family=Quicksand:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Quicksand:wght@300&display=swap'); */
 
 /* GLOBAL STYLING */
 .content {
@@ -10,6 +10,11 @@
 body {
     background-color: #EFE8E1;
     font-family: 'Quicksand', sans-serif;
+}
+
+h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #5F233F;
 }
 
 h4 {
@@ -89,15 +94,15 @@ img.logo-image {
     color: #5F233F;
 }
 
-.submit,
-.contact-submit {
+.submit {
     background-color: #5F233F;
     border: 2px solid #5F233F;
     color: #C9B5B4;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
 }
 
-.submit:hover,
-.contact-submit:hover {
+.submit:hover {
     color: #5F233F;
     border: 2px solid #5F233F;
     background-color: #C9B5B4;
@@ -111,37 +116,44 @@ img.logo-image {
 }
 
 /* CONTACT US */
+/* .contact-submit {
+    background-color: #317372;
+    border: 2px solid #317372;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+} */
 
-/* BACKGROUND IMAGE - id=contact-banner / about-banner but class=banner */
-/* .contact-banner {
-    background: url('../media/images/contact-page-banner.png') no-repeat center center / cover;
-    text-align: center;
-    font-size: 5em;
-    letter-spacing: 2px;
-    font-weight: 600;
-    color: #fefefe;
-    padding: 4rem 1.5rem;
-    opacity: .78;
-  } */
+.contact-submit {
+    background-color: #C9B5B4;
+    border: 2px solid #5F233F;
+    color: #5F233F;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.contact-submit:hover {
+    background-color: #5F233F;
+    border: 2px solid #5F233F;
+    color: #C9B5B4;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
 
 
 /* ABOUT PAGE */
-/* .about-banner {
-    background: url('../media/images/about-banner-dark.png') no-repeat center center / cover;
-    text-align: center;
-    font-size: 5em;
-    letter-spacing: 2px;
-    font-weight: 600;
-    color: #fefefe;
-    padding: 4rem 1.5rem;
-    opacity: .78;
-    
-} */
+.about-card { 
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+}
 
 .card-body {
     /* background-color is lighter version of #307473 */
     /* background-color: #9bb9b8; */
     background-color: #b9c9c7;
+}
+
+.card-body h3 {
+    text-align: center;
 }
 
 .star-reviews {
@@ -155,8 +167,9 @@ img.logo-image {
     text-align: center;
     padding: 20px 0;
     border-radius: 2%;
-    border: 1px solid #5F233F;
+    border: 2px solid #5F233F;
     margin-top: 1em;
+    background-color: #d9d1d1;
 }
 
 .logout {

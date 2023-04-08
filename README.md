@@ -196,7 +196,7 @@ The agile methodology was used throughout project development. EPICS, user stori
 
 In total, there were 9 EPICs that encompassed all user stories, depending on subject matter. Each user story was created as an 'issue' that outlined the goal to implement and the acceptance criteria. Once these criteria were developed and fully met, the user story moved through the process to the 'done' column. When all user stories specfic to an EPIC were completed, the EPIC itself was moved to the 'done' column. 
 
-Creating EPICs and user stories for this project facilitated a smooth working environment where both general and specific goals were visualized and therefore more easily tackled and brought to fruition. 
+Creating EPICs and user stories for this project facilitated a smooth working environment where both general and specific goals were visualized, more easily tackled and brought to fruition. 
 
 ## Data Model -- START HERE
 I used principles of Object-Oriented Programming throughout this project and Django’s Class-Based Generic Views.  
@@ -211,7 +211,7 @@ The meal plan item model allows users to add recipes to a meal plan for a partic
 
 The diagram below details the database schema.
 
-![Database Schema](docs/readme_images/database_schema.png)
+![Database Schema]() -- IS NECESSARY?
 
 ## Testing
 

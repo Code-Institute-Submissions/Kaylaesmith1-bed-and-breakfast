@@ -10,9 +10,10 @@
 
 <!-- LOGIN FORM START -->
 <div class="container">
-  <h1 class="page-title">{% trans "Log in" %} - Add some green to these forms</h1>
+  <h1 class="page-title">{% trans "Log in" %}</h1>
   <hr class="page-break">
   <br>
+  <div class="card-body">
   <p class="text-center mt-3">{% blocktrans %}Don't have an account yet? 
 <a href="{{ signup_url }}" class="text-dark"><u>Sign up</u></a>.{% endblocktrans %}</p>
 <div class="row justify-content-center">
@@ -30,6 +31,8 @@
 </div>
 </div>
 </div>
+</div>
+</br>
 <!-- LOGIN FORM END -->
 
 {% endblock %}
