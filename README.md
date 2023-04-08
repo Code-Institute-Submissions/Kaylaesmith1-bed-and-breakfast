@@ -132,7 +132,7 @@ Two different static images are included on the site depicting a homestead in a 
 #### Fonts -- DONE
 The 'Quicksand' font is the main font used on the page, while Montserrat in a bolder weight was used for the navbar and other accent areas. The 'Sans-serif' font is noted as a backup and will be used in the event that the main fonts aren't imported correctly to the site. These font style were chosen for their ease of legibility and general letter spacing and were imported from [Google Fonts](https://fonts.google.com/).
 
-#### Wireframes
+#### Wireframes -- DONE
 
 <details>
 
@@ -165,9 +165,29 @@ The 'Quicksand' font is the main font used on the page, while Montserrat in a bo
 
 <details>
 
-<summary>XX My Menu XX</summary>
+<summary>My Menu</summary>
 
-![My Menu](XX)
+![My Menu](documentation/wire_frames/menu.png)
+</details>
+
+<details>
+
+<summary>Sign Up</summary>
+
+![Account sign up](documentation/wire_frames/signup.png)
+</details>
+
+<details>
+
+<summary>Login</summary>
+
+![Account login](documentation/wire_frames/login.png)
+</details>
+<details>
+
+<summary>Log out</summary>
+
+![Account logout](documentation/wire_frames/logout.png)
 </details>
 
 ## Agile Methodology -- DONE
