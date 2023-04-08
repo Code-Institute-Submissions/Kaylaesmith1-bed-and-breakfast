@@ -156,6 +156,13 @@ img.logo-image {
     text-align: center;
 }
 
+.customers {
+    padding-top: 18px;
+    font-family: 'Kanit';
+    font-size: 38px;
+    color: #5f233f;
+}
+
 .star-reviews {
     color: #317372;
     font-size: 2.5rem;
