@@ -12,8 +12,10 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
-h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+h2, h3, h4 {
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Kanit', sans-serif;
     color: #5F233F;
 }
 
@@ -89,6 +91,7 @@ img.logo-image {
     /* font-family: 'Playfair Display', serif; */
     font-size: 45px;
     color: #5F233F;
+    margin-top: 4rem;
 }
 
 .book-now {
@@ -115,7 +118,9 @@ img.logo-image {
 .offers-image,
 .offers-title,
 .offers-text, 
-.about-card {
+.about-card, 
+.reviews {
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: #5F233F;
 }
@@ -147,7 +152,7 @@ img.logo-image {
 
 /* ABOUT PAGE */
 .about-card { 
-    font-family: 'Kanit', sans-serif;
+    /* font-family: 'Kanit', sans-serif; */
     font-size: 20px;
 }
 
@@ -168,10 +173,10 @@ img.logo-image {
     color: #5f233f;
 }
 
-.reviews {
+/* .reviews {
     text-align: center;
     font-family: 'Kanit', sans-serif;
-}
+} */
 
 .star-reviews {
     color: #317372;
@@ -215,6 +220,12 @@ img.logo-image {
 .login #id_remember {
     width: 20px;
     display: inline;
+}
+
+#msg {
+    color: #155724;
+    background-color: #baf2c3;
+    border: .1em solid #155724;
 }
 
 /* FOOTER */
