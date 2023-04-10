@@ -32,7 +32,7 @@ h4 {
 .hero-text-outer {
     /* border: 1px solid #dadada; */
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
+    /* transition: 0.2s; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -85,6 +85,7 @@ img.logo-image {
 .hero-text-outer {
     background-color: #C9B5B4;
     min-height: 200px;
+    text-align: center;
 }
 
 .hero-text {
@@ -280,9 +281,17 @@ img.logo-image {
         height: 120px;
     }
 
+
     .banner {
         font-size: 4em;
     }
+}
+
+
+@media screen and (max-width: 768px) {
+.hero-text-outer {
+    margin-top: 2rem;
+}
 }
 
 @media screen and (max-width: 550px) {

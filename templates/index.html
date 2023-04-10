@@ -14,7 +14,7 @@
             </div>
 
             {% if user.is_authenticated %}
-            <div class="col-md-5 col-lg-7 hero-text-outer text-center">
+            <div class="col-md-5 col-lg-7 hero-text-outer">
                 <h1 class="hero-text">Start planning your stay at The Wine Garden BnB</h1>
                 <div class="lead mt-3 book-now">
                     <!-- Find a room -->
@@ -23,7 +23,7 @@
                 </div>
             </div>
             {% else %}
-            <div class="col-md-5 col-lg-7 hero-text-outer text-center">
+            <div class="col-md-5 col-lg-7 hero-text-outer">
                 <h1 class="hero-text">Enjoy a relaxing stay and a glass of wine in the tranquility of a Midwest vineyard!</h1>
                 <div class="lead mt-4 book-now">
                 <a class="submit btn btn-outline-dark btn-lg ml-2 my-2 my-lg-0" href="{% url 'account_signup' %}">Sign Up</a>
@@ -106,7 +106,7 @@
                 <div class="offers-image mb-2">
                     <i class="fas fa-utensils fa-4x"></i>
                 </div>
-                <h3 class="offers-title">Delicious breakfast</h3>
+                <h3 class="offers-title">Breakfast</h3>
                 <p>
                     Choose from fresh, local ingredients to complete your breakfast in the mornings! Please let us
                     know of any dietary restrictions or food preferences.
