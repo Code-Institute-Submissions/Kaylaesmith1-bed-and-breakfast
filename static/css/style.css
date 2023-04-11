@@ -149,6 +149,11 @@ img.logo-image {
     margin-bottom: 1rem;
 }
 
+.fields {
+    font-size: 18px;
+    color: #5F233F;
+}
+
 .message{
     width: 100%;
     position: relative;
