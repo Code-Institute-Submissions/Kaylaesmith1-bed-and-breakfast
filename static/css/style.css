@@ -211,6 +211,19 @@ img.logo-image {
     text-align: center;
 }
 
+/* BREAKFAST */
+/* .breakfast {
+    background-image: url(../media/bfast2.png);
+    color: white;
+    font-size: 80px;
+    padding: 55px;    
+    font-weight: 700;
+    height: 250px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+} */
+
 /* ALL AUTH PAGES */
 .login {
     text-align: center;

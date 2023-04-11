@@ -73,6 +73,9 @@
                             <a class="nav-link" href="#">My Bookings</a>
                         </li>
                         <li class="nav-item d-block d-lg-none">
+                            <a class="nav-link" href="{% url 'breakfast' %}">My Menu</a>
+                        </li>
+                        <li class="nav-item d-block d-lg-none">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
@@ -97,7 +100,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">My Bookings</a>
-                                <a class="dropdown-item" href="#">My Menu</a>
+                                <a class="dropdown-item" href="{% url 'breakfast' %}">My Menu</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                             </div>
