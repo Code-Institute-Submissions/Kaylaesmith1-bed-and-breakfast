@@ -11,8 +11,40 @@ function sendMail(contactForm) {
             },
             function (error) {
                 console.log("Email failed to send", error);
-            }
-            
+            },
+           
         );
     return false;
+}
+
+ 
+function popup(){
+    var fname = document.getElementById('firstname');
+    var lname = document.getElementById('lastname');
+    var email = document.getElementById('emailaddress');
+    var message = document.getElementById('message');
+    const success = document.getElementById('success');
+    const danger = document.getElementById('danger');
+
+    if(fname.value === '' || lname.value === '' || email.value === '' || message.value === ''){
+        danger.style.display = 'block';
+    }
+    else{
+        setTimeout(() => {
+            fname.value = '';
+            lname.value = '';
+            email.value = '';
+            message.value = '';
+        }, 2000);
+
+        success.style.display = 'block';
+    }
+
+
+    setTimeout(() => {
+        danger.style.display = 'none';
+        success.style.display = 'none';
+        form.current.reset();
+    }, 4000);
+
 }
