@@ -127,19 +127,13 @@ img.logo-image {
 }
 
 /* CONTACT US */
-/* .contact-submit {
-    background-color: #317372;
-    border: 2px solid #317372;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1px;
-} */
-
 .contact-submit {
     background-color: #C9B5B4;
     border: 2px solid #5F233F;
     color: #5F233F;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
+    margin-top: 1rem
 }
 
 .contact-submit:hover {
@@ -148,6 +142,10 @@ img.logo-image {
     color: #C9B5B4;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
+}
+
+.form-control {
+    margin-top: 0.5rem; 
 }
 
 
