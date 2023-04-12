@@ -19,6 +19,7 @@ def create_customer(request):
     form = CustomerForm()
     return render(request, 'contact_us.html', {'form': form})
 
+
 class Breakfast(generic.TemplateView):
     """Opens My Menu page"""
     template_name = "breakfast.html"

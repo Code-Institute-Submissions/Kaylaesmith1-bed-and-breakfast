@@ -5,12 +5,183 @@
 <div class="container">
     <img src="https://res.cloudinary.com/kesmith/image/upload/v1681247544/Screen_Shot_2023-04-11_at_23.12.17_zk9cde.png" class="img-fluid" alt="breakfast">
 </div>
-<!-- <div class="container">
-<div class="breakfast">
-    Breakfast
-</div>
-</div> -->
 
 
+<section class="container px-2 py-3">
+    <div class="card-body">
+        <h4>Choose from fresh, local ingredients to build a made-to-order breakfast.</h4> 
+    <div class="row card-row m-1">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+            <!-- STARTERS -->
+            <div class="card card-menu d-flex justify-content-center">
+                <div class="ingredient-card d-flex justify-content-center align-items-center">
+                    <div class="card-face card-body-front">
+                        <!-- <img src="#" alt="starters-hero-image"> -->
+                        <h3 class="card-title">EGGS & MEATS</h3>
+                    </div>
+                    <div class="card-face card-body-back">
+                        <div class="card-content">
+                            {% for starter in starter_list%}
+                            <h5>{{ starter.name}}</h5>
+                            <p> {{ starter.description}} </p>
+                            <!-- <p> Price: {{ starter.price}} &euro; </p> -->
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+            <!-- SOUP -->
+            <div class="card card-menu d-flex justify-content-center">
+                <div class="ingredient-card d-flex justify-content-center align-items-center">
+                    <div class="card-face card-body-front">
+                        <img src="#" alt="soup-hero-image">
+                        <h2 class="card-title">SOUPS</h2>
+                    </div>
+                    <div class="card-face card-body-back">
+                        <div class="card-content">
+                            {% for soup in soup_list%}
+                            <h5>{{ soup.name}}</h5>
+                            <p> {{ soup.description}} </p>
+                            <p> Price: {{ soup.price}} &euro;</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
+            <!-- SALADS -->
+            <div class="card card-menu d-flex justify-content-center">
+                <div class="ingredient-card d-flex justify-content-center align-items-center">
+                    <div class="card-face card-body-front">
+                        <img src="#" alt="salad-hero-image">
+                        <h2 class="card-title">SALADS</h2>
+                    </div>
+                    <div class="card-face card-body-back">
+                        <div class="card-content">
+                            {% for salad in salads_list%}
+                            <h5>{{ salad.name}}</h5>
+                            <p> {{ salad.description}} </p>
+                            <p> Price: {{ salad.price}} &euro;</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row card-row m-1 mb-5">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+            <!-- FISH -->
+
+            <div class="card card-menu d-flex justify-content-center">
+                <div class="ingredient-card d-flex justify-content-center align-items-center">
+                    <div class="card-face card-body-front">
+                        <img src="#" alt="fish-hero-image">
+                        <h2 class="card-title">FISH COURSES</h2>
+                    </div>
+                    <div class="card-face card-body-back">
+                        <div class="card-content">
+                            {% for fish in fish_list%}
+                            <h5>{{ fish.name}}</h5>
+                            <p> {{ fish.description}} </p>
+                            <p> Price: {{ fish.price}} &euro;</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+            <!-- MAIN -->
+
+            <div class="card card-menu d-flex justify-content-center">
+                <div class="ingredient-card d-flex justify-content-center align-items-center">
+                    <div class="card-face card-body-front">
+                        <img src="#" alt="main-hero-image">
+                        <h2 class="card-title">MAIN COURSES</h2>
+                    </div>
+                    <div class="card-face card-body-back">
+                        <div class="card-content">
+                            {% for main in main_list%}
+                            <h5>{{ main.name}}</h5>
+                            <p> {{ main.description}} </p>
+                            <p> Price: {{ main.price}} &euro;</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
+            <!-- DESSERTS -->
+
+            <div class="card card-menu d-flex justify-content-center">
+                <div class="ingredient-card d-flex justify-content-center align-items-center">
+                    <div class="card-face card-body-front">
+                        <img src="#" alt="dessert-hero-image">
+                        <h2 class="card-title">DESSERTS</h2>
+                    </div>
+                    <div class="card-face card-body-back">
+                        <div class="card-content">
+                            {% for dessert in dessert_list%}
+                            <h5>{{ dessert.name}}</h5>
+                            <p> {{ dessert.description}} </p>
+                            <p> Price: {{ dessert.price}} &euro;</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- <section class="container px-2 py-3"> 
+
+    <div class="row flex-md-row py-3 m-0">
+    <div class="col-12 mb-4 card-body">
+        <div>
+          <h3>Choose from fresh, local ingredients to build your own made-to-order breakfast</h3>
+
+          <div class="row flex-md-row py-3 m-0">
+          <div class="col-lg-4 col-12 mb-4">
+              <div class="ingredient-card">
+                <p>"Great location, only a 20 minute drive to the historic downtown area. The staff were kind, helpful and knowledgable about activites in the
+                  surrouding area and the jacuzzi topped it off!"</p>
+              </div>
+          </div>
+
+          <div class="col-lg-8 col-12 mb-4">
+              <div class="ingredient-card">
+                <p>"Great location, only a 20 minute drive to the historic downtown area. The staff were kind, helpful and knowledgable about activites in the
+                  surrouding area and the jacuzzi topped it off!"</p>
+              </div>
+          </div>
+          </div>
+          </br>
+
+          <div class="row flex-md-row py-3 m-0">
+            <div class="col-lg-6 col-12 mb-4">
+                <div class="card h-100">
+                    <div class="ingredient-card">
+                      <p>"Great location, only a 20 minute drive to the historic downtown area. The staff were kind, helpful and knowledgable about activites in the
+                        surrouding area and the jacuzzi topped it off!"</p>
+                    </div>
+                  </div>
+            
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section> -->
 
 {% endblock %}

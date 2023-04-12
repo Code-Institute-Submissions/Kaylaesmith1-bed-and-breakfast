@@ -25,6 +25,7 @@ h4 {
 
 .card {
     border-radius: 0;
+    background-color: transparent;
 }
 
 .card-body,
@@ -224,6 +225,14 @@ img.logo-image {
     letter-spacing: 2px;
 } */
 
+.ingredient-card {
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color:#C9B5B4;
+}
+
 /* ALL AUTH PAGES */
 .login {
     text-align: center;
@@ -321,9 +330,9 @@ img.logo-image {
     }
 
 
-    .banner {
+    /* .banner {
         font-size: 4em;
-    }
+    } */
 }
 
 
@@ -339,7 +348,7 @@ img.logo-image {
         height: 85px;
     }
 
-    .banner {
+    /* .banner {
         font-size: 3em;
-    }
+    } */
 }
