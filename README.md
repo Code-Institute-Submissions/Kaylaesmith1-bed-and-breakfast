@@ -165,9 +165,9 @@ The 'Quicksand' font is the main font used on the page, while 'Montserrat' in a 
 
 <details>
 
-<summary>My Menu</summary>
+<summary>Menu</summary>
 
-![My Menu](documentation/wire_frames/menu.png)
+![Menu](documentation/wire_frames/menu.png)
 </details>
 
 <details>

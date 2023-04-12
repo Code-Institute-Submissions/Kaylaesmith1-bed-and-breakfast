@@ -22,7 +22,7 @@ def create_customer(request):
 
 
 class Breakfast(generic.TemplateView):
-    """Opens My Menu page"""
+    """Opens Menu page"""
     template_name = "breakfast.html"
 
 
