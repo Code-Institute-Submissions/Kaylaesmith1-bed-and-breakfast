@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}The Wine Garden BnB | Add menu item{% endblock %}
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <!-- ADD MENU ITEM PAGE -->
+    <div class="container">
+        <!-- <div class="row justify-content-center">
+            <div class="col-12 col-md-6 text-center">
+                <h1 class="hero-font text-uppercase">Product Management</h1>
+                <hr class="w-50 mb-5">
+            </div>
+        </div> -->
+        <!-- ADD MENU ITEM FORM -->
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h3 class="text-muted mb-3">Add a menu item</h3>
+                <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
+                    <div class="text-right">
+                        <a class="btn btn-light text-info font-weight-bold" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn btn-info font-weight-bold submit" type="submit">Add Item</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+{% endblock %}

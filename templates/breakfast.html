@@ -11,20 +11,20 @@
     <div class="card-body">
         <h4>Choose from fresh, local ingredients to build a made-to-order breakfast.</h4> 
     <div class="row card-row m-1">
+
+        <!-- EGGS & MEATS -->
         <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
-            <!-- STARTERS -->
             <div class="card card-menu d-flex justify-content-center">
                 <div class="ingredient-card d-flex justify-content-center align-items-center">
                     <div class="card-face card-body-front">
-                        <!-- <img src="#" alt="starters-hero-image"> -->
+                        <!-- <img src="#"> -->
                         <h3 class="card-title">EGGS & MEATS</h3>
                     </div>
                     <div class="card-face card-body-back">
                         <div class="card-content">
-                            {% for starter in starter_list%}
-                            <h5>{{ starter.name}}</h5>
-                            <p> {{ starter.description}} </p>
-                            <!-- <p> Price: {{ starter.price}} &euro; </p> -->
+                            {% for meat in meat_list%}
+                            <h5>{{ meat.name}}</h5>
+                            <p> {{ meat.description}} </p>
                             {% endfor %}
                         </div>
                     </div>
@@ -32,41 +32,39 @@
             </div>
         </div>
 
+     <!-- SAVORY BREADS -->
         <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
-            <!-- SOUP -->
             <div class="card card-menu d-flex justify-content-center">
                 <div class="ingredient-card d-flex justify-content-center align-items-center">
                     <div class="card-face card-body-front">
-                        <img src="#" alt="soup-hero-image">
-                        <h2 class="card-title">SOUPS</h2>
+                        <img src="#">
+                        <h2 class="card-title">SAVORY BREADS</h2>
                     </div>
                     <div class="card-face card-body-back">
                         <div class="card-content">
-                            {% for soup in soup_list%}
-                            <h5>{{ soup.name}}</h5>
-                            <p> {{ soup.description}} </p>
-                            <p> Price: {{ soup.price}} &euro;</p>
+                            {% for bread in bread_list%}
+                            <h5>{{ bread.name}}</h5>
+                            <p> {{ bread.description}} </p>
                             {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
 
-        <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
-            <!-- SALADS -->
+            <!-- PASTRIES -->
+            <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
             <div class="card card-menu d-flex justify-content-center">
                 <div class="ingredient-card d-flex justify-content-center align-items-center">
                     <div class="card-face card-body-front">
-                        <img src="#" alt="salad-hero-image">
-                        <h2 class="card-title">SALADS</h2>
+                        <img src="#">
+                        <h2 class="card-title">PASTRIES</h2>
                     </div>
                     <div class="card-face card-body-back">
                         <div class="card-content">
-                            {% for salad in salads_list%}
-                            <h5>{{ salad.name}}</h5>
-                            <p> {{ salad.description}} </p>
-                            <p> Price: {{ salad.price}} &euro;</p>
+                            {% for pastry in pastry_list%}
+                            <h5>{{ pastry.name}}</h5>
+                            <p> {{ pastry.description}} </p>
                             {% endfor %}
                         </div>
                     </div>
@@ -75,64 +73,59 @@
         </div>
     </div>
 
-    <div class="row card-row m-1 mb-5">
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
-            <!-- FISH -->
+    <div class="row card-row m-1">
+                    <!-- FRUIT -->
 
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
             <div class="card card-menu d-flex justify-content-center">
                 <div class="ingredient-card d-flex justify-content-center align-items-center">
                     <div class="card-face card-body-front">
-                        <img src="#" alt="fish-hero-image">
-                        <h2 class="card-title">FISH COURSES</h2>
+                        <img src="#">
+                        <h2 class="card-title">FRESH FRUIT</h2>
                     </div>
                     <div class="card-face card-body-back">
                         <div class="card-content">
-                            {% for fish in fish_list%}
-                            <h5>{{ fish.name}}</h5>
-                            <p> {{ fish.description}} </p>
-                            <p> Price: {{ fish.price}} &euro;</p>
+                            {% for fruit in fruit_list%}
+                            <h5>{{ fruit.name}}</h5>
+                            <p> {{ fruit.description}} </p>
                             {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+         <!-- VEGGIE OPTIONS -->
         <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
-            <!-- MAIN -->
-
             <div class="card card-menu d-flex justify-content-center">
                 <div class="ingredient-card d-flex justify-content-center align-items-center">
                     <div class="card-face card-body-front">
-                        <img src="#" alt="main-hero-image">
-                        <h2 class="card-title">MAIN COURSES</h2>
+                        <img src="#">
+                        <h2 class="card-title">VEGGIE OPTIONS</h2>
                     </div>
                     <div class="card-face card-body-back">
                         <div class="card-content">
-                            {% for main in main_list%}
-                            <h5>{{ main.name}}</h5>
-                            <p> {{ main.description}} </p>
-                            <p> Price: {{ main.price}} &euro;</p>
+                            {% for veg in veg_list%}
+                            <h5>{{ veg.name}}</h5>
+                            <p> {{ veg.description}} </p>
                             {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+       <!-- DRINKS -->
         <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
-            <!-- DESSERTS -->
-
             <div class="card card-menu d-flex justify-content-center">
                 <div class="ingredient-card d-flex justify-content-center align-items-center">
                     <div class="card-face card-body-front">
-                        <img src="#" alt="dessert-hero-image">
-                        <h2 class="card-title">DESSERTS</h2>
+                        <img src="#">
+                        <h2 class="card-title">DRINKS</h2>
                     </div>
                     <div class="card-face card-body-back">
                         <div class="card-content">
-                            {% for dessert in dessert_list%}
-                            <h5>{{ dessert.name}}</h5>
-                            <p> {{ dessert.description}} </p>
-                            <p> Price: {{ dessert.price}} &euro;</p>
+                            {% for drink in drinks_list%}
+                            <h5>{{ drink.name}}</h5>
+                            <p> {{ drink.description}} </p>
                             {% endfor %}
                         </div>
                     </div>
@@ -140,48 +133,10 @@
             </div>
         </div>
     </div>
+    <div class="col-12 mt-2">
+        <h6>*Please let us know if you have any dietary restrictions.</h6>
+    </div>
+
     </div>
 </section>
-
-<!-- <section class="container px-2 py-3"> 
-
-    <div class="row flex-md-row py-3 m-0">
-    <div class="col-12 mb-4 card-body">
-        <div>
-          <h3>Choose from fresh, local ingredients to build your own made-to-order breakfast</h3>
-
-          <div class="row flex-md-row py-3 m-0">
-          <div class="col-lg-4 col-12 mb-4">
-              <div class="ingredient-card">
-                <p>"Great location, only a 20 minute drive to the historic downtown area. The staff were kind, helpful and knowledgable about activites in the
-                  surrouding area and the jacuzzi topped it off!"</p>
-              </div>
-          </div>
-
-          <div class="col-lg-8 col-12 mb-4">
-              <div class="ingredient-card">
-                <p>"Great location, only a 20 minute drive to the historic downtown area. The staff were kind, helpful and knowledgable about activites in the
-                  surrouding area and the jacuzzi topped it off!"</p>
-              </div>
-          </div>
-          </div>
-          </br>
-
-          <div class="row flex-md-row py-3 m-0">
-            <div class="col-lg-6 col-12 mb-4">
-                <div class="card h-100">
-                    <div class="ingredient-card">
-                      <p>"Great location, only a 20 minute drive to the historic downtown area. The staff were kind, helpful and knowledgable about activites in the
-                        surrouding area and the jacuzzi topped it off!"</p>
-                    </div>
-                  </div>
-            
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section> -->
-
 {% endblock %}
