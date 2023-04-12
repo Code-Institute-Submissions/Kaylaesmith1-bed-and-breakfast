@@ -30,9 +30,16 @@
                     </p>
                     {% endif %} -->
                     <!-- EDIT / DELETE BUTTONS -->
-                    {% if request.user.is_superuser %}
+                    <!-- {% if request.user.is_superuser %}
                         <a class="btn btn-info" href="{% url 'edit_menu_item' menu.id %}">Edit</a>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
                             Delete
                         </button>
+                    {% endif %} -->
+
+                    {% if request.user.is_superuser %}
+                        <small class="ml-3">
+                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        </small>
                     {% endif %}
