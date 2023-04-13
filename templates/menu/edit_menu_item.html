@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}The Wine Garden BnB | Edit menu item{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <!-- EDIT MENU ITEM -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h3 class="text-muted mb-3">Edit An Item</h3>
+                <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
+                    <div class="text-right">
+                        <a class="btn btn-light text-info font-weight-bold" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn btn-info font-weight-bold" type="submit">Update Item</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+{% endblock %}

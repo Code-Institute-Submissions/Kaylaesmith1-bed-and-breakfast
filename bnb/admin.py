@@ -8,6 +8,7 @@ class MenuAdmin(admin.ModelAdmin):
     """
 
     list_display = (
+        'category',
         'name',
         'description',
     )

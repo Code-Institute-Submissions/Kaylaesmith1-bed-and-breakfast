@@ -16,7 +16,7 @@ class Menu(models.Model):
     """
     Menu Item
     """
-
+    category = models.CharField(max_length=50, blank=True)
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=350)
 
