@@ -84,13 +84,14 @@ img.logo-image {
 
 /* LANDING PAGE */
 .hero-text-outer {
-    background-color: #C9B5B4;
+    /* background-color: #C9B5B4; */
+    background-color: #b9c9c7;
     min-height: 200px;
     text-align: center;
 }
 
 .hero-text {
-    /* font-family: 'Playfair Display', serif; */
+    /* font-family: 'Montserrat', sans-serif; */
     font-size: 45px;
     color: #5F233F;
     margin-top: 4rem;
@@ -114,6 +115,10 @@ img.logo-image {
 .submit:hover {
     color: #5F233F;
     border: 2px solid #5F233F;
+    background-color: #C9B5B4;
+}
+
+#home {
     background-color: #C9B5B4;
 }
 
@@ -308,7 +313,6 @@ img.logo-image {
 /* MEDIA QUERIES */
 @media screen and (max-width: 1200px) {
   .hero-text {
-    /* font-family: 'Playfair Display', serif; */
     font-size: 30px;
 }
 }
