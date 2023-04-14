@@ -39,12 +39,12 @@ class FoodListViews(ListView):
 #     return render(request, "our-restaurant.html")
 
 def food_list(request):
-    meat_list = Item.objects.all().filter(food_type='Meat')
-    bread_list = Item.objects.all().filter(food_type='Bread')
-    pastry_list = Item.objects.all().filter(food_type='Pastry')
-    fruit_list = Item.objects.all().filter(food_type='Fruit')
-    vegan_list = Item.objects.all().filter(food_type='Vegan')
-    drinks_list = Item.objects.all().filter(food_type='Drinks')
+    meat_list = Item.objects.all().filter(food_type='meat')
+    bread_list = Item.objects.all().filter(food_type='BREAD')
+    pastry_list = Item.objects.all().filter(food_type='PASTRY')
+    fruit_list = Item.objects.all().filter(food_type='FRUIT')
+    vegan_list = Item.objects.all().filter(food_type='VEGA')
+    drinks_list = Item.objects.all().filter(food_type='DRINKS')
     context = {
         'meat_list': meat_list,
         'bread_list': bread_list,

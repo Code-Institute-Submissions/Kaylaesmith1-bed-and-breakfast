@@ -60,7 +60,7 @@ A link to the live site can be found here - [The Wine Garden BnB](https://wine-g
 ## User Experience (UX)
 
 
-A visitor The Wine Garden BnB website would likely be an adult looking to spend time away but whow would also want all the amenities of home. This website provides information about a family-run business that meets those needs.
+A visitor The Wine Garden BnB website would likely be an adult looking to spend time away but who would also want all the amenities of home. This website provides information about a family-run business that meets those needs.
 
 
 ### User Stories -- DO THESE
@@ -126,7 +126,7 @@ All combinations of the colors used illustrate a contrast between background and
 
 
 #### Imagery -- DONE
-Two different static images are included on the site depicting a homestead in a vineyard. Other images are used as the banner backgrounds on the About, Contact Us and other pages.
+Two different static images are included on the site depicting a homestead in a vineyard. Other images are used as the banner backgrounds on the About, Contact Us and Menu pages.
  
 
 #### Fonts -- DONE
@@ -165,7 +165,7 @@ The 'Quicksand' font is the main font used on the page, while 'Montserrat' in a 
 
 <details>
 
-<summary>Menu</summary>
+<summary>XX Menu XX</summary>
 
 ![Menu](documentation/wire_frames/menu.png)
 </details>
@@ -194,20 +194,17 @@ The 'Quicksand' font is the main font used on the page, while 'Montserrat' in a 
 
 The agile methodology was used throughout project development. EPICS, user stories and the steps of the process are shown on [GitHub projects](https://github.com/users/Kaylaesmith1/projects/2/views/1).
 
-In total, there were 9 EPICs that encompassed all user stories, depending on subject matter. Each user story was created as an 'issue' that outlined the goal to implement and the acceptance criteria. Once these criteria were developed and fully met, the user story moved through the process to the 'done' column. When all user stories specfic to an EPIC were completed, the EPIC itself was moved to the 'done' column. 
+In total, there were 9 EPICs that encompassed all user stories, depending on subject matter. Each user story was created as an 'issue' that outlined the goal to implement and the acceptance criteria. Once these criteria were developed and met, the user story moved through the process to the 'done' column. When all user stories specfic to an EPIC were completed, the EPIC itself was moved to the 'done' column. 
 
 Creating EPICs and user stories for this project facilitated a smooth working environment where both general and specific goals were visualized, more easily tackled and brought to fruition. 
 
-## Data Model -- START HERE
-I used principles of Object-Oriented Programming throughout this project and Django’s Class-Based Generic Views.  
+## Data Model -- FINISH THIS W NEW MODELS
+I used principles of Object-Oriented Programming throughout this project and Django’s Class-Based Generic Views. Django AllAuth was used for user authentication.
 
-Django AllAuth was used for the user authentication system.
+A custom Menu model was made to incorporate CRUD functionality for admin users. This allows logged in, admin users to add, edit or delete a menu item, both from the live site and from the Django admin page.
 
-In order for the users to create recipes a custom recipe model was required. The recipe author is a foreign key to the User model given a recipe can only have one author.
+The Customer model displays a working contact form on the Contact Us page. [Email js](https://www.emailjs.com/) was also used to ensure queries are addressed. For the purpose of this project, the emails arrive in my personal inbox.
 
-The Comment model allows users to comment on individual recipes and the Recipe is a foreign key in the comment model given a comment can only be linked to one recipe. 
-
-The meal plan item model allows users to add recipes to a meal plan for a particular day. A meal plan item can only have one user and one recipe and is therefore linked to the User and Recipe models through foreign keys.
 
 The diagram below details the database schema.
 
@@ -225,7 +222,7 @@ Testing and results can be found [here](/TESTING.md)
 - Django's UserPassesTestMixin is used to limit access based on certain permissions i.e. to ensure users can only edit/delete recipes and comments for which they are the author. If the user doesn't pass the test they are shown an HTTP 403 Forbidden error.
 
 ### Form Validation
-If incorrect or empty data is added to a form, the form won't submit and a warning will appear to the user informing them what field raised the error. 
+All fields in the contact form are required. If a user attempts to submit the form without this information,  or empty data is added to a form, the form won't submit and a warning will appear to the user informing them what field raised the error. 
 
 ### Database Security
 The database url and secret key are stored in the env.py file to prevent unwanted connections to the database and this was set up before the first push to Github.
