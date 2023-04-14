@@ -35,16 +35,13 @@ class FoodListViews(ListView):
     template_name = 'breakfast.html'
 
 
-# def restaurant_view(request):
-#     return render(request, "our-restaurant.html")
-
 def food_list(request):
-    meat_list = Item.objects.all().filter(food_type='meat')
-    bread_list = Item.objects.all().filter(food_type='BREAD')
-    pastry_list = Item.objects.all().filter(food_type='PASTRY')
-    fruit_list = Item.objects.all().filter(food_type='FRUIT')
-    vegan_list = Item.objects.all().filter(food_type='VEGA')
-    drinks_list = Item.objects.all().filter(food_type='DRINKS')
+    meat_list = Item.objects.filter(food_type='MEAT')
+    bread_list = Item.objects.filter(food_type=Item.SAVORY_BREADS)
+    pastry_list = Item.objects.filter(food_type=Item.PASTRIES)
+    fruit_list = Item.objects.filter(food_type=Item.FRESH_FRUIT)
+    vegan_list = Item.objects.filter(food_type=Item.VEGAN_OPTIONS)
+    drinks_list = Item.objects.filter(food_type=Item.DRINKS)
     context = {
         'meat_list': meat_list,
         'bread_list': bread_list,
@@ -52,7 +49,7 @@ def food_list(request):
         'fruit_list': fruit_list,
         'vegan_list': vegan_list,
         'drinks_list': drinks_list,
-        }
+    }
     return render(request, "breakfast.html", context)
 
 

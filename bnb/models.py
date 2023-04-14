@@ -33,7 +33,7 @@ class Item(models.Model):
     slug = models.SlugField(blank=True, null=True, unique=True)
     description = models.TextField(max_length=250)
 
-    meat = "meat"
+    MEAT = "Meat"
     SAVORY_BREADS = "Bread"
     PASTRIES = "Pastry"
     FRESH_FRUIT = "Fruit"
@@ -41,7 +41,7 @@ class Item(models.Model):
     DRINKS = "Drinks"
 
     FOOD_TYPE = [
-        (meat, "meat"),
+        (MEAT, "Meat"),
         (SAVORY_BREADS, "Bread"),
         (PASTRIES, "Pastry"),
         (FRESH_FRUIT, "Fruit"),
@@ -52,7 +52,7 @@ class Item(models.Model):
         ('Food type'),
         max_length=25,
         choices=FOOD_TYPE,
-        default="meat"
+        default="Meat"
         )
 
     class Meta:
