@@ -9,7 +9,7 @@
 
 <section class="container px-2 py-3">
     <div class="card-body">
-        <h4>Choose from fresh, local ingredients to build a made-to-order breakfast.</h4> 
+        <h4>Choose from an array of options for your made to order breakfast.</h4> 
     <div class="row card-row m-1">
 
         <!-- EGGS & MEATS -->
@@ -22,9 +22,9 @@
                     </div>
                     <div class="card-face card-body-back">
                         <div class="card-content">
-                            {% for meat in meat_list%}
-                            <h5>{{ meat.name}}</h5>
-                            <p> {{ meat.description}} </p>
+                            {% for meat in meat_list %}
+                            <h5>{{ meat.name }}</h5>
+                            <p> {{ meat.description }} </p>
                             {% endfor %}
                         </div>
                     </div>
@@ -37,14 +37,13 @@
             <div class="card card-menu d-flex justify-content-center">
                 <div class="ingredient-card d-flex justify-content-center align-items-center">
                     <div class="card-face card-body-front">
-                        <img src="#">
                         <h2 class="card-title">SAVORY BREADS</h2>
                     </div>
                     <div class="card-face card-body-back">
                         <div class="card-content">
-                            {% for bread in bread_list%}
-                            <h5>{{ bread.name}}</h5>
-                            <p> {{ bread.description}} </p>
+                            {% for bread in bread_list %}
+                            <h5>{{ bread.name }}</h5>
+                            <p> {{ bread.description }} </p>
                             {% endfor %}
                         </div>
                     </div>
@@ -57,7 +56,6 @@
             <div class="card card-menu d-flex justify-content-center">
                 <div class="ingredient-card d-flex justify-content-center align-items-center">
                     <div class="card-face card-body-front">
-                        <img src="#">
                         <h2 class="card-title">PASTRIES</h2>
                     </div>
                     <div class="card-face card-body-back">
@@ -80,7 +78,6 @@
             <div class="card card-menu d-flex justify-content-center">
                 <div class="ingredient-card d-flex justify-content-center align-items-center">
                     <div class="card-face card-body-front">
-                        <img src="#">
                         <h2 class="card-title">FRESH FRUIT</h2>
                     </div>
                     <div class="card-face card-body-back">
@@ -94,19 +91,18 @@
                 </div>
             </div>
         </div>
-         <!-- VEGGIE OPTIONS -->
+         <!-- VEGAN OPTIONS -->
         <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
             <div class="card card-menu d-flex justify-content-center">
                 <div class="ingredient-card d-flex justify-content-center align-items-center">
                     <div class="card-face card-body-front">
-                        <img src="#">
-                        <h2 class="card-title">VEGGIE OPTIONS</h2>
+                        <h2 class="card-title">VEGAN OPTIONS</h2>
                     </div>
                     <div class="card-face card-body-back">
                         <div class="card-content">
-                            {% for veg in veg_list%}
-                            <h5>{{ veg.name}}</h5>
-                            <p> {{ veg.description}} </p>
+                            {% for vegan in vegan_list%}
+                            <h5>{{ vegan.name}}</h5>
+                            <p> {{ vegan.description}} </p>
                             {% endfor %}
                         </div>
                     </div>
@@ -118,7 +114,6 @@
             <div class="card card-menu d-flex justify-content-center">
                 <div class="ingredient-card d-flex justify-content-center align-items-center">
                     <div class="card-face card-body-front">
-                        <img src="#">
                         <h2 class="card-title">DRINKS</h2>
                     </div>
                     <div class="card-face card-body-back">

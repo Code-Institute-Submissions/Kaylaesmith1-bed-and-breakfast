@@ -20,7 +20,7 @@
             <!-- ITEM DETAILS -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div>
-                    <h1 class="mb-4 pt-md-5 text-black font-weight-bold"> {{ menu.name }}</h1>
+                    <h1 class="mb-4 pt-md-5 text-black font-weight-bold"> {{ Item.name }}</h1>
                     <!-- <h2 class="text-black lead mb-2 text-left font-weight-bold">£{{ product.price }}</h2> -->
                     <!-- {% if product.category %}
                     <p class="small">
@@ -38,8 +38,8 @@
                     {% endif %} -->
 
                     {% if request.user.is_superuser %}
-                        <small class="ml-3">
-                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        <small class="ml-3 submit">
+                            <a href="{% url 'edit_menu_item' %}">Edit</a> | 
+                            <a class="text-danger">Delete</a>
                         </small>
                     {% endif %}

@@ -1,7 +1,9 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404, get_list_or_404
 from django.contrib.auth.decorators import login_required
 from django.views import generic, View
+from django.views.generic import ListView
 from .forms import CustomerForm
+from .models import Item
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
 
@@ -24,6 +26,34 @@ def create_customer(request):
 class Breakfast(generic.TemplateView):
     """Opens Menu page"""
     template_name = "breakfast.html"
+
+
+# MENU ITEMS & CATEGORIES
+class FoodListViews(ListView):
+    model = Item
+    queryset = Item.objects.order_by('food_type')
+    template_name = 'breakfast.html'
+
+
+# def restaurant_view(request):
+#     return render(request, "our-restaurant.html")
+
+def food_list(request):
+    meat_list = Item.objects.all().filter(food_type='Meat')
+    bread_list = Item.objects.all().filter(food_type='Bread')
+    pastry_list = Item.objects.all().filter(food_type='Pastry')
+    fruit_list = Item.objects.all().filter(food_type='Fruit')
+    vegan_list = Item.objects.all().filter(food_type='Vegan')
+    drinks_list = Item.objects.all().filter(food_type='Drinks')
+    context = {
+        'meat_list': meat_list,
+        'bread_list': bread_list,
+        'pastry_list': pastry_list,
+        'fruit_list': fruit_list,
+        'vegan_list': vegan_list,
+        'drinks_list': drinks_list,
+        }
+    return render(request, "breakfast.html", context)
 
 
 # def contactView(request):
