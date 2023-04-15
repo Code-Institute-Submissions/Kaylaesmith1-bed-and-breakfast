@@ -31,12 +31,13 @@ class Breakfast(generic.TemplateView):
 # MENU ITEMS & CATEGORIES
 class FoodListViews(ListView):
     model = Item
-    queryset = Item.objects.order_by('food_type')
+    queryset = Item.objects.all().filter(food_type='Meat')
+    # queryset = Item.objects.order_by('food_type')
     template_name = 'breakfast.html'
 
 
 def food_list(request):
-    meat_list = Item.objects.filter(food_type='MEAT')
+    meat_list = Item.objects.filter(food_type=Item.MEAT)
     bread_list = Item.objects.filter(food_type=Item.SAVORY_BREADS)
     pastry_list = Item.objects.filter(food_type=Item.PASTRIES)
     fruit_list = Item.objects.filter(food_type=Item.FRESH_FRUIT)

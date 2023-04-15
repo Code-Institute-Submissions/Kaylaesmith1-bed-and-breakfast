@@ -13,6 +13,7 @@ class MenuItemForm(forms.ModelForm):
 
     class Meta:
         model = Menu
+        # model = Item
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):

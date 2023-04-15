@@ -49,7 +49,7 @@ class Item(models.Model):
         (DRINKS, 'Drinks'),
     ]
     food_type = models.CharField(
-        ('Food type'),
+        ('food_type'),
         max_length=25,
         choices=FOOD_TYPE,
         default="Meat"
