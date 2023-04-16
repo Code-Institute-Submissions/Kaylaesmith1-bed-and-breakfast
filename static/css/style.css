@@ -244,6 +244,21 @@ img.logo-image {
     padding: 1rem;
 }
 
+.add-edit-delete {
+    font-size: 12px;
+}
+
+#add {
+    color: green;
+}
+#edit {
+    color: blue;
+}
+
+#delete {
+    color: red;
+}
+
 /* ALL AUTH PAGES */
 .login {
     text-align: center;

@@ -9,12 +9,11 @@ class CustomerForm(forms.ModelForm):
         fields = "__all__"
 
 
-class MenuItemForm(forms.ModelForm):
+# class MenuItemForm(forms.ModelForm):
 
-    class Meta:
-        model = Menu
-        # model = Item
-        fields = '__all__'
+#     class Meta:
+#         model = Menu
+#         fields = '__all__'
 
-    def __init__(self, *args, **kwargs):
-        super(). __init__(*args, **kwargs)
+#     def __init__(self, *args, **kwargs):
+#         super(). __init__(*args, **kwargs)

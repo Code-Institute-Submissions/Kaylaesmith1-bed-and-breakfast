@@ -1,30 +1,53 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}The Wine Garden BnB | Edit menu item{% endblock %}
+{% block title %}The Wine Garden BnB | Edit Item{% endblock %}
 
 {% load crispy_forms_tags %}
 
 {% block content %}
     <!-- EDIT MENU ITEM -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
                 <h3 class="text-muted mb-3">Edit An Item</h3>
-                <form method="POST" action="{% url 'edit_menu_item' %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'edit_menu_item' food_type %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %} -->
+
+            <!-- EDIT MENU ITEM FORM -->
+            <div class="col-md-6 col-lg-6 p-2 pl-md-6 align-self-center contact-form">
+                <h3>Send a message</h3>
+                <form onsubmit="return sendMail(this);" novalidate class="card-body">
                     {% csrf_token %}
-                    {% for field in form %}
+
+                    <div class="row">
+                        <div class="col-6">
+                            {{ form.first_name|as_crispy_field }}
+                        </div>
+                        <div class="col-6">
+                            {{ form.last_name|as_crispy_field }}
+                        </div>
+                    </div>
+                    {{ form.email|as_crispy_field }}
+                    {{ form.message|as_crispy_field }}
+
+                    <button type="submit" class="btn btn-primary contact-submit">Submit</button>
+                </form>
+            </div>
+            <!-- EDIT MENU ITEM FORM END -->
+
+                    <!-- {% for field in form %}
                         {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
                         {% else %}
                             {{ field }}
                         {% endif %}
-                    {% endfor %}
-                    <div class="text-right">
+                    {% endfor %} -->
+                    <!-- <div class="text-right">
                         <a class="btn btn-light text-info font-weight-bold" href="{% url 'breakfast' %}">Cancel</a>
                         <button class="btn btn-info font-weight-bold" type="submit">Update Item</button>
                     </div>
                 </form>
             </div>            
         </div>
-    </div>
+    </div> -->
 {% endblock %}

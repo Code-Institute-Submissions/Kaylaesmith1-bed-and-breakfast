@@ -23,11 +23,12 @@
                     <div class="card-face card-body-back">
                         <div class="card-content">
                             {% for meat in meat_list %}
-                            <h5>{{ meat.name }}</h5>
+                            <h5>{{ meat.name }} <span class="add-edit-delete"><a href="#" id="edit">Edit</a> | <a href="{% url 'home' %}" id="delete">Delete</a></span></h5>
                             <p> {{ meat.description }} </p>
                             {% endfor %}
                         </div>
                     </div>
+                    <span class="add-edit-delete"><a href="{% url 'add_menu_item' %}" id="add">Add</a> menu item</span>
                 </div>
             </div>
         </div>

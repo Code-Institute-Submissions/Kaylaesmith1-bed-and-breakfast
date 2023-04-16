@@ -144,5 +144,5 @@ def delete_menu_item(request):
     """
 
     if not request.user.is_superuser:
-        messages.error(request, 'Please log in as an admin to delete menu items.')
+        messages.error(request, 'Log in as an admin to delete menu items.')
         return redirect(reverse('home'))
