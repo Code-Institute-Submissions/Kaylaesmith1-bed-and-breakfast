@@ -95,7 +95,7 @@ def add_menu_item(request):
     if request.method == 'POST':
         form = MenuItemForm(request.POST, request.FILES)
         if form.is_valid():
-            Item = form.save()
+            form.save()
             messages.success(request, 'New menu item added successfully')
             return redirect(reverse('breakfast'))
         else:

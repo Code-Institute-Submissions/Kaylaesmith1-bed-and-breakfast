@@ -5,29 +5,21 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <!-- ADD MENU ITEM PAGE -->
-    <div class="container">
-        <!-- <div class="row justify-content-center">
-            <div class="col-12 col-md-6 text-center">
-                <h1 class="hero-font text-uppercase">Product Management</h1>
-                <hr class="w-50 mb-5">
-            </div>
-        </div> -->
-        
-        <!-- ADD MENU ITEM FORM -->
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 card-body">
-                <h3>Add A Menu Item</h3>
-                <form method="POST" action="{% url 'add_menu_item' %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <h6 class="add-item">{{ form.item_name|as_crispy_field }}</h6>
-                    <h6 class="add-item">{{ form.description|as_crispy_field }}</h6>
-                    <div class="text-right">
-                        <a class="btn font-weight-bold contact-submit" href="{% url 'breakfast' %}">Cancel</a>
-                        <button class="btn btn-info font-weight-bold submit mt-3" type="submit">Add Item</button>
-                    </div>
-                </form>
-            </div>            
+<!-- ADD MENU ITEM FORM -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-8 card-body">
+            <h3>Add A Menu Item</h3>
+            <form method="POST" action="{% url 'add_menu_item' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h6 class="add-item">{{ form.item_name|as_crispy_field }}</h6>
+                <h6 class="add-item">{{ form.description|as_crispy_field }}</h6>
+                <div class="text-right">
+                    <a class="btn font-weight-bold contact-submit" href="{% url 'breakfast' %}">Cancel</a>
+                    <button class="btn btn-info font-weight-bold submit mt-3" type="submit">Add Item</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 {% endblock %}

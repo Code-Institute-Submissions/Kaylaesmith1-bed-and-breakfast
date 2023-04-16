@@ -23,3 +23,10 @@ class ItemAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Item, ItemAdmin)
+
+
+# class MenuItemAdmin(admin.ModelAdmin):
+#     list_display = ("item_name", "description")
+
+
+# admin.site.register(MenuItem, MenuItemAdmin)
