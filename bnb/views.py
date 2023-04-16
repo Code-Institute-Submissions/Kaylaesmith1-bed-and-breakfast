@@ -81,7 +81,7 @@ def add_menu_item(request):
 #     return HttpResponse("Success! Thank you for your message.")
 
 
-# ADMIN LOGINS REQUIRED
+# ADMIN LOGINS REQUIRED - DON'T NEED THIS SINCE NON-ADMINS CAN'T SEE THE OPTIONS..? Don't need the edit or delete one either...
 @login_required
 def add_menu_item(request):
     """
