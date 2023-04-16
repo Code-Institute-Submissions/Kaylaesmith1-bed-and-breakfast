@@ -1,5 +1,5 @@
 from django import forms
-from .models import Customer, Menu
+from .models import Customer, Menu, MenuItem
 
 
 class CustomerForm(forms.ModelForm):
@@ -9,11 +9,11 @@ class CustomerForm(forms.ModelForm):
         fields = "__all__"
 
 
-# class MenuItemForm(forms.ModelForm):
+class MenuItemForm(forms.ModelForm):
 
-#     class Meta:
-#         model = Menu
-#         fields = '__all__'
+    class Meta:
+        model = MenuItem
+        fields = '__all__'
 
-#     def __init__(self, *args, **kwargs):
-#         super(). __init__(*args, **kwargs)
+    # def __init__(self, *args, **kwargs):
+    #     super(). __init__(*args, **kwargs)

@@ -250,6 +250,7 @@ img.logo-image {
 
 #add {
     color: green;
+    font-family: 'Kanit', sans-serif;
 }
 #edit {
     color: blue;
@@ -257,6 +258,10 @@ img.logo-image {
 
 #delete {
     color: red;
+}
+
+.add-item {
+    text-align: left;
 }
 
 /* ALL AUTH PAGES */
