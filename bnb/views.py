@@ -56,6 +56,7 @@ def food_list(request):
 
 
 # ADMIN LOGINS REQUIRED
+# ADD MENU ITEM 
 def add_menu_item(request):
     """
     Allows superuser to add menu item
@@ -80,6 +81,18 @@ def add_menu_item(request):
     }
 
     return render(request, template, context)
+
+
+# DELETE MENU ITEM
+def delete_menu_item(request, name):
+    """
+    Allows superuser to delete menu item.
+    """
+
+    food_item = get_object_or_404(Item)
+    food_item.delete()
+    messages.success(request, 'Menu item deleted successfully')
+    return redirect(reverse('breakfast'))
 
 
 # def add_menu_item(request):
@@ -140,14 +153,3 @@ def add_menu_item(request):
 #     }
 
 #     return render(request, template, context)
-
-
-# @login_required
-# def delete_menu_item(request):
-#     """
-#     Allows superuser to delete a menu item.
-#     """
-
-#     if not request.user.is_superuser:
-#         messages.error(request, 'Log in as an admin to delete menu items.')
-#         return redirect(reverse('home'))

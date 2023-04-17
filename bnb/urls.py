@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import create_customer, food_list, add_menu_item
+from .views import create_customer, food_list, add_menu_item, delete_menu_item
 
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
@@ -11,5 +11,7 @@ urlpatterns = [
     path('breakfast/', food_list, name='breakfast'),
     # path('add/', views.add_menu_item, name="add_menu_item"),
     path('add/', add_menu_item, name='add_menu_item'),
+    path('delete/', delete_menu_item, name='menu_detail'),
+
     # path('myaccount/', views.MyAccount.as_view(), name='my_account'),
 ]
