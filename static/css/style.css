@@ -10,18 +10,19 @@
 body {
     background-color: #EFE8E1;
     font-family: 'Quicksand', sans-serif;
+    color: #5F233F;
 }
 
 h2, h3, h4, h5 {
     /* font-family: 'Montserrat', sans-serif; */
     /* font-family: 'Poppins', sans-serif; */
     font-family: 'Kanit', sans-serif;
-    color: #5F233F;
+    /* color: #5F233F; */
 }
 
-h4, h6 {
+h4 {
     text-align: center;
-    color: #5F233F;
+    /* color: #5F233F; */
 }
 
 .card {
@@ -42,7 +43,7 @@ h4, h6 {
 
 .page-title {
     padding-top: 5px;
-    color: #5F233F;
+    /* color: #5F233F; */
     font-weight: 300;
     text-align: center;
 }
@@ -260,9 +261,13 @@ img.logo-image {
     color: red;
 }
 
-.add-item {
+/* .crud-form {
+    color: #5F233F;
+} */
+
+/* .add-item {
     text-align: left;
-}
+} */
 
 /* ALL AUTH PAGES */
 .login {

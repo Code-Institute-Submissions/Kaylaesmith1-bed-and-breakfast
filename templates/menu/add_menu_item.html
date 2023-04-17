@@ -2,6 +2,7 @@
 {% load static %}
 {% block title %}The Wine Garden BnB | Add menu item{% endblock %}
 
+{% load widget_tweaks%}
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -12,8 +13,14 @@
             <h3>Add A Menu Item</h3>
             </br>
             <form method="POST" action="{% url 'add_menu_item' %}" class="form mb-2" enctype="multipart/form-data">
-                <h6>{{ form.as_p }}</h6>
-                <div class="text-right">
+                <!-- <h6>{{ form.as_p }}</h6> -->
+                {% csrf_token %}
+                <h6>
+                {% render_field form.name placeholder="Item name" class+="form-control" %}
+                {% render_field form.description placeholder="Add a description" class+="form-control"%}
+                <span>Food Type{% render_field form.food_type class+="form-control"%} </span>
+                </h6>
+                <div class="text-center">
                     <a class="btn font-weight-bold contact-submit" href="{% url 'breakfast' %}">Cancel</a>
                     <button class="btn btn-info font-weight-bold submit mt-3" type="submit">Add Item</button>
                 </div>
