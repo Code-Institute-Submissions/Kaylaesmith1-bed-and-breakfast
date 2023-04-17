@@ -11,7 +11,8 @@ urlpatterns = [
     path('breakfast/', food_list, name='breakfast'),
     # path('add/', views.add_menu_item, name="add_menu_item"),
     path('add/', add_menu_item, name='add_menu_item'),
-    path('delete/', delete_menu_item, name='menu_detail'),
+    # path('delete/', delete_menu_item, name='menu_detail'),
+    path('delete/<item_id>', delete_menu_item, name='menu_detail')
 
     # path('myaccount/', views.MyAccount.as_view(), name='my_account'),
 ]

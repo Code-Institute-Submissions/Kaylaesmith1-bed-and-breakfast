@@ -25,7 +25,7 @@
                             {% for meat in meat_list %}
                             <!-- IF SUPERUSER -->
                             {% if user.is_superuser %}
-                            <h5>{{ meat.name }} <span class="add-edit-delete"><a href="{% url 'home' %}" id="edit">Edit</a> | <a href="{% url 'menu_detail' %}" id="delete">Delete</a></span></h5>
+                            <h5>{{ meat.name }} <span class="add-edit-delete"><a href="{% url 'home' %}" id="edit">Edit</a> | <a href="{% url 'menu_detail' meat.id %}" id="delete">Delete</a></span></h5>
                             <p> {{ meat.description }} </p>
                             {% else %}
                             <h5>{{ meat.name }}</h5>

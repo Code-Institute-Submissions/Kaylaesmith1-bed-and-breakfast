@@ -84,12 +84,12 @@ def add_menu_item(request):
 
 
 # DELETE MENU ITEM
-def delete_menu_item(request, name):
+def delete_menu_item(request, item_id):
     """
     Allows superuser to delete menu item.
     """
 
-    food_item = get_object_or_404(Item)
+    food_item = get_object_or_404(Item, id=item_id)
     food_item.delete()
     messages.success(request, 'Menu item deleted successfully')
     return redirect(reverse('breakfast'))
