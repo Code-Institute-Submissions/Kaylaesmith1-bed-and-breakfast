@@ -67,9 +67,15 @@ class Item(models.Model):
         return str(self.name)
 
 
+# ADDED NEW CATEGORY TO DJANGO DATABASE -- DELETE THIS and all below
 class MenuItem(models.Model):
     item_name = models.CharField(max_length=100, blank=True)
     description = models.CharField(max_length=300, blank=True)
 
-    def __str__(self):
-        return str(self.title)
+    # def __str__(self):
+    #     return str(self.title)
+
+
+# class AddItem(models.Model): 
+#     item_name = models.CharField(max_length=100, blank=True)
+#     description = models.CharField(max_length=300, blank=True)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Menu, Item
+from .models import Menu, Item, MenuItem
 
 
 class MenuAdmin(admin.ModelAdmin):

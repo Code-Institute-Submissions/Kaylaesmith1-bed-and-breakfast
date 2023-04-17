@@ -55,9 +55,36 @@ def food_list(request):
     return render(request, "breakfast.html", context)
 
 
+# ADMIN LOGINS REQUIRED
 def add_menu_item(request):
-    form = MenuItemForm()
-    return render(request, 'menu/add_menu_item.html', {'form': form})
+    """
+    Allows superuser to add menu item
+    """
+
+    if request.method == 'POST':
+        form = MenuItemForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'New menu item added successfully')
+            return redirect(reverse('breakfast'))
+        else:
+            messages.error(
+                request,
+                'An error occurred, please try again')
+    else:
+        form = MenuItemForm()
+
+    template = 'menu/add_menu_item.html'
+    context = {
+        'form': form
+    }
+
+    return render(request, template, context)
+
+
+# def add_menu_item(request):
+#     form = MenuItemForm()
+#     return render(request, 'menu/add_menu_item.html', {'form': form})
 
 
 
@@ -80,37 +107,6 @@ def add_menu_item(request):
 # def successView(request):
 #     return HttpResponse("Success! Thank you for your message.")
 
-
-# ADMIN LOGINS REQUIRED - DON'T NEED THIS SINCE NON-ADMINS CAN'T SEE THE OPTIONS..? Don't need the edit or delete one either...
-@login_required
-def add_menu_item(request):
-    """
-    Allows superuser to add menu item
-    """
-
-    if not request.user.is_superuser:
-        messages.error(request, 'Please log in as an admin to add menu items.')
-        return redirect(reverse('home'))
-
-    if request.method == 'POST':
-        form = MenuItemForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'New menu item added successfully')
-            return redirect(reverse('breakfast'))
-        else:
-            messages.error(
-                request,
-                'An error occurred, please make sure the form is valid')
-    else:
-        form = MenuItemForm()
-
-    template = 'menu/add_menu_item.html'
-    context = {
-        'form': form
-    }
-
-    return render(request, template, context)
 
     
 # @login_required
