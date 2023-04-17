@@ -25,7 +25,7 @@
                             {% for meat in meat_list %}
                             <!-- IF SUPERUSER -->
                             {% if user.is_superuser %}
-                            <h5>{{ meat.name }} <span class="add-edit-delete"><a href="{% url 'home' %}" id="edit">Edit</a> | <a href="{% url 'menu_detail' meat.id %}" id="delete">Delete</a></span></h5>
+                            <h5>{{ meat.name }} <span class="add-edit-delete"><a href="{% url 'home' %}" id="edit">Edit</a> | <a href="{% url 'menu_detail' %}" id="delete">Delete</a></span></h5>
                             <p> {{ meat.description }} </p>
                             {% else %}
                             <h5>{{ meat.name }}</h5>
@@ -51,7 +51,7 @@
                         <div class="card-content">
                             {% for bread in bread_list %}
                             {% if user.is_superuser %}
-                            <h5>{{ bread.name }} <span class="add-edit-delete"><a href="#" id="edit">Edit</a> | <a href="{% url 'home' %}" id="delete">Delete</a></span></h5>
+                            <h5>{{ bread.name }} <span class="add-edit-delete"><a href="#" id="edit">Edit</a> | <a href="{% url 'menu_detail' bread.id %}" id="delete">Delete</a></span></h5>
                             <p> {{ bread.description }} </p>
                             {% else %}
                             <h5>{{ bread.name }}</h5>
@@ -76,7 +76,7 @@
                         <div class="card-content">
                             {% for pastry in pastry_list%}
                             {% if user.is_superuser %}
-                            <h5>{{ pastry.name }} <span class="add-edit-delete"><a href="#" id="edit">Edit</a> | <a href="{% url 'home' %}" id="delete">Delete</a></span></h5>
+                            <h5>{{ pastry.name }} <span class="add-edit-delete"><a href="#" id="edit">Edit</a> | <a href="{% url 'menu_detail' pastry.id %}" id="delete">Delete</a></span></h5>
                             <p> {{ pastry.description }} </p>
                             {% else %}
                             <h5>{{ pastry.name }}</h5>
@@ -103,7 +103,7 @@
                         <div class="card-content">
                             {% for fruit in fruit_list%}
                             {% if user.is_superuser %}
-                            <h5>{{ fruit.name }} <span class="add-edit-delete"><a href="#" id="edit">Edit</a> | <a href="{% url 'home' %}" id="delete">Delete</a></span></h5>
+                            <h5>{{ fruit.name }} <span class="add-edit-delete"><a href="#" id="edit">Edit</a> | <a href="{% url 'menu_detail' fruit.id %}" id="delete">Delete</a></span></h5>
                             <p> {{ fruit.description }} </p>
                             {% else %}
                             <h5>{{ fruit.name }}</h5>
@@ -127,7 +127,7 @@
                         <div class="card-content">
                             {% for vegan in vegan_list%}
                             {% if user.is_superuser %}
-                            <h5>{{ vegan.name }} <span class="add-edit-delete"><a href="#" id="edit">Edit</a> | <a href="{% url 'home' %}" id="delete">Delete</a></span></h5>
+                            <h5>{{ vegan.name }} <span class="add-edit-delete"><a href="#" id="edit">Edit</a> | <a href="{% url 'menu_detail' vegan.id %}" id="delete">Delete</a></span></h5>
                             <p> {{ vegan.description }} </p>
                             {% else %}
                             <h5>{{ vegan.name }}</h5>
@@ -151,7 +151,7 @@
                         <div class="card-content">
                             {% for drink in drinks_list%}
                             {% if user.is_superuser %}
-                            <h5>{{ drink.name }} <span class="add-edit-delete"><a href="#" id="edit">Edit</a> | <a href="{% url 'home' %}" id="delete">Delete</a></span></h5>
+                            <h5>{{ drink.name }} <span class="add-edit-delete"><a href="#" id="edit">Edit</a> | <a href="{% url 'menu_detail' drink.id %}" id="delete">Delete</a></span></h5>
                             <p> {{ drink.description }} </p>
                             {% else %}
                             <h5>{{ drink.name }}</h5>
@@ -167,7 +167,6 @@
     </div>
     <div class="col-12 mt-2">
         <h6>*Please let us know if you have any dietary restrictions.</h6>
-            <!-- <button>Edit</button><button>Delete</button> -->
     </div>
     </div>
 </section>

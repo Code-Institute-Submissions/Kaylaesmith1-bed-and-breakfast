@@ -29,6 +29,11 @@ class Breakfast(generic.TemplateView):
     template_name = "breakfast.html"
 
 
+class MenuDetail(generic.TemplateView):
+    """Opens to Delete Menu Item page"""
+    template_name = "menu/menu_detail.html"
+
+
 # MENU ITEMS & CATEGORIES
 class FoodListViews(ListView):
     model = Item
@@ -56,7 +61,7 @@ def food_list(request):
 
 
 # ADMIN LOGINS REQUIRED
-# ADD MENU ITEM 
+# ADD MENU ITEM
 def add_menu_item(request):
     """
     Allows superuser to add menu item
@@ -91,37 +96,11 @@ def delete_menu_item(request, item_id):
 
     food_item = get_object_or_404(Item, id=item_id)
     food_item.delete()
+    # return redirect(reverse('menu_detail'))
     messages.success(request, 'Menu item deleted successfully')
     return redirect(reverse('breakfast'))
 
 
-# def add_menu_item(request):
-#     form = MenuItemForm()
-#     return render(request, 'menu/add_menu_item.html', {'form': form})
-
-
-
-# def contactView(request):
-#     if request.method == "GET":
-#         form = CustomerForm()
-#     else:
-#         form = CustomerForm(request.POST)
-#         if form.is_valid():
-#             subject = form.cleaned_data["subject"]
-#             from_email = form.cleaned_data["from_email"]
-#             message = form.cleaned_data['message']
-#             try:
-#                 send_mail(subject, message, from_email, ["kaylaesmith1@gmail.com"])
-#             except BadHeaderError:
-#                 return HttpResponse("Invalid header found.")
-#             return redirect("success")
-#     return render(request, 'contact_us.html', {'form': form})
-
-# def successView(request):
-#     return HttpResponse("Success! Thank you for your message.")
-
-
-    
 # @login_required
 # def edit_menu_item(request):
 #     """
