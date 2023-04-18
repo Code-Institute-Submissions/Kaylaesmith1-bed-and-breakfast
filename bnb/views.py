@@ -34,11 +34,6 @@ class MenuDetail(generic.TemplateView):
     template_name = "menu/menu_detail.html"
 
 
-class EditMenuItem(generic.TemplateView):
-    """Opens to Edit Menu Item page"""
-    template_name = "menu/edit_menu_item.html"
-
-
 # MENU ITEMS & CATEGORIES
 class FoodListViews(ListView):
     model = Item
@@ -64,9 +59,7 @@ def food_list(request):
     return render(request, "breakfast.html", context)
 
 
-# ADMIN LOGINS REQUIRED TO ADD, EDIT & DELETE MENU ITEMS
-
-# ADD MENU ITEM
+# ADD MENU ITEM - ADMIN LOGIN REQUIRED
 def add_menu_item(request):
     """
     Allows superuser to add menu item
@@ -93,7 +86,7 @@ def add_menu_item(request):
     return render(request, template, context)
 
 
-# EDIT MENU ITEM
+# EDIT MENU ITEM - ADMIN LOGIN REQUIRED
 def update_menu_item(request, item_id):
 
     update = Item.objects.get(id=item_id)
@@ -114,38 +107,12 @@ def update_menu_item(request, item_id):
     template = 'menu/edit_menu_item.html'
     return render(request, template, context)
 
-# def edit_menu_item(request, item_id):
-#     """
-#     Allows superuser to edit a menu item
-#     """
 
-#     if request.method == 'POST':
-#         form = MenuItemForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             form.save()
-#             messages.success(request, 'Menu item edited successfully')
-#             return redirect(reverse('breakfast'))
-#         else:
-#             messages.error(
-#                 request,
-#                 'An error occurred, please try again')
-#     else:
-#         form = MenuItemForm()
-
-#     template = 'menu/edit_menu_item.html'
-#     context = {
-#         'form': form,
-#     }
-
-#     return render(request, template, context)
-
-
-# DELETE MENU ITEM
+# DELETE MENU ITEM - ADMIN LOGIN REQUIRED
 def delete_menu_item(request, item_id):
     """
     Allows superuser to delete menu item.
     """
-
     food_item = get_object_or_404(Item, id=item_id)
     food_item.delete()
     # return redirect(reverse('menu_detail', args=[item.id]))

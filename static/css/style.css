@@ -17,12 +17,10 @@ h2, h3, h4, h5 {
     /* font-family: 'Montserrat', sans-serif; */
     /* font-family: 'Poppins', sans-serif; */
     font-family: 'Kanit', sans-serif;
-    /* color: #5F233F; */
 }
 
 h4 {
     text-align: center;
-    /* color: #5F233F; */
 }
 
 .card {
@@ -35,7 +33,6 @@ h4 {
 .hero-text-outer {
     /* border: 1px solid #dadada; */
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
-    /* transition: 0.2s; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -61,10 +58,7 @@ h4 {
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    /* color: #3F826D; */
     color: #307473;
-    /* font-size: 18px;
-    font-weight: 600; */
 }
 
 
@@ -72,12 +66,6 @@ h4 {
     background-color: #C9B5B4;
     /* background-color: #3F826D; */
 }
-
-/* NAVBAR DROPDOWN MENU */
-/* .navbar-nav .dropdown-menu {
-
-} */
-
 
 img.logo-image {
     /* height: 160px; */
@@ -210,11 +198,6 @@ img.logo-image {
     color: #5f233f;
 }
 
-/* .reviews {
-    text-align: center;
-    font-family: 'Kanit', sans-serif;
-} */
-
 .star-reviews {
     color: #317372;
     font-size: 2.5rem;
@@ -222,18 +205,6 @@ img.logo-image {
 }
 
 /* BREAKFAST */
-/* .breakfast {
-    background-image: url(../media/bfast2.png);
-    color: white;
-    font-size: 80px;
-    padding: 55px;    
-    font-weight: 700;
-    height: 250px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 2px;
-} */
-
 .ingredient-card {
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
@@ -260,14 +231,6 @@ img.logo-image {
 #delete {
     color: red;
 }
-
-/* .crud-form {
-    color: #5F233F;
-} */
-
-/* .add-item {
-    text-align: left;
-} */
 
 /* ALL AUTH PAGES */
 .login {
@@ -363,11 +326,6 @@ img.logo-image {
     img.logo-image {
         height: 120px;
     }
-
-
-    /* .banner {
-        font-size: 4em;
-    } */
 }
 
 
@@ -382,8 +340,4 @@ img.logo-image {
     img.logo-image {
         height: 85px;
     }
-
-    /* .banner {
-        font-size: 3em;
-    } */
 }

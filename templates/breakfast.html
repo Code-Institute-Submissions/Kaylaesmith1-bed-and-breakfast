@@ -3,170 +3,189 @@
 {% block content %}
 
 <div class="container">
-    <img src="https://res.cloudinary.com/kesmith/image/upload/v1681247544/Screen_Shot_2023-04-11_at_23.12.17_zk9cde.png" class="img-fluid" alt="breakfast">
+    <img src="https://res.cloudinary.com/kesmith/image/upload/v1681247544/Screen_Shot_2023-04-11_at_23.12.17_zk9cde.png"
+        class="img-fluid" alt="breakfast">
 </div>
 
 
 <section class="container px-2 py-3">
     <div class="card-body">
         <!-- <h4>Choose from an array of options for your made to order breakfast.</h4>  -->
-    <div class="row card-row m-1">
+        <div class="row card-row m-1">
 
-        <!-- EGGS & MEATS -->
-        <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
-            <div class="card card-menu d-flex justify-content-center h-100">
-                <div class="ingredient-card h-100">
-                    <div class="card-face card-body-front">
-                        <h3 class="card-title">EGGS & MEATS</h3>
-                    </div>
-                    <div class="card-face card-body-back">
-                        <div class="card-content">
-                            {% for meat in meat_list %}
-                            <!-- IF SUPERUSER -->
-                            {% if user.is_superuser %}
-                            <h5>{{ meat.name }} <span class="add-edit-delete"><a href="{% url 'edit_menu_item' meat.id %}" id="edit">Edit</a> | <a href="{% url 'menu_detail' %}" id="delete">Delete</a></span></h5>
-                            <p> {{ meat.description }} </p>
-                            {% else %}
-                            <h5>{{ meat.name }}</h5>
-                            <p> {{ meat.description }} </p>
-                            {% endif %}
-                            {% endfor %}
+            <!-- EGGS & MEATS -->
+            <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
+                <div class="card card-menu d-flex justify-content-center h-100">
+                    <div class="ingredient-card h-100">
+                        <div class="card-face card-body-front">
+                            <h3 class="card-title">EGGS & MEATS</h3>
                         </div>
+                        <div class="card-face card-body-back">
+                            <div class="card-content">
+                                {% for meat in meat_list %}
+
+                                <!-- IF ADMIN USER -->
+                                {% if user.is_superuser %}
+                                <h5>{{ meat.name }} <span class="add-edit-delete"><a
+                                            href="{% url 'edit_menu_item' meat.id %}" id="edit">Edit</a> | <a
+                                            href="{% url 'menu_detail' %}" id="delete">Delete</a></span></h5>
+                                <p> {{ meat.description }} </p>
+                                {% else %}
+                                <h5>{{ meat.name }}</h5>
+                                <p> {{ meat.description }} </p>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% if user.is_superuser %}<span class="add-edit-delete"><a href="{% url 'add_menu_item' %}"
+                                id="add">Add</a> menu item</span>{% endif %}
                     </div>
-                    {% if user.is_superuser %}<span class="add-edit-delete"><a href="{% url 'add_menu_item' %}" id="add">Add</a> menu item</span>{% endif %}
                 </div>
             </div>
-        </div>
 
-     <!-- SAVORY BREADS -->
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
-            <div class="card card-menu d-flex justify-content-center h-100">
-                <div class="ingredient-card h-100">
-                <!-- <div class="ingredient-card d-flex justify-content-center align-items-center"> -->
-                    <div class="card-face card-body-front">
-                        <h3 class="card-title">BREADY THINGS</h3>
-                    </div>
-                    <div class="card-face card-body-back">
-                        <div class="card-content">
-                            {% for bread in bread_list %}
-                            {% if user.is_superuser %}
-                            <h5>{{ bread.name }} <span class="add-edit-delete"><a href="{% url 'edit_menu_item' bread.id %}" id="edit">Edit</a> | <a href="{% url 'menu_detail' bread.id %}" id="delete">Delete</a></span></h5>
-                            <p> {{ bread.description }} </p>
-                            {% else %}
-                            <h5>{{ bread.name }}</h5>
-                            <p> {{ bread.description }} </p>
-                            {% endif %}
-                            {% endfor %}
+            <!-- SAVORY BREADS -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+                <div class="card card-menu d-flex justify-content-center h-100">
+                    <div class="ingredient-card h-100">
+                        <div class="card-face card-body-front">
+                            <h3 class="card-title">BREADY THINGS</h3>
                         </div>
+                        <div class="card-face card-body-back">
+                            <div class="card-content">
+                                {% for bread in bread_list %}
+                                {% if user.is_superuser %}
+                                <h5>{{ bread.name }} <span class="add-edit-delete"><a
+                                            href="{% url 'edit_menu_item' bread.id %}" id="edit">Edit</a> | <a
+                                            href="{% url 'menu_detail' bread.id %}" id="delete">Delete</a></span></h5>
+                                <p> {{ bread.description }} </p>
+                                {% else %}
+                                <h5>{{ bread.name }}</h5>
+                                <p> {{ bread.description }} </p>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% if user.is_superuser %}<span class="add-edit-delete"><a href="{% url 'add_menu_item' %}"
+                                id="add">Add</a> menu item</span>{% endif %}
                     </div>
-                    {% if user.is_superuser %}<span class="add-edit-delete"><a href="{% url 'add_menu_item' %}" id="add">Add</a> menu item</span>{% endif %}
                 </div>
-            </div>
             </div>
 
             <!-- PASTRIES -->
             <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
-            <div class="card card-menu d-flex justify-content-center h-100">
-                <div class="ingredient-card h-100">
-                    <div class="card-face card-body-front">
-                        <h3 class="card-title">SWEETER SIDE</h3>
-                    </div>
-                    <div class="card-face card-body-back">
-                        <div class="card-content">
-                            {% for pastry in pastry_list%}
-                            {% if user.is_superuser %}
-                            <h5>{{ pastry.name }} <span class="add-edit-delete"><a href="{% url 'edit_menu_item' pastry.id %}" id="edit">Edit</a> | <a href="{% url 'menu_detail' pastry.id %}" id="delete">Delete</a></span></h5>
-                            <p> {{ pastry.description }} </p>
-                            {% else %}
-                            <h5>{{ pastry.name }}</h5>
-                            <p> {{ pastry.description }} </p>
-                            {% endif %}
-                            {% endfor %}
+                <div class="card card-menu d-flex justify-content-center h-100">
+                    <div class="ingredient-card h-100">
+                        <div class="card-face card-body-front">
+                            <h3 class="card-title">SWEETER SIDE</h3>
                         </div>
+                        <div class="card-face card-body-back">
+                            <div class="card-content">
+                                {% for pastry in pastry_list%}
+                                {% if user.is_superuser %}
+                                <h5>{{ pastry.name }} <span class="add-edit-delete"><a
+                                            href="{% url 'edit_menu_item' pastry.id %}" id="edit">Edit</a> | <a
+                                            href="{% url 'menu_detail' pastry.id %}" id="delete">Delete</a></span></h5>
+                                <p> {{ pastry.description }} </p>
+                                {% else %}
+                                <h5>{{ pastry.name }}</h5>
+                                <p> {{ pastry.description }} </p>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% if user.is_superuser %}<span class="add-edit-delete"><a href="{% url 'add_menu_item' %}"
+                                id="add">Add</a> menu item</span>{% endif %}
                     </div>
-                    {% if user.is_superuser %}<span class="add-edit-delete"><a href="{% url 'add_menu_item' %}" id="add">Add</a> menu item</span>{% endif %}
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row card-row m-1">
-     <!-- FRUIT -->
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
-            <div class="card card-menu d-flex justify-content-center h-100">
-                <div class="ingredient-card h-100">
-                    <div class="card-face card-body-front">
-                        <h3 class="card-title">FRESH FRUIT</h3>
-                    </div>
-                    <div class="card-face card-body-back">
-                        <div class="card-content">
-                            {% for fruit in fruit_list%}
-                            {% if user.is_superuser %}
-                            <h5>{{ fruit.name }} <span class="add-edit-delete"><a href="{% url 'edit_menu_item' fruit.id %}" id="edit">Edit</a> | <a href="{% url 'menu_detail' fruit.id %}" id="delete">Delete</a></span></h5>
-                            <p> {{ fruit.description }} </p>
-                            {% else %}
-                            <h5>{{ fruit.name }}</h5>
-                            <p> {{ fruit.description }} </p>
-                            {% endif %}
-                            {% endfor %}
+        <div class="row card-row m-1">
+            <!-- FRUIT -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+                <div class="card card-menu d-flex justify-content-center h-100">
+                    <div class="ingredient-card h-100">
+                        <div class="card-face card-body-front">
+                            <h3 class="card-title">FRESH FRUIT</h3>
                         </div>
+                        <div class="card-face card-body-back">
+                            <div class="card-content">
+                                {% for fruit in fruit_list%}
+                                {% if user.is_superuser %}
+                                <h5>{{ fruit.name }} <span class="add-edit-delete"><a
+                                            href="{% url 'edit_menu_item' fruit.id %}" id="edit">Edit</a> | <a
+                                            href="{% url 'menu_detail' fruit.id %}" id="delete">Delete</a></span></h5>
+                                <p> {{ fruit.description }} </p>
+                                {% else %}
+                                <h5>{{ fruit.name }}</h5>
+                                <p> {{ fruit.description }} </p>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% if user.is_superuser %} <span class="add-edit-delete"><a href="{% url 'add_menu_item' %}"
+                                id="add">Add</a> menu item</span>{% endif %}
                     </div>
-                    {% if user.is_superuser %} <span class="add-edit-delete"><a href="{% url 'add_menu_item' %}" id="add">Add</a> menu item</span>{% endif %}
+                </div>
+            </div>
+            <!-- VEGAN OPTIONS -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+                <div class="card card-menu d-flex justify-content-center h-100">
+                    <div class="ingredient-card h-100">
+                        <div class="card-face card-body-front">
+                            <h3 class="card-title">VEGAN OPTIONS</h3>
+                        </div>
+                        <div class="card-face card-body-back">
+                            <div class="card-content">
+                                {% for vegan in vegan_list%}
+                                {% if user.is_superuser %}
+                                <h5>{{ vegan.name }} <span class="add-edit-delete"><a
+                                            href="{% url 'edit_menu_item' vegan.id %}" id="edit">Edit</a> | <a
+                                            href="{% url 'menu_detail' vegan.id %}" id="delete">Delete</a></span></h5>
+                                <p> {{ vegan.description }} </p>
+                                {% else %}
+                                <h5>{{ vegan.name }}</h5>
+                                <p> {{ vegan.description }} </p>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% if user.is_superuser %} <span class="add-edit-delete"><a href="{% url 'add_menu_item' %}"
+                                id="add">Add</a> menu item</span>{% endif %}
+                    </div>
+                </div>
+            </div>
+            <!-- DRINKS -->
+            <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
+                <div class="card card-menu d-flex justify-content-center h-100">
+                    <div class="ingredient-card h-100">
+                        <div class="card-face card-body-front">
+                            <h3 class="card-title">DRINKS</h3>
+                        </div>
+                        <div class="card-face card-body-back">
+                            <div class="card-content">
+                                {% for drink in drinks_list%}
+                                {% if user.is_superuser %}
+                                <h5>{{ drink.name }} <span class="add-edit-delete"><a
+                                            href="{% url 'edit_menu_item' drink.id %}" id="edit">Edit</a> | <a
+                                            href="{% url 'menu_detail' drink.id %}" id="delete">Delete</a></span></h5>
+                                <p> {{ drink.description }} </p>
+                                {% else %}
+                                <h5>{{ drink.name }}</h5>
+                                <p> {{ drink.description }} </p>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% if user.is_superuser %} <span class="add-edit-delete"><a href="{% url 'add_menu_item' %}"
+                                id="add">Add</a> menu item</span>{% endif %}
+                    </div>
                 </div>
             </div>
         </div>
-         <!-- VEGAN OPTIONS -->
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
-            <div class="card card-menu d-flex justify-content-center h-100">
-                <div class="ingredient-card h-100">
-                    <div class="card-face card-body-front">
-                        <h3 class="card-title">VEGAN OPTIONS</h3>
-                    </div>
-                    <div class="card-face card-body-back">
-                        <div class="card-content">
-                            {% for vegan in vegan_list%}
-                            {% if user.is_superuser %}
-                            <h5>{{ vegan.name }} <span class="add-edit-delete"><a href="{% url 'edit_menu_item' vegan.id %}" id="edit">Edit</a> | <a href="{% url 'menu_detail' vegan.id %}" id="delete">Delete</a></span></h5>
-                            <p> {{ vegan.description }} </p>
-                            {% else %}
-                            <h5>{{ vegan.name }}</h5>
-                            <p> {{ vegan.description }} </p>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                    {% if user.is_superuser %} <span class="add-edit-delete"><a href="{% url 'add_menu_item' %}" id="add">Add</a> menu item</span>{% endif %}
-                </div>
-            </div>
+        <div class="col-12 mt-2">
+            <h6>*Please let us know if you have any dietary restrictions.</h6>
         </div>
-       <!-- DRINKS -->
-        <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
-            <div class="card card-menu d-flex justify-content-center h-100">
-                <div class="ingredient-card h-100">
-                    <div class="card-face card-body-front">
-                        <h3 class="card-title">DRINKS</h3>
-                    </div>
-                    <div class="card-face card-body-back">
-                        <div class="card-content">
-                            {% for drink in drinks_list%}
-                            {% if user.is_superuser %}
-                            <h5>{{ drink.name }} <span class="add-edit-delete"><a href="{% url 'edit_menu_item' drink.id %}" id="edit">Edit</a> | <a href="{% url 'menu_detail' drink.id %}" id="delete">Delete</a></span></h5>
-                            <p> {{ drink.description }} </p>
-                            {% else %}
-                            <h5>{{ drink.name }}</h5>
-                            <p> {{ drink.description }} </p>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                    {% if user.is_superuser %} <span class="add-edit-delete"><a href="{% url 'add_menu_item' %}" id="add">Add</a> menu item</span>{% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 mt-2">
-        <h6>*Please let us know if you have any dietary restrictions.</h6>
-    </div>
     </div>
 </section>
 {% endblock %}
