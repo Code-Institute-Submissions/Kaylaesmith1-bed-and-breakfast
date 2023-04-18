@@ -1,8 +1,8 @@
 from django import forms
 from .models import Customer, Menu, Item
-# from .models import Customer, Menu, MenuItem
 
 
+# CUSTOMER CONTACT FORM ON CONTACT US PAGE - LINKED TO EMAIL JS
 class CustomerForm(forms.ModelForm):
 
     class Meta:
@@ -19,14 +19,3 @@ class MenuItemForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(). __init__(*args, **kwargs)
-
-
-# DELETE THIS BELOW
-# class ItemForm(forms.ModelForm):
-
-#     class Meta:
-#         model = AddItem
-#         fields = '__all__'
-
-#     def __init__(self, *args, **kwargs):
-#         super(). __init__(*args, **kwargs)

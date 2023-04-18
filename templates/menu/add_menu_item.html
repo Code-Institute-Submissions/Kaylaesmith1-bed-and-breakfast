@@ -6,6 +6,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+
 <!-- ADD MENU ITEM FORM -->
 <div class="container">
     <div class="row justify-content-center">
@@ -13,7 +14,6 @@
             <h3>Add A Menu Item</h3>
             </br>
             <form method="POST" action="{% url 'add_menu_item' %}" class="form mb-2" enctype="multipart/form-data">
-                <!-- <h6>{{ form.as_p }}</h6> -->
                 {% csrf_token %}
                 <h6>
                 {% render_field form.name placeholder="Item name" class+="form-control" %}

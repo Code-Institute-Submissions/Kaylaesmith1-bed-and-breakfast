@@ -10,17 +10,23 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-8 card-body">
-                    <h3>Add A Menu Item</h3>
+                    <h3>Edit A Menu Item</h3>
+                    </br>
                 <form method="POST" action="{% url 'edit_menu_item' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     <!-- HOW TO GET THESE FIELDS ALREADY SHOWING THE INFO FROM THE DB? -->
-                    {% for field in form %}
+                    <h6>
+                        {% render_field form.name placeholder="Item name" class+="form-control" %}
+                        {% render_field form.description placeholder="Add a description" class+="form-control"%}
+                        <span>Food Type{% render_field form.food_type class+="form-control"%} </span>
+                        </h6>
+                    <!-- {% for field in form %}
                         {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
                         {% else %}
                             {{ field }}
                         {% endif %}
-                    {% endfor %}
+                    {% endfor %} -->
                     <div class="text-center">
                         <a class="btn font-weight-bold contact-submit" href="{% url 'breakfast' %}">Cancel</a>
                         <button class="btn btn-info font-weight-bold submit mt-3" type="submit">Update Item</button>

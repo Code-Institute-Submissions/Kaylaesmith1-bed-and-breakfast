@@ -34,11 +34,15 @@ class MenuDetail(generic.TemplateView):
     template_name = "menu/menu_detail.html"
 
 
+# class EditMenuDetail(generic.TemplateView):
+#     """Opens to Edit Menu Item page"""
+#     template_name = "menu/edit_menu_item.html"
+
+
 # MENU ITEMS & CATEGORIES
 class FoodListViews(ListView):
     model = Item
     queryset = Item.objects.all().filter(food_type='Meat')
-    # queryset = Item.objects.order_by('food_type')
     template_name = 'breakfast.html'
 
 
@@ -60,7 +64,8 @@ def food_list(request):
     return render(request, "breakfast.html", context)
 
 
-# ADMIN LOGINS REQUIRED
+# ADMIN LOGINS REQUIRED TO ADD, EDIT & DELETE MENU ITEMS
+
 # ADD MENU ITEM
 def add_menu_item(request):
     """
@@ -88,6 +93,36 @@ def add_menu_item(request):
     return render(request, template, context)
 
 
+# EDIT MENU ITEM
+def edit_menu_item(request, item_id):
+    """
+    Allows superuser to edit a menu item
+    """
+
+    if request.method == 'POST':
+        form = MenuItemForm(request.POST, request.FILES)
+        # form = MenuItemForm(request.POST, request.FILES, instance=item_id)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Menu item edited successfully')
+            return redirect(reverse('breakfast'))
+        else:
+            messages.error(
+                request,
+                'An error occurred, please try again')
+    # else:
+    #     form = MenuItemForm(instance=item_id)
+    #     messages.info(request, f'You are editing {Item.name}')
+
+    template = 'menu/edit_menu_item.html'
+    context = {
+        'form': form,
+        'item_id': item_id
+    }
+
+    return render(request, template, context)
+
+
 # DELETE MENU ITEM
 def delete_menu_item(request, item_id):
     """
@@ -96,39 +131,6 @@ def delete_menu_item(request, item_id):
 
     food_item = get_object_or_404(Item, id=item_id)
     food_item.delete()
-    # return redirect(reverse('menu_detail'))
+    # return redirect(reverse('menu_detail', args=[item.id]))
     messages.success(request, 'Menu item deleted successfully')
     return redirect(reverse('breakfast'))
-
-
-# @login_required
-# def edit_menu_item(request):
-#     """
-#     Allows superuser to edit a menu item
-#     """
-
-#     if not request.user.is_superuser:
-#         messages.error(request, 'Please log in as an admin to edit menu items.')
-#         return redirect(reverse('home'))
-
-#     if request.method == 'POST':
-#         form = MenuItemForm(request.POST, request.FILES, instance=menu)
-#         if form.is_valid():
-#             form.save()
-#             messages.success(request, 'Menu item edited successfully')
-#             return redirect(reverse('menu_detail'))
-#         else:
-#             messages.error(
-#                 request,
-#                 'An error occurred, please make sure the form is valid')
-#     else:
-#         form = MenuItemForm(instance=menu)
-#         messages.info(request, f'You are editing {menu.name}')
-
-#     template = 'menu/edit_menu_item.html'
-#     context = {
-#         'form': form,
-#         'menu': menu
-#     }
-
-#     return render(request, template, context)
