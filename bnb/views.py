@@ -94,32 +94,50 @@ def add_menu_item(request):
 
 
 # EDIT MENU ITEM
-def edit_menu_item(request, item_id):
-    """
-    Allows superuser to edit a menu item
-    """
+def update_menu_item(request, item_id):
+
+    update = Item.objects.get(id=item_id)
+    form = MenuItemForm(instance=update)
 
     if request.method == 'POST':
-        form = MenuItemForm(request.POST, request.FILES)
-        # form = MenuItemForm(request.POST, request.FILES, item_id)
+        form = MenuItemForm(request.POST, request.FILES, instance=update)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Menu item edited successfully')
+            messages.success(request, 'New menu item added successfully')
             return redirect(reverse('breakfast'))
         else:
             messages.error(
                 request,
-                'An error occurred, please try again')
-    else:
-        form = MenuItemForm()
+                'An error occurred, please try again')  
 
+    context = {'form': form}
     template = 'menu/edit_menu_item.html'
-    context = {
-        'form': form,
-        # 'item_id': item_id
-    }
-
     return render(request, template, context)
+
+# def edit_menu_item(request, item_id):
+#     """
+#     Allows superuser to edit a menu item
+#     """
+
+#     if request.method == 'POST':
+#         form = MenuItemForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, 'Menu item edited successfully')
+#             return redirect(reverse('breakfast'))
+#         else:
+#             messages.error(
+#                 request,
+#                 'An error occurred, please try again')
+#     else:
+#         form = MenuItemForm()
+
+#     template = 'menu/edit_menu_item.html'
+#     context = {
+#         'form': form,
+#     }
+
+#     return render(request, template, context)
 
 
 # DELETE MENU ITEM

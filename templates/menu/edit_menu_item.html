@@ -13,13 +13,12 @@
                 <div class="col-lg-6 col-8 card-body">
                     <h3>Edit A Menu Item</h3>
                     </br>
-                <form method="POST" action="{% url 'edit_menu_item' %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <!-- HOW TO GET THESE FIELDS ALREADY SHOWING THE INFO FROM THE DB? The placeholder of form fields could be the information already there.-->
                     <h6>
                         {% render_field form.name placeholder="Item name" class+="form-control" %}
                         {% render_field form.description placeholder="Add a description" class+="form-control"%}
-                        <span>Food Type{% render_field form.food_type class+="form-control"%} </span>
+                        <span>Food Type{% render_field form.food_type class+="form-control"%} </span>                    
                     </h6>
                     <div class="text-center">
                         <a class="btn font-weight-bold contact-submit" href="{% url 'breakfast' %}">Cancel</a>
@@ -28,6 +27,6 @@
                 </form>
             </div>            
         </div>
+    </br>
         </div>
-
 {% endblock %}
