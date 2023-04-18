@@ -17,7 +17,7 @@
             {% csrf_token %}
             <div class="text-center mt-3">
                 <a class="btn font-weight-bold contact-submit" href="{% url 'breakfast' %}">Cancel</a>
-                <a class="btn btn-info font-weight-bold submit mt-3" type="submit" href="{% url 'menu_detail' %}">Delete
+                <a class="btn btn-info font-weight-bold submit mt-3" type="submit" href="{% url 'menu_detail' item.id %}">Delete
                     Item</a>
             </div>
 

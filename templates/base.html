@@ -73,15 +73,8 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item d-block d-lg-none">
-                            <a class="nav-link" href="#">My Bookings</a>
+                            <a class="nav-link" href="{% url 'book' %}">My Bookings</a>
                         </li>
-                        <!-- ADMIN MENU FOR ADMIN USERS TO EDIT -->
-                        <!-- {% if user.is_superuser %}
-                        <li class="nav-item d-block d-lg-none">
-                            <a class="nav-link" href="{% url 'breakfast' %}">AdminMenu</a>
-                        </li>
-                        {% endif %} -->
-
                         <li class="nav-item d-block d-lg-none">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
@@ -106,7 +99,7 @@
                                 <span><i class="fas fa-user profile-icon"></i> {{ user.username }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">My Bookings</a>
+                                <a class="dropdown-item" href="{% url 'book' %}">My Bookings</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                             </div>

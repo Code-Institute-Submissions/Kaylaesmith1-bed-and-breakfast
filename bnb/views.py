@@ -19,6 +19,11 @@ class About(generic.TemplateView):
     template_name = "about.html"
 
 
+class Booking(generic.TemplateView):
+    """Opens Booking page"""
+    template_name = "book.html"
+
+
 def create_customer(request):
     form = CustomerForm()
     return render(request, 'contact_us.html', {'form': form})

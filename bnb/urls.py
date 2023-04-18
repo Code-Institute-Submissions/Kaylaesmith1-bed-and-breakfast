@@ -5,6 +5,7 @@ from .views import create_customer, food_list, add_menu_item, update_menu_item, 
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
     path('about/', views.About.as_view(), name='about'),
+    path('book/', views.Booking.as_view(), name='book'),
     path('contact/', create_customer, name='contact_us'),
     path('breakfast/', food_list, name='breakfast'),
     path('add/', add_menu_item, name='add_menu_item'),
