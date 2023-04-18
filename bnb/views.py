@@ -34,9 +34,9 @@ class MenuDetail(generic.TemplateView):
     template_name = "menu/menu_detail.html"
 
 
-# class EditMenuDetail(generic.TemplateView):
-#     """Opens to Edit Menu Item page"""
-#     template_name = "menu/edit_menu_item.html"
+class EditMenuItem(generic.TemplateView):
+    """Opens to Edit Menu Item page"""
+    template_name = "menu/edit_menu_item.html"
 
 
 # MENU ITEMS & CATEGORIES
@@ -101,7 +101,7 @@ def edit_menu_item(request, item_id):
 
     if request.method == 'POST':
         form = MenuItemForm(request.POST, request.FILES)
-        # form = MenuItemForm(request.POST, request.FILES, instance=item_id)
+        # form = MenuItemForm(request.POST, request.FILES, item_id)
         if form.is_valid():
             form.save()
             messages.success(request, 'Menu item edited successfully')
@@ -110,14 +110,13 @@ def edit_menu_item(request, item_id):
             messages.error(
                 request,
                 'An error occurred, please try again')
-    # else:
-    #     form = MenuItemForm(instance=item_id)
-    #     messages.info(request, f'You are editing {Item.name}')
+    else:
+        form = MenuItemForm()
 
     template = 'menu/edit_menu_item.html'
     context = {
         'form': form,
-        'item_id': item_id
+        # 'item_id': item_id
     }
 
     return render(request, template, context)
