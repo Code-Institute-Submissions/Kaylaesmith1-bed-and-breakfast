@@ -13,4 +13,6 @@ urlpatterns = [
     path('menu/', views.MenuDetail.as_view(), name='menu_detail'),
     # path('menu/', views.DeleteMenuItem.as_view(), name='menu_detail'),
     path('delete/<item_id>/', delete_menu_item, name='menu_detail'),
+    # path('delete/<item_id>/', delete_menu_item, name='delete_item'),
+
     ]

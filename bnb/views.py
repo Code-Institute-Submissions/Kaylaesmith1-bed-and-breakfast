@@ -120,39 +120,30 @@ def update_menu_item(request, item_id):
 
 
 # DELETE MENU ITEM - ADMIN LOGIN REQUIRED - this works but doesn't ask if sure
-def delete_menu_item(request, item_id):
-    """
-    Allows superuser to delete menu item.
-    """
-    food_item = get_object_or_404(Item, id=item_id)
-    food_item.delete()
-    messages.success(request, 'Menu item deleted successfully')
-    return redirect(reverse('breakfast'))
-
-
 # def delete_menu_item(request, item_id):
 #     """
 #     Allows superuser to delete menu item.
 #     """
-#     update = Item.objects.get(id=item_id)
-#     context = {'item': update}
+#     food_item = get_object_or_404(Item, id=item_id)
+#     food_item.delete()
 #     messages.success(request, 'Menu item deleted successfully')
 #     return redirect(reverse('breakfast'))
 
-# def delete_menu_item(request, item_id):
-    # """
-    # Allows superuser to delete menu item.
-    # """
-    # item = get_object_or_404(Item, id=item_id)
 
-    # if request.method == "POST":
-    #     item.delete()
-    #     messages.success(request, "Menu item deleted successfully")
-    #     return redirect(reverse("breakfast"))
+def delete_menu_item(request, item_id):
+    """
+    Allows superuser to delete menu item.
+    """
+    item = get_object_or_404(Item, id=item_id)
 
-    # return render(
-    #     request,
-    #     "menu/menu_detail.html",
-    #     {"item": item},
+    if request.method == "POST":
+        item.delete()
+        messages.success(request, "Menu item deleted successfully")
+        return redirect(reverse("breakfast"))
 
-    # )
+    return render(
+        request,
+        "menu/menu_detail.html",
+        {"item": item},
+
+    )
