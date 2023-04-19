@@ -28,12 +28,16 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 # Debug = True >> local host. Debug = false >> heroku host
-DEBUG = False
 
-ALLOWED_HOSTS = ['wine-garden-bnb.herokuapp.com']
-# ALLOWED_HOSTS = ['localhost']
+# Then do: python manage.py collectstatic
+
+DEBUG = True
+
+# ALLOWED_HOSTS = ['wine-garden-bnb.herokuapp.com']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
