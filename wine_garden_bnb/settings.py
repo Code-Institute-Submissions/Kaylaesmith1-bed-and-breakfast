@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#Debug = True >> local host. Debug = false >> heroku host
+# Debug = True >> local host. Debug = false >> heroku host
 DEBUG = False
 
 ALLOWED_HOSTS = ['wine-garden-bnb.herokuapp.com']
