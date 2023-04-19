@@ -221,6 +221,15 @@ img.logo-image {
     font-size: 12px;
 }
 
+.delete-sure {
+    text-align: center;
+    font-size: 20px;
+}
+
+.delete-item-name {
+    font-family: 'Kanit', sans-serif
+}
+
 #add {
     color: green;
     font-family: 'Kanit', sans-serif;
@@ -315,6 +324,9 @@ img.logo-image {
   .hero-text {
     font-size: 30px;
 }
+    .card-body h3 {
+    font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -325,6 +337,9 @@ img.logo-image {
     .book-now {
         font-size: 25px;
         }
+    h5 {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 830px) {
