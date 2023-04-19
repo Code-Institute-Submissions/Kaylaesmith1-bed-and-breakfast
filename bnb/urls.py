@@ -11,5 +11,6 @@ urlpatterns = [
     path('add/', add_menu_item, name='add_menu_item'),
     path('edit/<item_id>/', update_menu_item, name='edit_menu_item'),
     path('menu/', views.MenuDetail.as_view(), name='menu_detail'),
+    # path('menu/', views.DeleteMenuItem.as_view(), name='menu_detail'),
     path('delete/<item_id>/', delete_menu_item, name='menu_detail'),
-]
+    ]

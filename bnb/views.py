@@ -39,6 +39,12 @@ class MenuDetail(generic.TemplateView):
     template_name = "menu/menu_detail.html"
 
 
+# class DeleteMenuItem(DeleteView):
+#     model = Item
+#     template_name = 'menu_detail.html'
+#     success_url = reverse_lazy('breakfast')
+
+
 # MENU ITEMS & CATEGORIES
 class FoodListViews(ListView):
     model = Item
@@ -113,13 +119,40 @@ def update_menu_item(request, item_id):
     return render(request, template, context)
 
 
-# DELETE MENU ITEM - ADMIN LOGIN REQUIRED
+# DELETE MENU ITEM - ADMIN LOGIN REQUIRED - this works but doesn't ask if sure
 def delete_menu_item(request, item_id):
     """
     Allows superuser to delete menu item.
     """
     food_item = get_object_or_404(Item, id=item_id)
     food_item.delete()
-    # return redirect(reverse('menu_detail', args=[item.id]))
     messages.success(request, 'Menu item deleted successfully')
     return redirect(reverse('breakfast'))
+
+
+# def delete_menu_item(request, item_id):
+#     """
+#     Allows superuser to delete menu item.
+#     """
+#     update = Item.objects.get(id=item_id)
+#     context = {'item': update}
+#     messages.success(request, 'Menu item deleted successfully')
+#     return redirect(reverse('breakfast'))
+
+# def delete_menu_item(request, item_id):
+    # """
+    # Allows superuser to delete menu item.
+    # """
+    # item = get_object_or_404(Item, id=item_id)
+
+    # if request.method == "POST":
+    #     item.delete()
+    #     messages.success(request, "Menu item deleted successfully")
+    #     return redirect(reverse("breakfast"))
+
+    # return render(
+    #     request,
+    #     "menu/menu_detail.html",
+    #     {"item": item},
+
+    # )
