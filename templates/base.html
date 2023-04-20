@@ -73,7 +73,7 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item d-block d-lg-none">
-                            <a class="nav-link" href="{% url 'book' %}">My Bookings</a>
+                            <a class="nav-link" href="{% url 'my_bookings' %}">My Bookings</a>
                         </li>
                         <li class="nav-item d-block d-lg-none">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
@@ -99,7 +99,7 @@
                                 <span><i class="fas fa-user profile-icon"></i> {{ user.username }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{% url 'book' %}">My Bookings</a>
+                                <a class="dropdown-item" href="{% url 'my_bookings' %}">My Bookings</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                             </div>
