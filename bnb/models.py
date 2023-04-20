@@ -74,6 +74,16 @@ class MenuItem(models.Model):
     description = models.CharField(max_length=300, blank=True)
 
 
+class Availability(models.Model):
+    ROOM_CATEGORIES = (
+        ('MBD', 'Master Bedroom'),
+        ('BD2', 'Second Bedroom'),
+    )
+    room_category = models.CharField(max_length=100, choices=ROOM_CATEGORIES)
+    check_in = models.DateField()
+    check_out = models.DateField()
+
+
 # BOOK A ROOM
 class Room(models.Model):
     ROOM_CATEGORIES = (

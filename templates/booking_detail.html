@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}The Wine Garden BnB | Delete Booking{% endblock %}
+
+{% block content %}
+
+<!-- DELETE BOOKING -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-8 card-body">
+            <h3>Delete A Booking</h3>
+            </br>
+            <p class="delete-sure">
+                Are you sure you want to delete your booking?
+            </p>
+            <form action="{% url 'delete_booking' booking.id %}" method="POST">
+                {% csrf_token %}
+                <div class="text-center mt-3">
+                <a class="btn font-weight-bold contact-submit" href="{% url 'my_bookings' %}">Cancel</a>
+                <button class="btn btn-info font-weight-bold submit mt-3">Delete Booking</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    </br>
+</div>
+
+{% endblock %}
