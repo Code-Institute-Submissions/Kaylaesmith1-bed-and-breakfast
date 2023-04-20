@@ -14,14 +14,6 @@
             <p class="delete-sure">
                 Are you sure you want to delete '<strong class="delete-item-name">{{ item.name }}</strong>'?
             </p>
-            <!-- {% csrf_token %} -->
-            <!-- <div class="text-center mt-3">
-           
-
-                <a class="btn font-weight-bold contact-submit" href="{% url 'breakfast' %}">Cancel</a>
-                <a class="btn btn-info font-weight-bold submit mt-3" type="submit" href="{% url 'menu_detail' %}">Delete Item</a>
-
-            </div> -->
             <form action="{% url 'delete_item' item.id %}" method="POST">
                 {% csrf_token %}
                 <div class="text-center mt-3">
