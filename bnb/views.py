@@ -2,11 +2,12 @@ from django.shortcuts import render, reverse, redirect, get_object_or_404, get_l
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import generic, View
-from django.views.generic import ListView
-from .forms import CustomerForm, MenuItemForm
-from .models import Item, MenuItem
+from django.views.generic import ListView, FormView
+from .forms import CustomerForm, MenuItemForm, AvailabilityForm
+from .models import Item, MenuItem, Room, Booking
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
+from .availability import check_availability
 
 
 class Home(generic.TemplateView):
@@ -99,7 +100,9 @@ def add_menu_item(request):
 
 # EDIT MENU ITEM - ADMIN LOGIN REQUIRED
 def update_menu_item(request, item_id):
-
+    """
+    Allows superuser to edit menu item
+    """
     update = Item.objects.get(id=item_id)
     form = MenuItemForm(instance=update)
 
@@ -112,24 +115,14 @@ def update_menu_item(request, item_id):
         else:
             messages.error(
                 request,
-                'An error occurred, please try again')  
+                'An error occurred, please try again')
 
     context = {'form': form}
     template = 'menu/edit_menu_item.html'
     return render(request, template, context)
 
 
-# DELETE MENU ITEM - ADMIN LOGIN REQUIRED - this works but doesn't ask if sure
-# def delete_menu_item(request, item_id):
-#     """
-#     Allows superuser to delete menu item.
-#     """
-#     food_item = get_object_or_404(Item, id=item_id)
-#     food_item.delete()
-#     messages.success(request, 'Menu item deleted successfully')
-#     return redirect(reverse('breakfast'))
-
-
+# DELETE MENU ITEM - ADMIN LOGIN REQUIRED
 def delete_menu_item(request, item_id):
     """
     Allows superuser to delete menu item.
@@ -147,3 +140,38 @@ def delete_menu_item(request, item_id):
         {"item": item},
 
     )
+
+
+# BOOKINGS - video at 10:30 creates .html pages for these two views (is this necessary?)
+class RoomList(ListView):
+    model = Room
+
+
+class BookingList(ListView):
+    model = Booking
+
+
+class BookingView(FormView):
+    form_class = AvailabilityForm
+    template_name = ""
+
+    def form_vaild(self, form):
+        data = form.cleaned_data
+        room_list = Room.objects.filter(category=data['room_category'])
+        available_rooms = []
+        for room in room_list:
+            if check_availability(room, data['check_in'], data['check_out']):
+                available_rooms.append(room)
+
+        if len(availabl_rooms) > 0:
+            room = available_rooms[0]
+            booking = Booking.objects.create(
+                user=request.user,
+                room=room,
+                check_in=data['check_in'],
+                check_out=data['check_out']
+            )
+            booking.save()
+            return HttpResponse(booking)
+        else:
+            return HttpResponse('This is unavailable at the moment.')

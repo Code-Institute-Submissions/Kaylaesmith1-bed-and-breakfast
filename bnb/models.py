@@ -74,15 +74,7 @@ class MenuItem(models.Model):
     description = models.CharField(max_length=300, blank=True)
 
 
-# BOOK A ROOM, TUTORIAL: https://www.youtube.com/watch?v=-9dhCQ7FdD0&list=PL_6Ho1hjJirn8WbY4xfVUAlcn51E4cSbY
-# class RoomCategory(models.Model):
-#     category = models.CharField(max_length=50)
-#     rate = models.FloatField()
-
-#     def __str__(self):
-#         return self.category
-        
-
+# BOOK A ROOM
 class Room(models.Model):
     ROOM_CATEGORIES = (
         ('MBD', 'Master Bedroom'),
@@ -93,10 +85,9 @@ class Room(models.Model):
     category = models.CharField(max_length=3, choices=ROOM_CATEGORIES, blank=True, null=True)
     beds = models.IntegerField()
     capacity = models.IntegerField()
-    # category = models.ForeignKey(RoomCategory, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
-        return f'{self.number}. {self.category} with {self.beds} beds for {self.capacity} people.'
+        return f'{self.number}. {self.category} with {self.beds} bed/s for {self.capacity} people.'
 
 
 class Booking(models.Model):

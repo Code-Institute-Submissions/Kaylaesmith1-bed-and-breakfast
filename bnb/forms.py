@@ -19,3 +19,14 @@ class MenuItemForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(). __init__(*args, **kwargs)
+
+
+# BOOKING (AVAILABILITY) FORM - user must be logged in
+class AvailabilityForm(forms.Form):
+    ROOM_CATEGORIES = (
+        ('MBD', 'Master Bedroom'),
+        ('BD2', 'Second Bedroom'),
+    )
+    room_category = forms.ChoiceField(choices=ROOM_CATEGORIES, required=True)
+    check_in = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT%H:%M", ])
+    check_out = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT%H:%M", ])

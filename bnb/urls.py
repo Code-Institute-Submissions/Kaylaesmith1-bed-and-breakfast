@@ -12,4 +12,8 @@ urlpatterns = [
     path('edit/<item_id>/', update_menu_item, name='edit_menu_item'),
     path('menu/', views.MenuDetail.as_view(), name='menu_detail'),
     path('delete/<item_id>/', delete_menu_item, name='delete_item'),
+
+    path('book/', views.RoomList.as_view(), name='room_list'),
+    path('book/', views.BookingList.as_view(), name='booking_list'),
+    path('book/', views.BookingView.as_view(), name='booking_view'),
     ]
