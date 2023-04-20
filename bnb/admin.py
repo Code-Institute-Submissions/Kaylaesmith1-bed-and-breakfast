@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Menu, Item, MenuItem
+from .models import Menu, Item, MenuItem, Room, Booking
 
 
 class MenuAdmin(admin.ModelAdmin):
@@ -25,8 +25,6 @@ class ItemAdmin(admin.ModelAdmin):
 admin.site.register(Item, ItemAdmin)
 
 
-# class MenuItemAdmin(admin.ModelAdmin):
-#     list_display = ("item_name", "description")
-
-
-# admin.site.register(MenuItem, MenuItemAdmin)
+# ROOM REGISTRATION
+admin.site.register(Room)
+admin.site.register(Booking)

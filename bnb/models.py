@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from django.conf import settings
 
 
 # CONTACT FORM
@@ -71,3 +72,42 @@ class Item(models.Model):
 class MenuItem(models.Model):
     item_name = models.CharField(max_length=100, blank=True)
     description = models.CharField(max_length=300, blank=True)
+
+
+# BOOK A ROOM, TUTORIAL: https://www.youtube.com/watch?v=-9dhCQ7FdD0&list=PL_6Ho1hjJirn8WbY4xfVUAlcn51E4cSbY
+# class RoomCategory(models.Model):
+#     category = models.CharField(max_length=50)
+#     rate = models.FloatField()
+
+#     def __str__(self):
+#         return self.category
+        
+
+class Room(models.Model):
+    ROOM_CATEGORIES = (
+        ('MBD', 'Master Bedroom'),
+        ('BD2', 'Second Bedroom'),
+    )
+    # WILL ONLY EVER HAVE 2 ROOMS AVAILABLE AT ANY GIVEN TIME
+    number = models.IntegerField()
+    category = models.CharField(max_length=3, choices=ROOM_CATEGORIES, blank=True, null=True)
+    beds = models.IntegerField()
+    capacity = models.IntegerField()
+    # category = models.ForeignKey(RoomCategory, on_delete=models.CASCADE, blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.number}. {self.category} with {self.beds} beds for {self.capacity} people.'
+
+
+class Booking(models.Model):
+    """
+    It uses the User Foreign Key so that each book will be associated with a
+    specific user. User is authenticated but doesn't have to be Admin.
+    """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    check_in = models.DateTimeField()
+    check_out = models.DateTimeField()
+
+    def __str__(self):
+        return f'{self.user} has booked {self.room} from {self.check_in} to {self.check_out}'
