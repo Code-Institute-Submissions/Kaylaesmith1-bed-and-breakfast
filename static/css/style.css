@@ -124,7 +124,9 @@ img.logo-image {
 }
 
 /* CONTACT US */
-.contact-submit {
+.contact-submit, 
+.cancel-submit,
+.delete-submit {
     background-color: #C9B5B4;
     border: 2px solid #5F233F;
     color: #5F233F;
@@ -133,7 +135,9 @@ img.logo-image {
     margin-top: 1rem
 }
 
-.contact-submit:hover {
+.contact-submit:hover,
+.cancel-submit:hover,
+.delete-submit:hover {
     background-color: #5F233F;
     border: 2px solid #5F233F;
     color: #C9B5B4;
@@ -284,6 +288,22 @@ img.logo-image {
     color: #155724;
     background-color: #baf2c3;
     border: .1em solid #155724;
+}
+
+/* BOOKING PAGES */
+.booking-card {
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color:#b9c9c7;
+    text-align: center;
+    color: #5F233F;
+    padding: 1rem;
+}
+
+#booking {
+    padding: 2rem;
 }
 
 /* FOOTER */
