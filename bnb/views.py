@@ -154,12 +154,12 @@ def delete_menu_item(request, item_id):
 
 
 # BOOKINGS - video at 10:30 creates .html pages for these two views (is this necessary?)
-class RoomList(ListView):
-    model = Room
+# class RoomList(ListView):
+#     model = Room
 
 
-class BookingListV(ListView):
-    model = Booking
+# class BookingList(ListView):
+#     model = Booking
 
 
 # USERS LIST OF BOOKINGS TO EDIT / DELETE

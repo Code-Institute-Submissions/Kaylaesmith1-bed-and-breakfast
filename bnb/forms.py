@@ -35,14 +35,15 @@ class MenuItemForm(forms.ModelForm):
 
 
 # BOOKING (AVAILABILITY) FORM - user must be logged in
-# class AvailabilityForm(forms.Form):
-#     ROOM_CATEGORIES = (
-#         ('MBD', 'Master Bedroom'),
-#         ('BD2', 'Second Bedroom'),
-#     )
-#     room_category = forms.ChoiceField(choices=ROOM_CATEGORIES, required=True)
-#     check_in = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT%H:%M", ])
-#     check_out = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT%H:%M", ])
+class AvailabilityForm(forms.Form):
+    ROOM_CATEGORIES = (
+        ('MBD', 'Master Bedroom'),
+        ('BD2', 'Second Bedroom'),
+    )
+    room_category = forms.ChoiceField(choices=ROOM_CATEGORIES, required=True)
+    # check_in = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT%H:%M", ])
+    check_in = forms.DateTimeField(required=True, input_formats=["%d-%m-%YT%H:%M", ])
+    check_out = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT%H:%M", ])
 
 
 # SELECT DATE FROM CALENDAR BUTTON - DO WE NEED??
@@ -65,16 +66,21 @@ class BookingForm(forms.ModelForm):
     text for each field, as wells as the widgets
     and handles validation where required.
     """
-    name = forms.CharField(
-        label='Booking Name',
-        required=True,
-        widget=forms.TextInput(attrs={'placeholder': 'Booking Name'}),
-    )
+    ROOM_CATEGORIES = (
+        ('MBD', 'Master Bedroom'),
+        ('BD2', 'Second Bedroom'),
+)
+    name = forms.CharField(label='Booking Name', required=True, widget=forms.TextInput(attrs={'placeholder': 'Booking Name'}),)
+    room_category = forms.ChoiceField(choices=ROOM_CATEGORIES, required=True, widget=forms.TextInput(attrs={'placeholder': 'Room Choice'}),)
+    check_in = forms.DateTimeField(required=True, input_formats=["%d-%m-%yT%H:%M", ])
+    check_out = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT%H:%M", ])
+    # check_in = forms.CharField(label='Booking Name', required=True, widget=forms.TextInput(attrs={'placeholder': 'Check In'}),)
+    # check-out = forms.CharField(label='Booking Name', required=True, widget=forms.TextInput(attrs={'placeholder': 'Check Out'}),)
+
 
     # email_address = forms.EmailField(
     #     label='Email Address',
     #     required=True,
-    #     validators=[validators.EmailValidator(message="Invalid Email")],
     #     widget=forms.TextInput(attrs={'placeholder': 'Email Address'}),
     # )
 
