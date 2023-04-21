@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import generic, View
 from django.views.generic import ListView, FormView
-from .forms import CustomerForm, MenuItemForm, AvailabilityForm
+from .forms import CustomerForm, MenuItemForm, AvailabilityForm, BookingForm
 from .models import Item, MenuItem, Room, Booking
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
@@ -205,14 +205,14 @@ class BookingView(FormView):
         if len(available_rooms) > 0:
             room = available_rooms[0]
             booking = Booking.objects.create(
-                # change user to name?
+
                 user=request.user,
                 room=room,
                 check_in=data['check_in'],
                 check_out=data['check_out']
             )
             booking.save()
-            return HttpResponse(booking)
+            return HttpResponse('Your room has been booked!')
         else:
             return HttpResponse('This room is unavailable at the moment.')
 
@@ -243,7 +243,6 @@ def edit_bookings(request, booking_id):
                     form.save()
                     messages.success(request, 'Your booking has been updated')
                     return redirect('my_bookings')
-
 
     return render(request, 'edit_bookings.html', {
         'form': form

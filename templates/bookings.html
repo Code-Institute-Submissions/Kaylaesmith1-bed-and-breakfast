@@ -25,8 +25,9 @@
 
                     {% csrf_token %}
                     {{form.as_p}}
+                    <button class="btn btn-success submit" type="submit"><a href="{% url 'my_bookings' %} ">Book Now</a></button>
+                    <!-- <a href="{% url 'my_bookings' %} ">Book Now</a> -->
 
-                    <button class="btn btn-success submit">Book Now</button>
                 </form>
             </div>
         </div>
@@ -34,6 +35,6 @@
 </section>
 
 {% endif %}
-{% endif %}
+<!-- {% endif %} -->
 
 {%endblock%}
