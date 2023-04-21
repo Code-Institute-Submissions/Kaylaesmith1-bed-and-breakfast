@@ -11,30 +11,23 @@
 </div>
 
 <!-- DJANGO BOOKING INFORMATION -->
-<section class="container px-2 py-3">
+<!-- <section class="container px-2 py-3">
     <div>
-        <!-- <div class="card-body"> -->
         <div class="row card-row m-1">
             <div>
-                <!-- <div class="mt-3 mb-3" id="booking"> -->
                 <div>
                     <h2>My Bookings:</h2>
                     </br>
-                    <!-- <p>To edit or cancel a booking please click on the buttons below.</p> -->
                 </div>
                 <div>
                     <div class="test mb-3">
                         {% for booking in bookings %}
-                        <!-- <div class="col-md-5 mb-3"> -->
                         <div>
                             <div class="card card-body">
                                 <div>
-                                    <!-- <h5>{{ booking.name }}</h5> -->
-                                    <!-- <p>Booking Name: {{booking.user}}</p> -->
                                     <p>Room: {{booking.room}}</p>
                                     <p>Check in: {{booking.check_in}}</p>
                                     <p>Check out: {{booking.check_out}}</p>
-                                    <!-- <p>Booking name: {{ booking.user }}</p> -->
                                 </div>
                                 <span>
                                     <a href="{% url 'edit_bookings' booking.id %}"
@@ -47,33 +40,36 @@
                     </div>
                 </div>
                 {%endfor%}
-                <!-- </div> -->
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- TEST CSS LAYOUT - ADAPT THIS-->
-<section id="booking" class="book_a_table">
-    <div class="my_bookings_container">
-        <h2 class="stroke">My Bookings - USE THIS LAYOUT AND ADAPT COLORS</h2>
-        <p class="stroke">To edit or cancel a
-            booking please click on the buttons below.</p>
-        <div class="row">
+<section class="container mt-3 mb-3">
+    <div id="booking">
+        <h2 class="my-bookings-title">My Bookings </h2>
+    </br>
+        <!-- <p>To edit or cancel a booking please click on the buttons below.</p> -->
+        <div class="row my-bookings">
             {% for booking in bookings %}
             <div class="col-md-5">
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h5 class='card-title text-uppercase text-center'>{{ booking.name }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ booking.date }} at
-                            {{ booking.time }}</h6>
+                        <h5 class='card-title text-uppercase text-center'>Booking Name: {{ booking.user }}</h5>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">put something here?: {{ booking.room }} at</h6> -->
                         <div class='card-text'>
-                            <p>No. of People: {{ booking.number_of_people }}</p>
-                            <p>Location: {{booking.table}}</p>
-                            <p>Occasion: {{booking.occasion}}</p>
+                            <p>Room: {{booking.room}}</p>
+                            <p>Check in: {{ booking.check_in }}</p>
+                            <p>Check out: {{booking.check_out}}</p>
                         </div>
-                        <a href="/edit_bookings/{{booking.id}}" class="btn btn-success">Edit</a>
-                        <a href="/delete_booking/{{booking.id}}" class="btn btn-success">Cancel</a>
+                        <!-- <a href="/edit_bookings/{{booking.id}}" class="btn btn-success">Edit</a>
+                        <a href="/delete_booking/{{booking.id}}" class="btn btn-success">Cancel</a> -->
+                        <span id="my-bookings-buttons">
+                            <a href="{% url 'edit_bookings' booking.id %}" class="btn btn-success submit mt-3">Edit</a>
+                            <a href="{% url 'delete_booking' booking.id %}"
+                                class="btn btn-success delete-submit">Delete</a>
+                        </span>
                     </div>
                 </div>
             </div>

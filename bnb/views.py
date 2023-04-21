@@ -190,7 +190,7 @@ class BookingListView(generic.DetailView):
             return redirect('account_login')
 
 
-# BOOKING FORM FOR AUTHENTICATED / ADMIN USERS
+# BOOKING FORM FOR AUTHENTICATED / ADMIN USERS -- rewatch availability form video (19.55) and look at nondairy BookingView(FormView)
 class BookingView(FormView):
     form_class = AvailabilityForm
     template_name = "bookings.html"

@@ -306,6 +306,18 @@ img.logo-image {
     padding: 2rem;
 }
 
+.my-bookings-title {
+    text-align: center;
+}
+.my-bookings {
+    /* text-align: center; */
+    justify-content: center;
+}
+
+#my-bookings-buttons {
+    justify-content: center;
+}
+
 /* FOOTER */
 .footer-container,
 .page-break {
