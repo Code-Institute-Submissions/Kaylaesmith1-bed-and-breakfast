@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.views import generic, View
 # from django.views.generic.edit import FormView
 from django.views.generic import ListView, FormView
-from .forms import CustomerForm, MenuItemForm, AvailabilityForm
+from .forms import CustomerForm, MenuItemForm, BookingForm
 from .models import Item, MenuItem, Room, Booking
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
@@ -143,11 +143,11 @@ def delete_menu_item(request, item_id):
     if request.method == "POST":
         item.delete()
         messages.success(request, "Menu item deleted successfully")
-        return redirect(reverse("breakfast"))
+        return redirect(reverse("my_bookings"))
 
     return render(
         request,
-        "menu/menu_detail.html",
+        "booking_detail.html",
         {"item": item},
 
     )
@@ -187,7 +187,7 @@ class BookingListView(generic.DetailView):
 # BOOKING FORM FOR AUTHENTICATED / ADMIN USERS - some info not shown on form page yet
 # SOURCE: https://www.youtube.com/watch?v=m7uVhLxT1AA&list=PL_6Ho1hjJirn8WbY4xfVUAlcn51E4cSbY&index=5
 class BookingView(FormView):
-    form_class = AvailabilityForm
+    form_class = BookingForm()
     template_name = "bookings.html"
 
     def form_vaild(self, form):
@@ -214,7 +214,7 @@ class BookingView(FormView):
 
 # EDIT YOUR BOOKING - AUTHENTICATED / ADMIN USERS ONLY
 # SOURCE: https://github.com/Martiless/nondairy-godmother
-def edit_booking(request, booking_id):
+def edit_bookings(request, booking_id):
     """
     When a user is on the My Bookings page
     which can only be accessed if you are
@@ -229,22 +229,22 @@ def edit_booking(request, booking_id):
 
     if request.user.is_authenticated:
         booking = get_object_or_404(Booking, id=booking_id)
-        form = AvailabilityForm(instance=booking)
+        form = BookingForm(instance=booking)
 
         if booking.user == request.user:
             if request.method == 'POST':
-                form = AvailabilityForm(data=request.POST, instance=booking)
+                form = BookingForm(data=request.POST, instance=booking)
                 if form.is_valid():
                     form.save()
                     messages.success(request, 'Your booking has been updated')
-                    return redirect('/')
+                    return redirect('my_bookings')
         # else:
         #     messages.error(request, "Sorry, you don't have access to this page.")
         #     return redirect('/')
 
     # form = AvailabilityForm(instance=booking)
 
-    return render(request, 'edit_booking.html', {
+    return render(request, 'edit_bookings.html', {
         'form': form
         })
 
@@ -275,7 +275,7 @@ def delete_booking(request, booking_id):
     if request.method == "POST":
         booking.delete()
         messages.success(request, "Your booking has been deleted successfully")
-        return redirect(reverse("breakfast"))
+        return redirect(reverse("my_bookings"))
     
     return render(
         request,

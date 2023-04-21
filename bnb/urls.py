@@ -15,9 +15,11 @@ urlpatterns = [
     path('edit/<item_id>/', update_menu_item, name='edit_menu_item'),
     path('menu/', views.MenuDetail.as_view(), name='menu_detail'),
     path('delete/<item_id>/', delete_menu_item, name='delete_item'),
+
     path('bookings/', views.BookingView.as_view(), name='bookings'),
+
     path('my_bookings/', views.BookingListView.as_view(), name='my_bookings'),
-    path('edit_booking/<booking_id>', views.edit_booking, name='edit_booking'),
+    path('edit_bookings/<booking_id>', views.edit_bookings, name='edit_bookings'),
     path('booking_detail/', views.BookingDetail.as_view(), name='booking_detail'),
     path('delete_booking/<booking_id>', delete_booking, name='delete_booking'),
 

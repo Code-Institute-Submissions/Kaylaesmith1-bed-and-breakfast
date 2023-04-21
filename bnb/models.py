@@ -74,10 +74,11 @@ class MenuItem(models.Model):
     description = models.CharField(max_length=300, blank=True)
 
 
+# CHECK AVAILABILITY
 class Availability(models.Model):
     ROOM_CATEGORIES = (
-        ('MBD', 'Master Bedroom'),
-        ('BD2', 'Second Bedroom'),
+        ('Master Bedroom', 'Master Bedroom'),
+        ('Queen Bedroom', 'Queen Bedroom'),
     )
     room_category = models.CharField(max_length=100, choices=ROOM_CATEGORIES)
     check_in = models.DateField()
@@ -87,19 +88,19 @@ class Availability(models.Model):
 # BOOK A ROOM
 class Room(models.Model):
     ROOM_CATEGORIES = (
-        ('MBD', 'Master Bedroom'),
-        ('BD2', 'Second Bedroom'),
+        ('Master Bedroom', 'Master Bedroom'),
+        ('Queen Bedroom', 'Queen Bedroom'),
     )
     # WILL ONLY EVER HAVE 2 ROOMS AVAILABLE AT ANY GIVEN TIME
     number = models.IntegerField()
-    category = models.CharField(max_length=3, choices=ROOM_CATEGORIES, blank=True, null=True)
+    category = models.CharField(max_length=50, choices=ROOM_CATEGORIES, blank=True, null=True)
     beds = models.IntegerField()
     capacity = models.IntegerField()
 
     def __str__(self):
         return f'{self.number}. {self.category} with {self.beds} bed/s for {self.capacity} people.'
 
-
+# MAYBE DELETE - TROUBLESHOOTING
 class Booking(models.Model):
     """
     It uses the User Foreign Key so that each book will be associated with a
@@ -112,3 +113,21 @@ class Booking(models.Model):
 
     def __str__(self):
         return f'{self.user} has booked {self.room} from {self.check_in} to {self.check_out}'
+
+
+# class Booking(models.Model):
+#     """
+#     Model to be used in the forms.py and views.py for the booking form.
+#     It uses the User Foreign Key so that each book will be associated with a
+#     specific user.
+#     The rest of the information is saved for the booking
+#     """
+
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     name = models.CharField(max_length=60, null=True, blank=True)
+#     email_address = models.EmailField(null=True, blank=True)
+ 
+#     date = models.DateField()
+    
+#     def __str__(self):
+#         return self.name

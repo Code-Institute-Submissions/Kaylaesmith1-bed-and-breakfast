@@ -36,7 +36,7 @@
                                     <p>Check out: {{booking.check_out}}</p>
                                 </div>
                                 <span>
-                                    <a href="{% url 'edit_booking' booking.id %}"
+                                    <a href="{% url 'edit_bookings' booking.id %}"
                                         class="btn btn-success submit mt-3">Edit</a>
                                     <a href="{% url 'delete_booking' booking.id %}"
                                         class="btn btn-success delete-submit">Delete</a>
@@ -48,6 +48,35 @@
                 {%endfor%}
                 <!-- </div> -->
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEST CSS LAYOUT - ADAPT THIS-->
+<section id="booking" class="book_a_table">
+    <div class="my_bookings_container">
+        <h2 class="stroke">My Bookings - USE THIS LAYOUT AND ADAPT COLORS</h2>
+        <p class="stroke">To edit or cancel a
+            booking please click on the buttons below.</p>
+        <div class="row">
+            {% for booking in bookings %}
+            <div class="col-md-5">
+                <div class="card mb-5">
+                    <div class="card-body">
+                        <h5 class='card-title text-uppercase text-center'>{{ booking.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ booking.date }} at
+                            {{ booking.time }}</h6>
+                        <div class='card-text'>
+                            <p>No. of People: {{ booking.number_of_people }}</p>
+                            <p>Location: {{booking.table}}</p>
+                            <p>Occasion: {{booking.occasion}}</p>
+                        </div>
+                        <a href="/edit_bookings/{{booking.id}}" class="btn btn-success">Edit</a>
+                        <a href="/delete_booking/{{booking.id}}" class="btn btn-success">Cancel</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
         </div>
     </div>
 </section>

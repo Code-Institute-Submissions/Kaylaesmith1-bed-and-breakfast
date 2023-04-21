@@ -1,5 +1,5 @@
 from django import forms
-from .models import Customer, Menu, Item, Availability
+from .models import Customer, Menu, Item, Availability, Booking
 
 
 # CUSTOMER CONTACT FORM ON CONTACT US PAGE - LINKED TO EMAIL JS
@@ -21,14 +21,17 @@ class MenuItemForm(forms.ModelForm):
         super(). __init__(*args, **kwargs)
 
 
-class AvailabilityForm(forms.Form):
+# class AvailabilityForm(forms.Form):
 
-    class Meta:
-        model = Availability
-        fields = ['room_category', 'check_in', 'check_out']
+#     class Meta:
+#         model = Availability
+#         fields = ['room_category', 'check_in', 'check_out']
+        #     widgets = {
+        #     'date': DateInput()
+        # }
 
-    def __init__(self, *args, **kwargs):
-        super(). __init__(*args, **kwargs)
+#     def __init__(self, *args, **kwargs):
+#         super(). __init__(*args, **kwargs)
 
 
 # BOOKING (AVAILABILITY) FORM - user must be logged in
@@ -43,10 +46,52 @@ class AvailabilityForm(forms.Form):
 
 
 # SELECT DATE FROM CALENDAR BUTTON - DO WE NEED??
-# class DateInput(forms.DateInput):
-#     """
-#     This class provides a widget for use in the
-#     booking form. It provides a calendar for users
-#     to pick the booking date from
-#     """
-#     input_type = 'date'
+class DateInput(forms.DateInput):
+    """
+    This class provides a widget for use in the
+    booking form. It provides a calendar for users
+    to pick the booking date from
+    """
+    input_type = 'date'
+
+
+# BOOKING FORM
+class BookingForm(forms.ModelForm):
+    """
+    This form is connected with the view
+    in order to provide users with the neccessary
+    fields for making a booking
+    It also provides the labels and placeholder
+    text for each field, as wells as the widgets
+    and handles validation where required.
+    """
+    name = forms.CharField(
+        label='Booking Name',
+        required=True,
+        widget=forms.TextInput(attrs={'placeholder': 'Booking Name'}),
+    )
+
+    # email_address = forms.EmailField(
+    #     label='Email Address',
+    #     required=True,
+    #     validators=[validators.EmailValidator(message="Invalid Email")],
+    #     widget=forms.TextInput(attrs={'placeholder': 'Email Address'}),
+    # )
+
+    # phone = forms.IntegerField(
+    #     label='Contact Number',
+    #     required=True,
+    #     widget=forms.TextInput(attrs={'placeholder': 'Contact number'}),
+    # )
+
+    class Meta:
+        """Defines which model to pull the
+        fields from"""
+        model = Booking
+        # Tell the form to use all the fields provided
+        fields = '__all__'
+        # Except fot the user field
+        exclude = ('user', )
+        widgets = {
+            'date': DateInput()
+        }

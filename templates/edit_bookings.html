@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}The Wine Garden BnB | Edit Bookings{% endblock %}
+
+
+{% block content %}
+
+<section id="booking" class="book_a_table">
+    <div class="booking_container">
+        <div class="row">
+            <div class="col-md-3 mt-5 offset-md-3">
+                <h4 class="stroke">Edit Your Booking:</h4>
+                <form method="POST">
+
+                    {% csrf_token %}
+                    {{form.as_p}}
+
+                    <button id="submit-button" class="btn btn-success">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{%endblock%}
