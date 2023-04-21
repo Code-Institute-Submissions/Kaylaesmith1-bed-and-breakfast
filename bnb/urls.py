@@ -25,6 +25,6 @@ urlpatterns = [
 
     
 
-    # path('book/', views.RoomList.as_view(), name='room_list'),
-    # path('booking_list/', views.BookingList, name='booking_list'),
+    path('room_list/', views.RoomList.as_view(), name='room_list'),
+    path('booking_list/', views.BookingList.as_view(), name='booking_list'),
     ]

@@ -75,14 +75,14 @@ class MenuItem(models.Model):
 
 
 # CHECK AVAILABILITY
-class Availability(models.Model):
-    ROOM_CATEGORIES = (
-        ('Master Bedroom', 'Master Bedroom'),
-        ('Queen Bedroom', 'Queen Bedroom'),
-    )
-    room_category = models.CharField(max_length=100, choices=ROOM_CATEGORIES)
-    check_in = models.DateField()
-    check_out = models.DateField()
+# class Availability(models.Model):
+#     ROOM_CATEGORIES = (
+#         ('Master Bedroom', 'Master Bedroom'),
+#         ('Queen Bedroom', 'Queen Bedroom'),
+#     )
+#     room_category = models.CharField(max_length=100, choices=ROOM_CATEGORIES)
+#     check_in = models.DateField()
+#     check_out = models.DateField()
 
 
 # BOOK A ROOM

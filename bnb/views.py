@@ -2,9 +2,8 @@ from django.shortcuts import render, reverse, redirect, get_object_or_404, get_l
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import generic, View
-# from django.views.generic.edit import FormView
 from django.views.generic import ListView, FormView
-from .forms import CustomerForm, MenuItemForm, BookingForm
+from .forms import CustomerForm, MenuItemForm, AvailabilityForm
 from .models import Item, MenuItem, Room, Booking
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
@@ -154,12 +153,17 @@ def delete_menu_item(request, item_id):
 
 
 # BOOKINGS - video at 10:30 creates .html pages for these two views (is this necessary?)
-# class RoomList(ListView):
-#     model = Room
+class RoomList(ListView):
+    """Opens Room List page"""
+    model = Room
+    template_name = "room_list.html"
 
 
-# class BookingList(ListView):
-#     model = Booking
+# BOOKING FORM TEST
+class BookingList(ListView):
+    """Opens Booking List page"""
+    model = Booking
+    template_name = "booking_list.html"
 
 
 # USERS LIST OF BOOKINGS TO EDIT / DELETE
@@ -187,7 +191,7 @@ class BookingListView(generic.DetailView):
 # BOOKING FORM FOR AUTHENTICATED / ADMIN USERS - some info not shown on form page yet
 # SOURCE: https://www.youtube.com/watch?v=m7uVhLxT1AA&list=PL_6Ho1hjJirn8WbY4xfVUAlcn51E4cSbY&index=5
 class BookingView(FormView):
-    form_class = BookingForm()
+    form_class = AvailabilityForm
     template_name = "bookings.html"
 
     def form_vaild(self, form):
@@ -198,9 +202,10 @@ class BookingView(FormView):
             if check_availability(room, data['check_in'], data['check_out']):
                 available_rooms.append(room)
 
-        if len(availabl_rooms) > 0:
+        if len(available_rooms) > 0:
             room = available_rooms[0]
             booking = Booking.objects.create(
+                # change user to name?
                 user=request.user,
                 room=room,
                 check_in=data['check_in'],
@@ -209,7 +214,7 @@ class BookingView(FormView):
             booking.save()
             return HttpResponse(booking)
         else:
-            return HttpResponse('This is unavailable at the moment.')
+            return HttpResponse('This room is unavailable at the moment.')
 
 
 # EDIT YOUR BOOKING - AUTHENTICATED / ADMIN USERS ONLY
@@ -238,11 +243,7 @@ def edit_bookings(request, booking_id):
                     form.save()
                     messages.success(request, 'Your booking has been updated')
                     return redirect('my_bookings')
-        # else:
-        #     messages.error(request, "Sorry, you don't have access to this page.")
-        #     return redirect('/')
 
-    # form = AvailabilityForm(instance=booking)
 
     return render(request, 'edit_bookings.html', {
         'form': form
@@ -251,22 +252,22 @@ def edit_bookings(request, booking_id):
 
 # DELETE YOUR BOOKING - AUTHENTICATED / ADMIN USERS ONLY
 # SOURCE: https://github.com/Martiless/nondairy-godmother
-# def delete_booking(request, booking_id):
-#     """
-#     When a user is on the My Bookings page
-#     which can only be accessed if you are
-#     logged in, they can click on the cancel booking
-#     button. This will cancel the booking using its
-#     booking id, redirect the user back to the home page and
-#     pop up a confimation message will appear.
-#     """
-#     if request.user.is_authenticated:
-#         booking = get_object_or_404(Booking, id=booking_id)
+def delete_booking(request, booking_id):
+    """
+    When a user is on the My Bookings page
+    which can only be accessed if you are
+    logged in, they can click on the cancel booking
+    button. This will cancel the booking using its
+    booking id, redirect the user back to the home page and
+    pop up a confimation message will appear.
+    """
+    if request.user.is_authenticated:
+        booking = get_object_or_404(Booking, id=booking_id)
 
-#         if booking.user == request.user:
-#             booking.delete()
-#             messages.success(request, 'Booking deleted successfully')
-#             return redirect('/')
+        if booking.user == request.user:
+            booking.delete()
+            messages.success(request, 'Booking deleted successfully')
+            return redirect('/')
 
 
 def delete_booking(request, booking_id):

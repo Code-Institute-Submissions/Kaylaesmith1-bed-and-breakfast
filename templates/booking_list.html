@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}The Wine Garden BnB | Booking List{% endblock %}
+
+
+{% block content %}
+
+<section>
+
+    <div>
+    <h2>BOOKING LIST TEST</h2>
+</div>
+
+<div> {% for booking in booking_list %}
+    <h4>{{booking}}</h4>
+    {% endfor %}
+</div>
+
+
+</section>
+
+
+{%endblock%}
