@@ -7,6 +7,8 @@ from .forms import CustomerForm, MenuItemForm, AvailabilityForm, BookingForm
 from .models import Item, MenuItem, Room, Booking
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
+
+# IS THIS INCORRECTLY CALLED?
 from .availability import check_availability
 
 
@@ -188,8 +190,7 @@ class BookingListView(generic.DetailView):
             return redirect('account_login')
 
 
-# BOOKING FORM FOR AUTHENTICATED / ADMIN USERS - some info not shown on form page yet
-# SOURCE: https://www.youtube.com/watch?v=m7uVhLxT1AA&list=PL_6Ho1hjJirn8WbY4xfVUAlcn51E4cSbY&index=5
+# BOOKING FORM FOR AUTHENTICATED / ADMIN USERS
 class BookingView(FormView):
     form_class = AvailabilityForm
     template_name = "bookings.html"

@@ -32,12 +32,10 @@ class AvailabilityForm(forms.Form):
     check_out = forms.DateTimeField(required=True, input_formats=['%m/%d/%y', ])
 
 
-# SELECT DATE FROM CALENDAR BUTTON - DO WE NEED??
+# SELECT DATE FROM CALENDAR BUTTON
 class DateInput(forms.DateInput):
     """
-    This class provides a widget for use in the
-    booking form. It provides a calendar for users
-    to pick the booking date from
+    Calendar widget to choose check-in / check-out dates
     """
     input_type = 'date'
 
@@ -62,8 +60,6 @@ class BookingForm(forms.ModelForm):
     check_out = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT%H:%M", ])
 
     class Meta:
-        """Defines which model to pull the
-        fields from"""
         model = Booking
         fields = '__all__'
         exclude = ('user', )

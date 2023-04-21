@@ -100,6 +100,7 @@ class Room(models.Model):
     def __str__(self):
         return f'{self.number}. {self.category} with {self.beds} bed/s for {self.capacity} people.'
 
+
 # MAYBE DELETE - TROUBLESHOOTING
 class Booking(models.Model):
     """
