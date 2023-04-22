@@ -65,12 +65,15 @@
                         </div>
                         <!-- <a href="/edit_bookings/{{booking.id}}" class="btn btn-success">Edit</a>
                         <a href="/delete_booking/{{booking.id}}" class="btn btn-success">Cancel</a> -->
-                        <span id="my-bookings-buttons">
+                        <div id="my-bookings-buttons">
+                            <span>
                             <a href="{% url 'edit_bookings' booking.id %}" class="btn btn-success submit mt-3">Edit</a>
                             <a href="{% url 'delete_booking' booking.id %}"
                                 class="btn btn-success delete-submit">Delete</a>
                         </span>
+                        </div>
                     </div>
+
                 </div>
             </div>
             {%endfor%}

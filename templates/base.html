@@ -73,7 +73,7 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item d-block d-lg-none">
-                            <a class="nav-link" href="#">Book A Room</a>
+                            <a class="nav-link" href="{% url 'bookings' %}">Book A Room</a>
                         </li>
                         <li class="nav-item d-block d-lg-none">
                             <a class="nav-link" href="{% url 'my_bookings' %}">My Bookings</a>
