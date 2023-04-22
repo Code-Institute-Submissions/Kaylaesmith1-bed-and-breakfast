@@ -26,8 +26,8 @@ class Migration(migrations.Migration):
             name='Booking',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('check_in', models.DateTimeField()),
-                ('check_out', models.DateTimeField()),
+                ('check_in', models.DateField()),
+                ('check_out', models.DateField()),
                 ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bnb.room')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],

@@ -3,13 +3,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import generic, View
 from django.views.generic import ListView, FormView
-from .forms import CustomerForm, MenuItemForm, AvailabilityForm, BookingForm
+from .forms import CustomerForm, MenuItemForm, BookingForm
 from .models import Item, MenuItem, Room, Booking
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
+# from .availability import check_availability
 
 # IS THIS INCORRECTLY CALLED?
-from .availability import check_availability
+# from .availability import check_availability
 
 
 class Home(generic.TemplateView):
@@ -21,7 +22,7 @@ class About(generic.TemplateView):
     """Opens About page"""
     template_name = "about.html"
 
-
+# DELETE THIS
 class BookingPage(generic.TemplateView):
     """Opens Booking page"""
     template_name = "book.html"
@@ -148,20 +149,20 @@ def delete_menu_item(request, item_id):
 
     return render(
         request,
-        "booking_detail.html",
+        "menu/menu_detail.html",
         {"item": item},
 
     )
 
 
-# BOOKINGS - video at 10:30 creates .html pages for these two views (is this necessary?)
+# BOOKINGS - delete this and urls
 class RoomList(ListView):
     """Opens Room List page"""
     model = Room
     template_name = "room_list.html"
 
 
-# BOOKING FORM TEST
+# BOOKING FORM TEST - DELETE THIS and urls
 class BookingList(ListView):
     """Opens Booking List page"""
     model = Booking
@@ -180,6 +181,7 @@ class BookingListView(generic.DetailView):
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
+            print((Booking.objects.all()))
             bookings = Booking.objects.filter(user=request.user)
 
             return render(request, 'my_bookings.html', {
@@ -190,32 +192,60 @@ class BookingListView(generic.DetailView):
             return redirect('account_login')
 
 
-# BOOKING FORM FOR AUTHENTICATED / ADMIN USERS -- rewatch availability form video (19.55) and look at nondairy BookingView(FormView)
-class BookingView(FormView):
-    form_class = AvailabilityForm
-    template_name = "bookings.html"
+# BOOKING FORM FOR AUTHENTICATED / ADMIN USERS -- look at nondairy BookingView(FormView)
+# ADD A BOOKING
+# class BookingView(FormView):
+#     form_class = BookingForm
+#     template_name = "bookings.html"
+#     success_url = '/my_bookings/'
 
-    def form_vaild(self, form):
-        data = form.cleaned_data
-        room_list = Room.objects.filter(category=data['room_category'])
-        available_rooms = []
-        for room in room_list:
-            if check_availability(room, data['check_in'], data['check_out']):
-                available_rooms.append(room)
+#     def form_vaild(self, form):
+#         data = form.cleaned_data
+#         room_list = Room.objects.filter(category=data['room_category'])
+#         available_rooms = []
+#         for room in room_list:
+#             if check_availability(room, data['check_in'], data['check_out']):
+#                 available_rooms.append(room)
 
-        if len(available_rooms) > 0:
-            room = available_rooms[0]
-            booking = Booking.objects.create(
+#         if len(available_rooms) > 0:
+#             room = available_rooms[0]
+#             booking = Booking.objects.create(
+#                 user=self.request.user,
+#                 room=room,
+#                 check_in=data['check_in'],
+#                 check_out=data['check_out']
+#             )
+#             booking.save()
+#             return HttpResponse(booking)
+#         else:
+#             return HttpResponse('This room is unavailable at the moment.')
 
-                user=request.user,
-                room=room,
-                check_in=data['check_in'],
-                check_out=data['check_out']
-            )
-            booking.save()
-            return HttpResponse('Your room has been booked!')
+
+# ADD BOOKING - ADMIN LOGIN REQUIRED
+def add_booking(request):
+    """
+    Allows authenticated user to add booking
+    """
+
+    if request.method == 'POST':
+        form = BookingForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Booking added successfully')
+            return redirect(reverse('my_bookings'))
         else:
-            return HttpResponse('This room is unavailable at the moment.')
+            messages.error(
+                request,
+                'An error occurred, please try again')
+    else:
+        form = BookingForm()
+
+    template = 'bookings.html'
+    context = {
+        'form': form
+    }
+
+    return render(request, template, context)
 
 
 # EDIT YOUR BOOKING - AUTHENTICATED / ADMIN USERS ONLY
@@ -277,7 +307,7 @@ def delete_booking(request, booking_id):
         booking.delete()
         messages.success(request, "Your booking has been deleted successfully")
         return redirect(reverse("my_bookings"))
-    
+
     return render(
         request,
         "booking_detail.html",

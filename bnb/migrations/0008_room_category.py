@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='room',
             name='category',
-            field=models.CharField(blank=True, choices=[('MBD', 'MASTERBEDROOM'), ('BD2', 'BEDROOM2')], max_length=3, null=True),
+            field=models.CharField(blank=True, choices=[('Master Bedroom', 'MASTERBEDROOM'), ('Queen Bedroom', 'BEDROOM2')], max_length=3, null=True),
         ),
     ]

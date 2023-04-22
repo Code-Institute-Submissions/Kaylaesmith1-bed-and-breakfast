@@ -92,13 +92,14 @@ class Room(models.Model):
         ('Queen Bedroom', 'Queen Bedroom'),
     )
     # WILL ONLY EVER HAVE 2 ROOMS AVAILABLE AT ANY GIVEN TIME
-    number = models.IntegerField()
+    # number = models.IntegerField()
     category = models.CharField(max_length=50, choices=ROOM_CATEGORIES, blank=True, null=True)
     beds = models.IntegerField()
     capacity = models.IntegerField()
 
     def __str__(self):
-        return f'{self.number}. {self.category} with {self.beds} bed/s for {self.capacity} people.'
+        # return f'{self.number}. {self.category} with {self.beds} bed/s for {self.capacity} people.'
+        return f'{self.category}.'
 
 
 # MAYBE DELETE - TROUBLESHOOTING
@@ -109,11 +110,13 @@ class Booking(models.Model):
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    check_in = models.DateTimeField()
-    check_out = models.DateTimeField()
+    # check_in = models.DateField('date')
+    # check_out = models.DateField('date')
+    check_in = models.DateField()
+    check_out = models.DateField()
 
-    def __str__(self):
-        return f'{self.user} has booked {self.room} from {self.check_in} to {self.check_out}'
+    # def __str__(self):
+    #     return f'{self.user} has booked {self.room} from {self.check_in} to {self.check_out}'
 
 
 # class Booking(models.Model):
@@ -127,8 +130,20 @@ class Booking(models.Model):
 #     user = models.ForeignKey(User, on_delete=models.CASCADE)
 #     name = models.CharField(max_length=60, null=True, blank=True)
 #     email_address = models.EmailField(null=True, blank=True)
- 
+
 #     date = models.DateField()
-    
+
 #     def __str__(self):
 #         return self.name
+
+
+# class BookRoomTest(models.Model):
+#     ROOM_CATEGORIES = (
+#         ('Master Bedroom', 'Master Bedroom'),
+#         ('Queen Bedroom', 'Queen Bedroom'),
+#     )
+#     name = models.CharField(max_length=100)
+#     email = models.EmailField()
+#     check_in = models.DateField()
+#     check_out = models.DateField()
+#     room_type = models.CharField(choices=ROOM_CATEGORIES, max_length=100)

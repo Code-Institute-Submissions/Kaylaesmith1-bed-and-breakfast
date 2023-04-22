@@ -21,13 +21,11 @@
         <div class="row">
             <div class="col-md-3 mt-5 offset-md-3">
                 <h4">Bookings: - <strong>DO CSS ON THIS PAGE import widget tweaks for form fields</strong></h4>
-                <form method="POST">
+                <form method="POST" action="{% url 'bookings' %}">
 
                     {% csrf_token %}
                     {{form.as_p}}
-                    <button class="btn btn-success submit" type="submit"><a href="{% url 'my_bookings' %} ">Book Now</a></button>
-                    <!-- <a href="{% url 'my_bookings' %} ">Book Now</a> -->
-
+                    <input class="btn submit" type="submit" value="Book Now">
                 </form>
             </div>
         </div>

@@ -306,15 +306,17 @@ img.logo-image {
     padding: 2rem;
 }
 
-.my-bookings-title {
-    text-align: center;
-}
 .my-bookings {
     /* text-align: center; */
     justify-content: center;
 }
 
-#my-bookings-buttons {
+.booking-form-fields {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#my-bookings-buttons,
+.my-bookings-title {
     text-align: center;
 }
 

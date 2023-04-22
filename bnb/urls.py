@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import create_customer, food_list, add_menu_item, update_menu_item, delete_menu_item, delete_booking
+from .views import create_customer, food_list, add_menu_item, update_menu_item, delete_menu_item, delete_booking, add_booking
 
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
@@ -17,8 +17,9 @@ urlpatterns = [
     path('delete/<item_id>/', delete_menu_item, name='delete_item'),
 
     # TO ADD A BOOKING
-    path('bookings/', views.BookingView.as_view(), name='bookings'),
-    
+    path('bookings/', add_booking, name='bookings'),
+    # path('bookings/', book_room, name='bookings'),
+
     # EDIT / DELETE A BOOKING
     path('my_bookings/', views.BookingListView.as_view(), name='my_bookings'),
     path('edit_bookings/<booking_id>', views.edit_bookings, name='edit_bookings'),
