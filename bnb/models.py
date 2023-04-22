@@ -91,8 +91,7 @@ class Room(models.Model):
         ('Master Bedroom', 'Master Bedroom'),
         ('Queen Bedroom', 'Queen Bedroom'),
     )
-    # WILL ONLY EVER HAVE 2 ROOMS AVAILABLE AT ANY GIVEN TIME
-    # number = models.IntegerField()
+
     category = models.CharField(max_length=50, choices=ROOM_CATEGORIES, blank=True, null=True)
     beds = models.IntegerField()
     capacity = models.IntegerField()

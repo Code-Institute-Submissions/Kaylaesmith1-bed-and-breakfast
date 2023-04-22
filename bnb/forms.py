@@ -21,7 +21,7 @@ class MenuItemForm(forms.ModelForm):
         super(). __init__(*args, **kwargs)
 
 
-# BOOKING (AVAILABILITY) FORM - This may be the problem--it's not a model form like the others. Delete this?
+# BOOKING (AVAILABILITY) FORM - Delete this?
 # class AvailabilityForm(forms.Form):
 #     ROOM_CATEGORIES = (
 #         ('Master Bedroom', 'Master Bedroom'),
@@ -39,12 +39,6 @@ class DateInput(forms.DateInput):
     """
     input_type = 'date'
 
-class LastActiveForm(forms.Form):
-    """
-    Last Active Date Form
-    """
-    last_active = forms.DateField(widget=DateInput)
-
 
 # BOOKING FORM
 class BookingForm(forms.ModelForm):
@@ -60,11 +54,11 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = '__all__'
-        # exclude = ('user', )
-        # widgets = {
-        #     'date': DateInput(format=["%d-%m-%Y"],),
-        # }
-        last_active = forms.DateField(widget=DateInput)
+        # calendar widget not working
+        widgets = {
+            'date': forms.DateInput
+        }
+
 
 
             # ROOM_CATEGORIES = (

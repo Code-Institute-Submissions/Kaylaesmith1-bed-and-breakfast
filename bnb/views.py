@@ -145,7 +145,7 @@ def delete_menu_item(request, item_id):
     if request.method == "POST":
         item.delete()
         messages.success(request, "Menu item deleted successfully")
-        return redirect(reverse("my_bookings"))
+        return redirect(reverse("breakfast"))
 
     return render(
         request,

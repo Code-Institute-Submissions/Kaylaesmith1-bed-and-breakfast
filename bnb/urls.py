@@ -5,10 +5,6 @@ from .views import create_customer, food_list, add_menu_item, update_menu_item, 
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
     path('about/', views.About.as_view(), name='about'),
-
-    # DELETE THIS URL AND TAKE CSS TO my_bookings PAGE
-    path('book/', views.BookingPage.as_view(), name='book'),
-
     path('contact/', create_customer, name='contact_us'),
     path('breakfast/', food_list, name='breakfast'),
     path('add/', add_menu_item, name='add_menu_item'),
@@ -18,7 +14,6 @@ urlpatterns = [
 
     # TO ADD A BOOKING
     path('bookings/', add_booking, name='bookings'),
-    # path('bookings/', book_room, name='bookings'),
 
     # EDIT / DELETE A BOOKING
     path('my_bookings/', views.BookingListView.as_view(), name='my_bookings'),
@@ -27,6 +22,8 @@ urlpatterns = [
     path('delete_booking/<booking_id>', delete_booking, name='delete_booking'),
 
     # UNNECESSARY?
-    path('room_list/', views.RoomList.as_view(), name='room_list'),
-    path('booking_list/', views.BookingList.as_view(), name='booking_list'),
+    # path('room_list/', views.RoomList.as_view(), name='room_list'),
+    # path('booking_list/', views.BookingList.as_view(), name='booking_list'),
+    # path('book/', views.BookingPage.as_view(), name='book'),
+
     ]

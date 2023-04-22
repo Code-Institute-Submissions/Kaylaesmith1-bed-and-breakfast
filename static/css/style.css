@@ -153,6 +153,7 @@ img.logo-image {
 .fields {
     font-size: 18px;
     color: #5F233F;
+    text-align: left;
 }
 
 .message{
