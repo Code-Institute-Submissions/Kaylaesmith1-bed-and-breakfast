@@ -1,5 +1,6 @@
 from django import forms
 from .models import Customer, Menu, Item, Booking
+from django.forms.widgets import DateInput
 
 
 # CUSTOMER CONTACT FORM ON CONTACT US PAGE - LINKED TO EMAIL JS
@@ -28,8 +29,8 @@ class MenuItemForm(forms.ModelForm):
 #         ('Second Bedroom', 'Second Bedroom'),
 #     )
 #     room_category = forms.ChoiceField(choices=ROOM_CATEGORIES, required=True)
-#     check_in = forms.DateTimeField(required=True, input_formats=['%m/%d/%y', ])
-#     check_out = forms.DateTimeField(required=True, input_formats=['%m/%d/%y', ])
+#     check_in = forms.DateField(required=True, input_formats=['%m/%d/%y', ])
+#     check_out = forms.DateField(required=True, input_formats=['%m/%d/%y', ])
 
 
 # SELECT DATE FROM CALENDAR BUTTON
@@ -37,27 +38,24 @@ class DateInput(forms.DateInput):
     """
     Calendar widget to choose check-in / check-out dates
     """
+    # date = forms.DateField(widget=DateInput(attrs={"type": "date"}))
     input_type = 'date'
 
 
 # BOOKING FORM
 class BookingForm(forms.ModelForm):
-    """
-    This form is connected with the view
-    in order to provide users with the neccessary
-    fields for making a booking
-    It also provides the labels and placeholder
-    text for each field, as wells as the widgets
-    and handles validation where required.
-    """
 
     class Meta:
         model = Booking
         fields = '__all__'
+
+
+        # date = forms.DateField(widget=DatePickerInput())
+        
         # calendar widget not working
-        widgets = {
-            'date': forms.DateInput
-        }
+        # widgets = {
+        #     'date': forms.DateInput
+        # }
 
 
 
@@ -78,8 +76,8 @@ class BookingForm(forms.ModelForm):
     #     required=True,
     #     widget=forms.TextInput(attrs={'placeholder': 'Email Address'}),
     # )
-    # check_in = forms.DateTimeField(required=True, input_formats=['%m/%d/%y', ])
-    # check_out = forms.DateTimeField(required=True, input_formats=['%m/%d/%y', ])
+    # check_in = forms.DateField(required=True, input_formats=['%m/%d/%y', ])
+    # check_out = forms.DateField(required=True, input_formats=['%m/%d/%y', ])
 
 # TEST BOOKING FORM
 # class BookRoomFormTest(forms.ModelForm):

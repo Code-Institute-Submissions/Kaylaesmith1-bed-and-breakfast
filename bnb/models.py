@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.conf import settings
+# from django.forms.widgets import DateInput
 
 
 # CONTACT FORM
@@ -109,10 +110,10 @@ class Booking(models.Model):
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    # check_in = models.DateField('date')
-    # check_out = models.DateField('date')
     check_in = models.DateField()
     check_out = models.DateField()
+    # check_in = models.DateField(widget=DateInput(attrs={"type": "date"}))
+    # check_out = models.DateField(widget=DateInput(attrs={"type": "date"}))
 
     # def __str__(self):
     #     return f'{self.user} has booked {self.room} from {self.check_in} to {self.check_out}'
