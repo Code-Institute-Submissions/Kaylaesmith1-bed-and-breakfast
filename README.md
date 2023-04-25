@@ -63,13 +63,15 @@ A link to the live site can be found here - [The Wine Garden BnB](https://wine-g
 A visitor The Wine Garden BnB website would likely be an adult looking to spend time away but who would also want all the amenities of home. This website provides information about a family-run business that meets those needs.
 
 
-### User Stories -- DO THESE
+### User Stories -- DO THESE START HERE 
 
 
-#### EPIC | User Profile
-- As a Site User I can register an account so that I can add/edit/delete my recipes and comment on and bookmark other people's recipes and add recipes to my meal planner.
-- As a Site User, I can log in or log out of my account so that I can keep my account secure.
-- As a Site User I can see my login status so that I know if I'm logged in or out.
+#### EPIC | Project Environment Setup
+#### As the developer, I can create a new project so that I can develop the website.
+- Create project (GitHub)
+- Install Django
+- Create env.py file with secure variables in .gitignore file
+- Test and ensure project works locally
 
 
 #### EPIC | User Navigation

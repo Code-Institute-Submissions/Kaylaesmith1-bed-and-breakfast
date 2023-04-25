@@ -5,15 +5,15 @@ function sendMail(contactForm) {
             "from_email": contactForm.emailaddress.value,
             "message": contactForm.message.value
         })
-        .then(
-            function (response) {
-                console.log("Email successfully sent", response);
-            },
-            function (error) {
-                console.log("Email failed to send", error);
-            },
+        // .then(
+        //     function (response) {
+        //         console.log("Email successfully sent", response);
+        //     },
+        //     function (error) {
+        //         console.log("Email failed to send", error);
+        //     },
            
-        );
+        // );
     return false;
 }
 
@@ -44,7 +44,7 @@ function popup(){
     setTimeout(() => {
         danger.style.display = 'none';
         success.style.display = 'none';
-        form.current.reset();
+        // form.current.reset();
     }, 4000);
 
 }

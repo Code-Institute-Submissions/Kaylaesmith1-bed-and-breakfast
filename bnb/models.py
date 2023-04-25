@@ -2,11 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.conf import settings
-# from django.forms.widgets import DateInput
+from datetime import date
 
 
-# CONTACT FORM
 class Customer(models.Model):
+    """
+    CUSTOMER CONTACT FORM, allows site
+    visitors to write a message or query to 
+    the business owners.
+    """
     first_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50, blank=True)
     email = models.EmailField()
@@ -16,10 +20,9 @@ class Customer(models.Model):
         return str(self.title)
 
 
-# ADD MENU ITEM AS ADMIN THROUGH DJANGO
 class Menu(models.Model):
     """
-    Menu Item
+    ADD MENU ITEM as Admin user through Django
     """
     category = models.CharField(max_length=50, blank=True)
     name = models.CharField(max_length=50)
@@ -29,8 +32,10 @@ class Menu(models.Model):
         return self.name
 
 
-# MENU ITEM CATEGORIES
 class Item(models.Model):
+    """
+    MENU ITEM CATEGORIES
+    """
     name = models.CharField(max_length=50)
     slug = models.SlugField(blank=True, null=True, unique=True)
     description = models.TextField(max_length=250)
@@ -69,25 +74,18 @@ class Item(models.Model):
         return str(self.name)
 
 
-# ADD NEW CATEGORY TO DJANGO DATABASE
 class MenuItem(models.Model):
+    """
+    ADD NEW CATEGORY TO DJANGO DATABASE
+    """
     item_name = models.CharField(max_length=100, blank=True)
     description = models.CharField(max_length=300, blank=True)
 
 
-# CHECK AVAILABILITY
-# class Availability(models.Model):
-#     ROOM_CATEGORIES = (
-#         ('Master Bedroom', 'Master Bedroom'),
-#         ('Queen Bedroom', 'Queen Bedroom'),
-#     )
-#     room_category = models.CharField(max_length=100, choices=ROOM_CATEGORIES)
-#     check_in = models.DateField()
-#     check_out = models.DateField()
-
-
-# BOOK A ROOM
 class Room(models.Model):
+    """
+    BOOK A ROOM
+    """
     ROOM_CATEGORIES = (
         ('Master Bedroom', 'Master Bedroom'),
         ('Queen Bedroom', 'Queen Bedroom'),
@@ -98,52 +96,16 @@ class Room(models.Model):
     capacity = models.IntegerField()
 
     def __str__(self):
-        # return f'{self.number}. {self.category} with {self.beds} bed/s for {self.capacity} people.'
         return f'{self.category}.'
 
 
-# MAYBE DELETE - TROUBLESHOOTING
 class Booking(models.Model):
     """
-    It uses the User Foreign Key so that each book will be associated with a
-    specific user. User is authenticated but doesn't have to be Admin.
+    BOOKING ROOMS. Model uses the User Foreign Key 
+    so each booking is associated with a user. 
+    User is authenticated but doesn't have to be Admin.
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    check_in = models.DateField()
-    check_out = models.DateField()
-    # check_in = models.DateField(widget=DateInput(attrs={"type": "date"}))
-    # check_out = models.DateField(widget=DateInput(attrs={"type": "date"}))
-
-    # def __str__(self):
-    #     return f'{self.user} has booked {self.room} from {self.check_in} to {self.check_out}'
-
-
-# class Booking(models.Model):
-#     """
-#     Model to be used in the forms.py and views.py for the booking form.
-#     It uses the User Foreign Key so that each book will be associated with a
-#     specific user.
-#     The rest of the information is saved for the booking
-#     """
-
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     name = models.CharField(max_length=60, null=True, blank=True)
-#     email_address = models.EmailField(null=True, blank=True)
-
-#     date = models.DateField()
-
-#     def __str__(self):
-#         return self.name
-
-
-# class BookRoomTest(models.Model):
-#     ROOM_CATEGORIES = (
-#         ('Master Bedroom', 'Master Bedroom'),
-#         ('Queen Bedroom', 'Queen Bedroom'),
-#     )
-#     name = models.CharField(max_length=100)
-#     email = models.EmailField()
-#     check_in = models.DateField()
-#     check_out = models.DateField()
-#     room_type = models.CharField(choices=ROOM_CATEGORIES, max_length=100)
+    check_in = models.DateField(null=False, default=date(2023, 4, 25))
+    check_out = models.DateField(null=False, default=date(2023, 4, 28))
