@@ -12,22 +12,22 @@
   <hr class="page-break">
   <br>
   <div class="card-body">
-  <p class="text-center mt-3">{% blocktrans %}Don't have an account yet? 
-<a href="{{ signup_url }}" class="text-dark"><u>Sign up</u></a>.{% endblocktrans %}</p>
-<div class="row justify-content-center">
-    <div class="col-12 col-md-9 col-lg-6 mt-3 mb-3">
+    <p class="text-center mt-3">{% blocktrans %}Don't have an account yet?
+      <a href="{{ signup_url }}" class="text-dark"><u>Sign up</u></a>.{% endblocktrans %}</p>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-9 col-lg-6 mt-3 mb-3">
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button class="btn btn-outline-dark submit" type="submit">{% trans "Log In" %}</button>
-</form>
-</div>
-</div>
-</div>
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
+          {{ form.as_p }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="btn btn-outline-dark submit" type="submit">{% trans "Log In" %}</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 </br>
 <!-- LOGIN FORM END -->

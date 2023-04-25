@@ -1,24 +1,15 @@
 function sendMail(contactForm) {
     emailjs.send("service_6a8xgnp", "template_ub9mghj", {
-            "from_fname": contactForm.firstname.value,
-            "from_lname": contactForm.lastname.value,
-            "from_email": contactForm.emailaddress.value,
-            "message": contactForm.message.value
-        })
-        // .then(
-        //     function (response) {
-        //         console.log("Email successfully sent", response);
-        //     },
-        //     function (error) {
-        //         console.log("Email failed to send", error);
-        //     },
-           
-        // );
+        "from_fname": contactForm.firstname.value,
+        "from_lname": contactForm.lastname.value,
+        "from_email": contactForm.emailaddress.value,
+        "message": contactForm.message.value
+    })
     return false;
 }
 
- 
-function popup(){
+
+function popup() {
     var fname = document.getElementById('firstname');
     var lname = document.getElementById('lastname');
     var email = document.getElementById('emailaddress');
@@ -26,10 +17,9 @@ function popup(){
     const success = document.getElementById('success');
     const danger = document.getElementById('danger');
 
-    if(fname.value === '' || lname.value === '' || email.value === '' || message.value === ''){
+    if (fname.value === '' || lname.value === '' || email.value === '' || message.value === '') {
         danger.style.display = 'block';
-    }
-    else{
+    } else {
         setTimeout(() => {
             fname.value = '';
             lname.value = '';
@@ -44,7 +34,6 @@ function popup(){
     setTimeout(() => {
         danger.style.display = 'none';
         success.style.display = 'none';
-        // form.current.reset();
     }, 4000);
 
 }

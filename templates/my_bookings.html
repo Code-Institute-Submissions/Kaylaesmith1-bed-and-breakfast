@@ -10,67 +10,26 @@
         class="img-fluid" alt="Booking Banner">
 </div>
 
-<!-- DJANGO BOOKING INFORMATION -->
-<!-- <section class="container px-2 py-3">
-    <div>
-        <div class="row card-row m-1">
-            <div>
-                <div>
-                    <h2>My Bookings:</h2>
-                    </br>
-                </div>
-                <div>
-                    <div class="test mb-3">
-                        {% for booking in bookings %}
-                        <div>
-                            <div class="card card-body">
-                                <div>
-                                    <p>Room: {{booking.room}}</p>
-                                    <p>Check in: {{booking.check_in}}</p>
-                                    <p>Check out: {{booking.check_out}}</p>
-                                </div>
-                                <span>
-                                    <a href="{% url 'edit_bookings' booking.id %}"
-                                        class="btn btn-success submit mt-3">Edit</a>
-                                    <a href="{% url 'delete_booking' booking.id %}"
-                                        class="btn btn-success delete-submit">Delete</a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {%endfor%}
-            </div>
-        </div>
-    </div>
-</section> -->
-
-<!-- TEST CSS LAYOUT - ADAPT THIS-->
 <section class="container mt-3 mb-3">
     <div id="booking">
         <h2 class="my-bookings-title">My Bookings </h2>
-    </br>
-        <!-- <p>To edit or cancel a booking please click on the buttons below.</p> -->
+        </br>
         <div class="row my-bookings">
             {% for booking in bookings %}
             <div class="col-md-5">
                 <div class="card mb-5">
                     <div class="card-body">
                         <h5 class='card-title text-uppercase text-center'>Booking Name: {{ booking.user }}</h5>
-                        <!-- <h6 class="card-subtitle mb-2 text-muted">put something here?: {{ booking.room }} at</h6> -->
                         <div class='card-text'>
                             <p><strong class="booking-form-fields">Room</strong>: {{booking.room}}</p>
                             <p><strong class="booking-form-fields">Check in</strong>: {{ booking.check_in }}</p>
                             <p><strong class="booking-form-fields">Check out</strong>: {{booking.check_out}}</p>
                         </div>
-                        <!-- <a href="/edit_bookings/{{booking.id}}" class="btn btn-success">Edit</a>
-                        <a href="/delete_booking/{{booking.id}}" class="btn btn-success">Cancel</a> -->
                         <div id="my-bookings-buttons">
                             <span>
-                            <a href="{% url 'edit_bookings' booking.id %}" class="btn submit mt-3">Edit</a>
-                            <a href="{% url 'delete_booking' booking.id %}"
-                                class="btn delete-submit">Delete</a>
-                        </span>
+                                <a href="{% url 'edit_bookings' booking.id %}" class="btn submit mt-3">Edit</a>
+                                <a href="{% url 'delete_booking' booking.id %}" class="btn delete-submit">Delete</a>
+                            </span>
                         </div>
                     </div>
 

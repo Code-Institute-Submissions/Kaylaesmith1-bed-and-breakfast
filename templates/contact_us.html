@@ -25,60 +25,37 @@
             <!-- CONTACT FORM START -->
             <div class="col-md-6 col-lg-6 p-2 pl-md-6 align-self-center h-100">
                 <h3>Send a message</h3>
-            <form onsubmit="return sendMail(this);" class="card-body">               
-                <div class="row">
-                    <div class="col-6">
-                        <div class="fields">First name</div>
-                <input type="text" name="firstname" id="firstname" class="form-control" required />
-                    </div>
-                    <div class="col-6">
-                        <div class="fields">Last name</div>
-                        <input type="text" name="lastname" id="lastname" class="form-control" required />
-                            </div>                
-             <div class="col-12">  
-                <div class="fields">Email</div>
-                <input type="email" name="email" id="emailaddress" class="form-control"
-                    required />
-             </div>              
-             <div class="col-12"> 
-                <div class="fields">Message</div>
-                <textarea rows="5" name="message" id="message" class="form-control"
-                    required></textarea>
-             </div>
-             
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary contact-submit col-12" onclick="popup()">Submit</button>
-                    </div>
-                    <!-- SUCCESS / EMPTY FIELDS POP UP -->
-                    <div class="message">
-                        <div class="success" id="success">Your message has been sent.</div>
-                        <div class="danger" id="danger">Please fill out all fields.</div>
-                    </div>
-            </form>
-            </div>
-            <!-- CONTACT FORM END -->
-
-            <!-- CRISPY FORMS -->
-            <!-- <div class="col-md-6 col-lg-6 p-2 pl-md-6 align-self-center contact-form">
-                <h3>Send a message</h3>
-                <form onsubmit="return sendMail(this);" novalidate class="card-body">
-                    {% csrf_token %}
-
+                <form onsubmit="return sendMail(this);" class="card-body">
                     <div class="row">
                         <div class="col-6">
-                            {{ form.first_name|as_crispy_field }}
+                            <div class="fields">First name</div>
+                            <input type="text" name="firstname" id="firstname" class="form-control" required />
                         </div>
                         <div class="col-6">
-                            {{ form.last_name|as_crispy_field }}
+                            <div class="fields">Last name</div>
+                            <input type="text" name="lastname" id="lastname" class="form-control" required />
                         </div>
-                    </div>
-                    {{ form.email|as_crispy_field }}
-                    {{ form.message|as_crispy_field }}
+                        <div class="col-12">
+                            <div class="fields">Email</div>
+                            <input type="email" name="email" id="emailaddress" class="form-control" required />
+                        </div>
+                        <div class="col-12">
+                            <div class="fields">Message</div>
+                            <textarea rows="5" name="message" id="message" class="form-control" required></textarea>
+                        </div>
 
-                    <button type="submit" class="btn btn-primary contact-submit">Submit</button>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary contact-submit col-12"
+                                onclick="popup()">Submit</button>
+                        </div>
+                        
+                        <!-- SUCCESS / EMPTY FIELDS POP UP -->
+                        <div class="message">
+                            <div class="success" id="success">Your message has been sent.</div>
+                            <div class="danger" id="danger">Please fill out all fields.</div>
+                        </div>
                 </form>
-            </div> -->
-            <!-- CRISPY FORM END -->
+            </div>
         </div>
     </div>
     </div>

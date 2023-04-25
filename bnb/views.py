@@ -7,10 +7,6 @@ from .forms import CustomerForm, MenuItemForm, BookingForm
 from .models import Item, MenuItem, Room, Booking
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
-# from .availability import check_availability
-
-# IS THIS INCORRECTLY CALLED?
-# from .availability import check_availability
 
 
 class Home(generic.TemplateView):
@@ -22,18 +18,9 @@ class About(generic.TemplateView):
     """Opens About page"""
     template_name = "about.html"
 
-# DELETE THIS
-class BookingPage(generic.TemplateView):
-    """Opens Booking page"""
-    template_name = "book.html"
-
-
-# class Booking(generic.TemplateView):
-#     """Opens Booking page if user is authenticated or asks them to login"""
-#     template_name = "bookings.html"
-
 
 def create_customer(request):
+    """Customer Contact Form"""
     form = CustomerForm()
     return render(request, 'contact_us.html', {'form': form})
 
@@ -52,15 +39,9 @@ class BookingDetail(generic.TemplateView):
     """Opens to Delete A Booking page"""
     template_name = "booking_detail.html"
 
-# CAN DELETE THIS?
-# class DeleteMenuItem(DeleteView):
-#     model = Item
-#     template_name = 'menu_detail.html'
-#     success_url = reverse_lazy('breakfast')
 
-
-# MENU ITEMS & CATEGORIES
 class FoodListViews(ListView):
+    """Menu Items& Food Categories"""
     model = Item
     queryset = Item.objects.all().filter(food_type='Meat')
     template_name = 'breakfast.html'
@@ -84,11 +65,9 @@ def food_list(request):
     return render(request, "breakfast.html", context)
 
 
-# ADD MENU ITEM - ADMIN LOGIN REQUIRED
+@login_required
 def add_menu_item(request):
-    """
-    Allows superuser to add menu item
-    """
+    """Allows superuser to ADD menu item"""
 
     if request.method == 'POST':
         form = MenuItemForm(request.POST, request.FILES)
@@ -111,11 +90,9 @@ def add_menu_item(request):
     return render(request, template, context)
 
 
-# EDIT MENU ITEM - ADMIN LOGIN REQUIRED
+@login_required
 def update_menu_item(request, item_id):
-    """
-    Allows superuser to edit menu item
-    """
+    """Allows superuser to EDIT menu item"""
     update = Item.objects.get(id=item_id)
     form = MenuItemForm(instance=update)
 
@@ -135,11 +112,9 @@ def update_menu_item(request, item_id):
     return render(request, template, context)
 
 
-# DELETE MENU ITEM - ADMIN LOGIN REQUIRED
+@login_required
 def delete_menu_item(request, item_id):
-    """
-    Allows superuser to delete menu item.
-    """
+    """Allows superuser to DELETE menu item"""
     item = get_object_or_404(Item, id=item_id)
 
     if request.method == "POST":
@@ -155,21 +130,6 @@ def delete_menu_item(request, item_id):
     )
 
 
-# BOOKINGS - delete this and urls
-class RoomList(ListView):
-    """Opens Room List page"""
-    model = Room
-    template_name = "room_list.html"
-
-
-# BOOKING FORM TEST - DELETE THIS and urls
-class BookingList(ListView):
-    """Opens Booking List page"""
-    model = Booking
-    template_name = "booking_list.html"
-
-
-# USERS LIST OF BOOKINGS TO EDIT / DELETE
 class BookingListView(generic.DetailView):
     """
     This is the view that will bring up the
@@ -192,36 +152,7 @@ class BookingListView(generic.DetailView):
             return redirect('account_login')
 
 
-# BOOKING FORM FOR AUTHENTICATED / ADMIN USERS -- look at nondairy BookingView(FormView)
-# ADD A BOOKING
-# class BookingView(FormView):
-#     form_class = BookingForm
-#     template_name = "bookings.html"
-#     success_url = '/my_bookings/'
-
-#     def form_vaild(self, form):
-#         data = form.cleaned_data
-#         room_list = Room.objects.filter(category=data['room_category'])
-#         available_rooms = []
-#         for room in room_list:
-#             if check_availability(room, data['check_in'], data['check_out']):
-#                 available_rooms.append(room)
-
-#         if len(available_rooms) > 0:
-#             room = available_rooms[0]
-#             booking = Booking.objects.create(
-#                 user=self.request.user,
-#                 room=room,
-#                 check_in=data['check_in'],
-#                 check_out=data['check_out']
-#             )
-#             booking.save()
-#             return HttpResponse(booking)
-#         else:
-#             return HttpResponse('This room is unavailable at the moment.')
-
-
-# ADD BOOKING - ADMIN LOGIN REQUIRED
+@login_required
 def add_booking(request):
     """
     Allows authenticated user to add booking
@@ -250,17 +181,16 @@ def add_booking(request):
 
 # EDIT YOUR BOOKING - AUTHENTICATED / ADMIN USERS ONLY
 # SOURCE: https://github.com/Martiless/nondairy-godmother
+@login_required
 def edit_bookings(request, booking_id):
     """
-    When a user is on the My Bookings page
-    which can only be accessed if you are
-    logged in, they can click on the edit button.
-    This will bring them to a new page, where the booking
-    they wish to edit, located using the booking id,
-    appears, prepopulated with the current information.
-    Once the user clicks on the submit changes button
-    they will be redirected to the home page and a
-    confimation message will appear.
+    Authenticated users can edit their own bookings. 
+    If they choose to edit a booking, they can click
+    the 'edit' button, which will take them to a page 
+    with their booking information, prepopulated with 
+    the current information. They can change the information 
+    and update the changes.  A confirmation will appear and 
+    they'll be redirected to the My Bookings page.
     """
 
     if request.user.is_authenticated:
@@ -282,6 +212,7 @@ def edit_bookings(request, booking_id):
 
 # DELETE YOUR BOOKING - AUTHENTICATED / ADMIN USERS ONLY
 # SOURCE: https://github.com/Martiless/nondairy-godmother
+@login_required
 def delete_booking(request, booking_id):
     """
     When a user is on the My Bookings page
@@ -300,6 +231,7 @@ def delete_booking(request, booking_id):
             return redirect('/')
 
 
+@login_required
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
 

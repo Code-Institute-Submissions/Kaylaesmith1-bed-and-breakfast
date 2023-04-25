@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Lato&family=Montserrat:wght@400&family=Poppins:wght@200&family=Quicksand:wght@300&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Quicksand:wght@300&display=swap'); */
 
 /* GLOBAL STYLING */
 .content {
@@ -13,9 +12,10 @@ body {
     color: #5F233F;
 }
 
-h2, h3, h4, h5 {
-    /* font-family: 'Montserrat', sans-serif; */
-    /* font-family: 'Poppins', sans-serif; */
+h2,
+h3,
+h4,
+h5 {
     font-family: 'Kanit', sans-serif;
 }
 
@@ -31,7 +31,6 @@ h4 {
 .card-body,
 .bnb-vineyard-image,
 .hero-text-outer {
-    /* border: 1px solid #dadada; */
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
     display: flex;
@@ -40,7 +39,6 @@ h4 {
 
 .page-title {
     padding-top: 5px;
-    /* color: #5F233F; */
     font-weight: 300;
     text-align: center;
 }
@@ -52,7 +50,7 @@ h4 {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color:#5F233F;
+    color: #5F233F;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -61,27 +59,22 @@ h4 {
     color: #307473;
 }
 
-
 .navbar-toggler:hover {
     background-color: #C9B5B4;
-    /* background-color: #3F826D; */
 }
 
 img.logo-image {
-    /* height: 160px; */
     height: 145px;
 }
 
 /* LANDING PAGE */
 .hero-text-outer {
-    /* background-color: #C9B5B4; */
     background-color: #b9c9c7;
     min-height: 200px;
     text-align: center;
 }
 
 .hero-text {
-    /* font-family: 'Montserrat', sans-serif; */
     font-size: 45px;
     color: #5F233F;
     margin-top: 4rem;
@@ -115,8 +108,8 @@ img.logo-image {
 
 .offers-image,
 .offers-title,
-.offers-text, 
-.about-card, 
+.offers-text,
+.about-card,
 .reviews {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -124,7 +117,7 @@ img.logo-image {
 }
 
 /* CONTACT US */
-.contact-submit, 
+.contact-submit,
 .cancel-submit,
 .delete-submit {
     background-color: #C9B5B4;
@@ -156,7 +149,7 @@ img.logo-image {
     text-align: left;
 }
 
-.message{
+.message {
     width: 100%;
     position: relative;
     margin-top: 0.5rem;
@@ -164,13 +157,14 @@ img.logo-image {
     justify-content: center;
 }
 
-.message .success{
+.message .success {
     font-size: 20px;
     color: green;
     animation: buttons .3s linear;
     display: none;
 }
-.message .danger{
+
+.message .danger {
     font-size: 20px;
     color: red;
     transition: .3s;
@@ -180,14 +174,11 @@ img.logo-image {
 
 
 /* ABOUT PAGE */
-.about-card { 
-    /* font-family: 'Kanit', sans-serif; */
+.about-card {
     font-size: 20px;
 }
 
 .card-body {
-    /* background-color is lighter version of #307473 */
-    /* background-color: #9bb9b8; */
     background-color: #b9c9c7;
 }
 
@@ -216,7 +207,7 @@ img.logo-image {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color:#C9B5B4;
+    background-color: #C9B5B4;
     text-align: center;
     color: #5F233F;
     padding: 1rem;
@@ -239,6 +230,7 @@ img.logo-image {
     color: green;
     font-family: 'Kanit', sans-serif;
 }
+
 #edit {
     color: blue;
 }
@@ -266,13 +258,12 @@ img.logo-image {
     border: 1px solid #5F233F;
     padding: 5px;
     margin: 5px 0 10px 0;
-} 
+}
 
 .login label,
 .logout label {
     display: block;
     text-align: center;
-    /* color: #442E10; */
     font-weight: bold;
 }
 
@@ -297,7 +288,7 @@ img.logo-image {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color:#b9c9c7;
+    background-color: #b9c9c7;
     text-align: center;
     color: #5F233F;
     padding: 1rem;
@@ -308,7 +299,6 @@ img.logo-image {
 }
 
 .my-bookings {
-    /* text-align: center; */
     justify-content: center;
 }
 
@@ -344,36 +334,37 @@ img.logo-image {
 }
 
 .socials i:hover {
-    /* color: #3F826D; */
     color: #307473;
 }
 
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1200px) {
-  .hero-text {
-    font-size: 30px;
-}
+    .hero-text {
+        font-size: 30px;
+    }
+
     .card-body h3 {
-    font-size: 1.5rem;
+        font-size: 1.5rem;
     }
 }
 
 @media screen and (max-width: 1000px) {
     .hero-text {
-    font-size: 28px;
+        font-size: 28px;
     }
 
     .book-now {
         font-size: 25px;
-        }
+    }
+
     h5 {
         font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 830px) {
-    
+
     img.logo-image {
         height: 120px;
     }
@@ -381,13 +372,13 @@ img.logo-image {
 
 
 @media screen and (max-width: 768px) {
-.hero-text-outer {
-    margin-top: 2rem;
-}
+    .hero-text-outer {
+        margin-top: 2rem;
+    }
 }
 
 @media screen and (max-width: 550px) {
-    
+
     img.logo-image {
         height: 85px;
     }
