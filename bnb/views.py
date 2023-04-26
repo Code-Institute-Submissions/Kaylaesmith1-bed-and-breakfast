@@ -7,6 +7,7 @@ from .forms import CustomerForm, MenuItemForm, BookingForm
 from .models import Item, MenuItem, Room, Booking
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 
 class Home(generic.TemplateView):
@@ -159,6 +160,7 @@ def add_booking(request):
     """
 
     if request.method == 'POST':
+
         form = BookingForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
@@ -179,17 +181,15 @@ def add_booking(request):
     return render(request, template, context)
 
 
-# EDIT YOUR BOOKING - AUTHENTICATED / ADMIN USERS ONLY
-# SOURCE: https://github.com/Martiless/nondairy-godmother
 @login_required
 def edit_bookings(request, booking_id):
     """
-    Authenticated users can edit their own bookings. 
+    Authenticated users can edit their own bookings.
     If they choose to edit a booking, they can click
-    the 'edit' button, which will take them to a page 
-    with their booking information, prepopulated with 
-    the current information. They can change the information 
-    and update the changes.  A confirmation will appear and 
+    the 'edit' button, which will take them to a page
+    with their booking information, prepopulated with
+    the current information. They can change the information
+    and update the changes.  A confirmation will appear and
     they'll be redirected to the My Bookings page.
     """
 
@@ -210,29 +210,17 @@ def edit_bookings(request, booking_id):
         })
 
 
-# DELETE YOUR BOOKING - AUTHENTICATED / ADMIN USERS ONLY
-# SOURCE: https://github.com/Martiless/nondairy-godmother
 @login_required
 def delete_booking(request, booking_id):
     """
-    When a user is on the My Bookings page
-    which can only be accessed if you are
-    logged in, they can click on the cancel booking
-    button. This will cancel the booking using its
-    booking id, redirect the user back to the home page and
-    pop up a confimation message will appear.
+    Authenticated users can delete their own bookings
+    if they choose. If they click the 'delete' button
+    they will be taken to a page asking if they're
+    sure they want to delete that booking. If they click
+    'cancel' they'll be returned to the My Bookings
+    page. If they click 'delete' the booking will
+    be deleted permanently.
     """
-    if request.user.is_authenticated:
-        booking = get_object_or_404(Booking, id=booking_id)
-
-        if booking.user == request.user:
-            booking.delete()
-            messages.success(request, 'Booking deleted successfully')
-            return redirect('/')
-
-
-@login_required
-def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
 
     if request.method == "POST":

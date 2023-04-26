@@ -214,8 +214,7 @@ The diagram below details the database schema.
 
 ## Testing
 
-Testing and results can be found [here](/TESTING.md)
-
+Details of all testing done can be viewed in depth in the [TESTING.md](https://github.com/Kaylaesmith1/bed-and-breakfast/blob/main/TESTING.md) documentation.
 ## Security Features and Defensive Design
 
 ### User Authentication

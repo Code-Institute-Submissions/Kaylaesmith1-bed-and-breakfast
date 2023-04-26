@@ -6,13 +6,13 @@
 
 {% block content %}
 
+<!-- LOG OUT FORM START -->
 <div class="container">
   <h1 class="page-title">{% trans "Log out" %}</h1>
   <hr class="page-break">
   <div class="card-body">
   <p class="text-center mt-3">{% trans 'Are you sure you want to log out?' %}</p>
 <div class="row justify-content-center">
-  <!-- <div class="col-11 col-md-6 col-lg-4 mt-3 mb-3"> -->
     <div class="col-12 col-md-9 col-lg-6 mt-3 mb-3">
 
 <form class="logout" method="POST" action="{% url 'account_logout' %}">
@@ -26,5 +26,6 @@
 </div>
 </div>
 </div>
+<!-- LOG OUT FORM START -->
 
 {% endblock %}

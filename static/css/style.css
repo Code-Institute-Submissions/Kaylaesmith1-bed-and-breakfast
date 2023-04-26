@@ -172,6 +172,9 @@ img.logo-image {
     display: none;
 }
 
+iframe {
+    width: 100%;
+}
 
 /* ABOUT PAGE */
 .about-card {
@@ -189,10 +192,10 @@ img.logo-image {
 }
 
 .customers {
-    padding-top: 18px;
     font-family: 'Kanit';
     font-size: 38px;
     color: #5f233f;
+    text-align: center;
 }
 
 .star-reviews {

@@ -105,7 +105,9 @@ class Booking(models.Model):
     so each booking is associated with a user. 
     User is authenticated but doesn't have to be Admin.
     """
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, default=user.username)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     check_in = models.DateField(null=False, default=date(2023, 4, 25))
     check_out = models.DateField(null=False, default=date(2023, 4, 28))
