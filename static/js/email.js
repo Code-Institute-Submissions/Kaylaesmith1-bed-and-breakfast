@@ -25,7 +25,7 @@ function popup() {
             lname.value = '';
             email.value = '';
             message.value = '';
-        }, 2000);
+        }, 3000);
 
         success.style.display = 'block';
     }
@@ -34,6 +34,6 @@ function popup() {
     setTimeout(() => {
         danger.style.display = 'none';
         success.style.display = 'none';
-    }, 4000);
+    }, 3000);
 
 }

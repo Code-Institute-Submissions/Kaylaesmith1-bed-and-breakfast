@@ -10,40 +10,40 @@ All HTML pages were validated using the [W3C HTML Validator](https://validator.w
 <details>
   <summary>Home Page - No errors</summary>
   
-  ![HTML Validation - Home page](/documentation/readme_images/validator-home-page.png)
+  ![HTML Validation - Home page](/documentation/validation/validator-home-page.png)
 
 </details>
 
 <details>
   <summary>Sign Up Page - No errors</summary>
   
-  ![HTML Validation - Sign up page](/documentation/readme_images/validator-signup-page.png)
+  ![HTML Validation - Sign up page](/documentation/validation/validator-signup-page.png)
 </details>
 
 <details>
   <summary>Log In Page - No errors</summary>
   
-  ![HTML Validation - Log in page](/documentation/readme_images/validator-login-page.png)
+  ![HTML Validation - Log in page](/documentation/validation/validator-login-page.png)
 </details>
 
 
 <details>
   <summary>Log Out Page - No errors</summary>
   
-  ![HTML Validation - Log out page](/documentation/readme_images/validator-logout-page.png)
+  ![HTML Validation - Log out page](/documentation/validation/validator-logout-page.png)
 </details>
 
 
 <details>
   <summary>About Page - No errors</summary>
   
-  ![HTML Validation - About page](/documentation/readme_images/validator-about-page.png)
+  ![HTML Validation - About page](/documentation/validation/validator-about-page.png)
 </details>
 
 <details>
   <summary>Menu Page (non-authenticated user) - No errors</summary> 
   
-  ![HTML Validation - Menu page](/documentation/readme_images/validator-menu-page.png)
+  ![HTML Validation - Menu page](/documentation/validation/validator-menu-page.png)
 </details>
 
 <details>
@@ -55,56 +55,56 @@ All HTML pages were validated using the [W3C HTML Validator](https://validator.w
 <details>
   <summary>Add Menu Item Page - No errors</summary>
   
-  ![HTML Validation - Add Menu Item page](/documentation/readme_images/validator-add-menu-item-page.png)
+  ![HTML Validation - Add Menu Item page](/documentation/validation/validator-add-menu-item-page.png)
 </details>
 <details>
   <summary>Edit Menu Item Page - No errors</summary>
   
-  ![HTML Validation - Edit Menu Item page](/documentation/readme_images/validator-edit-menu-item-page.png)
+  ![HTML Validation - Edit Menu Item page](/documentation/validation/validator-edit-menu-item-page.png)
 </details>
 <details>
   <summary>Delete Menu Item Page - No errors</summary>
   
-  ![HTML Validation - Delete Menu Item page](/documentation/readme_images/validator-delete-menu-item-page.png)
+  ![HTML Validation - Delete Menu Item page](/documentation/validation/validator-delete-menu-item-page.png)
 </details>
 
 <details>
   <summary>Contact Us Page - No errors</summary>
   
-  ![HTML Validation - Contact Us page](/documentation/readme_images/validator-contact-us-page.png)
+  ![HTML Validation - Contact Us page](/documentation/validation/validator-contact-us-page.png)
 </details>
 
 <details>
   <summary>Book A Room Page - FIX THIS AFTER USER ISSUES</summary> 
   
-  ![HTML Validation - Add Booking page](/documentation/readme_images/validator-about-zz.png)
+  ![HTML Validation - Add Booking page](/documentation/validation/validator-about-zz.png)
 
 </details>
 
 <details>
   <summary>My Bookings Page - No errors</summary> 
   
-  ![HTML Validation - My Bookings page](/documentation/readme_images/validator-my-bookings-page.png)
+  ![HTML Validation - My Bookings page](/documentation/validation/validator-my-bookings-page.png)
 
 </details>  
 
 <details>
   <summary>Edit A Booking Page - No errors</summary> 
   
-  ![HTML Validation - Edit Booking page](/documentation/readme_images/validator-edit-bookings-page.png)
+  ![HTML Validation - Edit Booking page](/documentation/validation/validator-edit-bookings-page.png)
 
 </details> 
 <details>
   <summary>Delete A Booking Page - No errors</summary> 
   
-  ![HTML Validation - Delete Booking page](/documentation/readme_images/validator-delete-booking-page.png)
+  ![HTML Validation - Delete Booking page](/documentation/validation/validator-delete-booking-page.png)
 
 </details> 
 
 <details>
   <summary>404 Error Page - No errors</summary> 
   
-  ![HTML Validation - Delete Booking page](/documentation/readme_images/validator-404-error-page.png)
+  ![HTML Validation - Delete Booking page](/documentation/validation/validator-404-error-page.png)
 </details>
 
 ### CSS
@@ -113,9 +113,9 @@ CSS codes used in the website were validated with [W3C CSS Validator](https://ji
 <details>
   <summary>CSS Codes - No errors, one warning</summary> 
   
-![CSS Validation - Full CSS, no error](/documentation/readme_images/css-validator.png)
+![CSS Validation - Full CSS, no error](/documentation//css-validator.png)
 
-![CSS Validation - Warning](/documentation/readme_images/css-validator-warning.png)
+![CSS Validation - Warning](/documentation/validation/css-validator-warning.png)
 </details>
 
 ### JavaScript
@@ -124,10 +124,10 @@ JavaScript codes used on the website were validated using [JSHint](https://jshin
 <details>
   <summary>JavaScript Codes - A few warnings that don't affect the functionality of the page. See explanations.</summary> 
   
-![JS Validation - Warnings](/documentation/readme_images/js-validator.png)
+![JS Validation - Warnings](/documentation/validation/js-validator.png)
 </details>
 
-### Python
+### Python - START HERE
 Python codes used throughout the application were validated using [CI Python Linter](https://pep8ci.herokuapp.com/) and no issues or errors were found.
 Please see the results for each page.
 

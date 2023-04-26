@@ -63,7 +63,7 @@ A link to the live site can be found here - [The Wine Garden BnB](https://wine-g
 A visitor The Wine Garden BnB website would likely be an adult looking to spend time away but who would also want all the amenities of home. This website provides information about a family-run business that meets those needs.
 
 
-### User Stories -- DO THESE START HERE 
+### User Stories 
 
 
 #### EPIC | Project Environment Setup
@@ -74,33 +74,36 @@ A visitor The Wine Garden BnB website would likely be an adult looking to spend 
 - Test and ensure project works locally
 
 
-#### EPIC | User Navigation
-- As a Site User I can immediately understand the purpose of the site so that I can decide if it meets my needs.
-- As a Site User, I can intuitively navigate around the site so that I can find content and understand where I am on the site.
-- As a Site User, I can view a paginated list of recipes so that I can select a recipe to view.
-- As a Site User, I can click on a recipe so that I can read the full recipe, ingredients required and view comments left by users.
+#### EPIC | Landing Page
+- 
 
 
-#### EPIC | Recipe Management
+#### EPIC | Initial Deployment
 - As a Site User, I can input my favourite recipes onto the app through an easy to use interface so that I can share them with other users.
 - As a Site User, I can edit and delete recipes that I have created so that I can easily make changes without having to start over.
 - As a Site User I can view my recipes so that I can see and manage all recipes I have created in the one location.
 - As a Site User I can view my bookmarked recipes so I can find them easily in the one location.
 
 
-#### EPIC | Recipe Interaction
+#### EPIC | Website Aesthetics
 - As a Site User, I can save other user's recipes to my bookmarks so that I can find them easily at a later date.
 - As a Site User, I can comment on other people's recipes so I can give my feedback.
 - As a Site User, I can edit and delete comments that I have created so that I can easily make changes if I have made a mistake.
 
 
-#### EPIC | Mealplan Management
-- As a Site User, I can add/delete recipes to my meal planner for a particular day of the week so that I can create a meal plan for the week ahead.
-- As a Site User, I can view my meal plan for the week when I log into my account so that I can plan for the week ahead.
+#### EPIC | User Account
+- 
 
 
-#### EPIC | Site Administration
+#### EPIC | Site Administration & Booking
 - As a Site Administrator, I can create, read, update and delete recipes, comments and meal plan items so that I can manage the app content.
+
+#### EPIC | Testing & Documentation
+- As a Site Administrator, I can create, read, update and delete recipes, comments and meal plan items so that I can manage the app content.
+
+#### EPIC | Error Pages
+- 
+
 
 #### User stories not yet implemented -- ARE THERE ANY ??
 
@@ -196,7 +199,7 @@ The 'Quicksand' font is the main font used on the page, while 'Montserrat' in a 
 
 The agile methodology was used throughout project development. EPICS, user stories and the steps of the process are shown on [GitHub projects](https://github.com/users/Kaylaesmith1/projects/2/views/1).
 
-In total, there were 9 EPICs that encompassed all user stories, depending on subject matter. Each user story was created as an 'issue' that outlined the goal to implement and the acceptance criteria. Once these criteria were developed and met, the user story moved through the process to the 'done' column. When all user stories specfic to an EPIC were completed, the EPIC itself was moved to the 'done' column. 
+In total, there were 8 EPICs that encompassed all user stories, depending on subject matter. Each user story was created as an 'issue' that outlined the goal to implement and the acceptance criteria. Once these criteria were developed and met, the user story moved through the process to the 'done' column. When all user stories specfic to an EPIC were completed, the EPIC itself was moved to the 'done' column. 
 
 Creating EPICs and user stories for this project facilitated a smooth working environment where both general and specific goals were visualized, more easily tackled and brought to fruition. 
 
@@ -215,130 +218,159 @@ The diagram below details the database schema.
 ## Testing
 
 Details of all testing done can be viewed in depth in the [TESTING.md](https://github.com/Kaylaesmith1/bed-and-breakfast/blob/main/TESTING.md) documentation.
-## Security Features and Defensive Design
+## Security Features and Defensive Design - DO THIS
 
-### User Authentication
+### User Authentication - DONE
 
-- Django's LoginRequiredMixin is used to make sure that any requests to access secure pages by non-authenticated users are redirected to the login page. 
-- Django's UserPassesTestMixin is used to limit access based on certain permissions i.e. to ensure users can only edit/delete recipes and comments for which they are the author. If the user doesn't pass the test they are shown an HTTP 403 Forbidden error.
+- Django's LoginRequiredMixin is used to ensure that any requests to access secure pages by non-authenticated or, in some cases, non-admin users, are redirected to the login page. 
 
-### Form Validation
-All fields in the contact form are required. If a user attempts to submit the form without this information,  or empty data is added to a form, the form won't submit and a warning will appear to the user informing them what field raised the error. 
 
-### Database Security
-The database url and secret key are stored in the env.py file to prevent unwanted connections to the database and this was set up before the first push to Github.
+### Form Validation - DONE
+All fields in the contact form are required. If a user attempts to submit the form without filling in all fields, a warning text will appear at the bottom of the form asking them to complete the fields. The form will not submit until all fields are filled in. Once this is done, a message will pop up that the form was submitted successfully.
 
-Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this site.
+### Database Security - DONE
+The database url and secret key are stored in the env.py file to prevent unwanted connections to the database. The env.py file was created before the initial push to GitHub.
 
-### Custom error pages:
+Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this site, barring the contact form.
+
+### Custom error pages: DONE
 
 Custom Error Pages were created to give the user more information on the error and to provide them with buttons to guide them back to the site.
 
-- 400 Bad Request - The Easy Eater is unable to handle this request.
-- 403 Page Forbidden - Looks like you're trying to access forbidden content. Please log out and sign in to the correct account.
-- 404 Page Not Found - The page you're looking for doesn't exist.
-- 500 Server Error - The Easy Eater is currently unable to handle this request
+- 404 Page Not Found - "Sorry! The page you're looking for doesn't exist. Click below to return to the homepage." Below, there is a clickable button that will take the user back to the home page.
+- 500 Server Error - "Sorry! The Wine Garden BnB can't handle this request at the moment. Please return to the home page." Below this, there is a button that will take the user back to the home page.
 
 ## Features
 
 ### Header
 
-![header](docs/readme_images/features/nav_loggedout.png)
+![Header](/documentation/readme_images/header.png)
 
 **Logo**
-- A customised logo was created using Hatchful by Shopify which is a free logo generator.
-- This logo is positioned in the top left of the navigation bar. The logo is linked to the home page for ease of navigation for the user.
+- A customized logo was created using the free logo generator, [Hatchful](https://www.shopify.com/tools/logo-maker), by Shopify.
+- The logo is positioned at the top left of the navigation bar. The logo is linked to the home page so the user can easily navigate the site.
 
-**Navigation Bar**
+![Header](/documentation/readme_images/navbar-logo.png)
 
-- The navigation bar is present at the top of every page and includes all links to the various other pages.
-- The My Account navigation link is a drop down menu which includes the Sign up and Log in links. 
-- When the user has logged in, the My Account drop down menu changes to display the user's name and a profile icon.
+**Navigation Bar** DONE
 
-![header](docs/readme_images/features/header.png)
+- The navigation bar is present at the top of every page and includes all links to the other pages.
+- The My Account navigation link is a drop down menu that includes the Sign up and Log in links. 
 
-- The options to Sign up or Log in will change to the option to log out once a user has logged in.
-- Once a user has signed in, more options such as 'Add Recipe', 'My Meal Plan', 'My Recipes' and 'My Bookmarks' become available.
-- The navigation bar is fully responsive, collapsing into a hamburger menu when the screen size becomes too small.
-- Hovering over the links will lighten the font.
+![Header](/documentation/readme_images/navbar-no-user.png)
+
+- When a user is logged in, the title changes to the user's name with a profile icon and the dropdown menu includes the Book A Room, My Bookings and Logout page links.
+
+![Header](/documentation/readme_images/navbar-authenticated-user.png)
+
+- The navigation bar is fully responsive and collapses into a hamburger menu icon on smaller screen sizes. collapsing into a hamburger menu when the screen size becomes too small. When the hamburger is clicked, the menu options open on the left-hand side just under the page logo.
+
+![Header](/documentation/readme_images/navbar-hamburger.png)
+
+- Hovering over the links will change the color to a light green.
+
+![Header](/documentation/readme_images/navbar-hover.png)
 
 
-### Footer
+### Footer - DONE
+- The footer section includes working links to GitHub, Twitter, Instagram and Facebook. Clicking each link will open a separate browser page to the login of that website, barring the GitHub icon, which opens to my personal GitHub page.
 
-![header](docs/readme_images/features/footer.png)
+![Footer](/documentation/readme_images/footer.png)
 
-- The footer section includes links to Facebook, Instagram, Twitter and Youtube.
-- Clicking the links in the footer opens a separate browser tab to avoid pulling the user away from the site.
+- Hovering over the links will change the color to a light green, identical to the navbar. 
+
+![Footer](/documentation/readme_images/footer-hover.png)
 
 ### Home Page
 
-**Call to Action Section**
+**Call to Action Section** DONE
+- The landing page includes a call to action section which encourages the user to book a room at The Wine Garden BnB. If the user is logged in, the message above the 'Book Now' button is, "Start planning your stay at The Wine Garden BnB". 
 
-![header](docs/readme_images/features/call_out.png)
+![Landing Page - Call to Action](/documentation/readme_images/landing-hero-image-authenticated.png)
+- If the user is not logged in, "Enjoy a relaxing stay and a glass of wine in the tranquility of a Midwest vineyard!" appears. Below, a 'Book Now' button is visible and will take the user to the login page where they can either log in or sign up to continue the booking process.
 
-- The home page includes a call to action section which encourages the user to sign up to the site with the message "Take the stress out of everyday cooking!" and an image of a family dinner.
-- The CTA includes a sign up button which takes the user to the sign up page.
-- If a user is already signed in the message changes to 'Welcome back to The Easy Eater' and the user is encouraged to create a new recipe.
-- The sign up button changes to a 'Create' button which takes the user to the 'Add recipe' page. 
+![Landing Page - Call to Action](/documentation/readme_images/landing-hero-image.png)
 
-![header](docs/readme_images/features/callout_logged_in.png)
 
-**What We Do Section**
 
-![header](docs/readme_images/features/what_we_do.png)
+**Why a BnB Section**
+- The "Why a bed and breakfast' section gives a brief overview of why users should choose a bed and breakfast over a 'cookie cutter' hotel experience. Under that, a few of the ammenities are listed in short paragraphs with three icons of the most important features The Wine Garden has to offer.
 
-- The "What We Do' section gives a brief overview of what the site has to offer and summarises the basic features with three simple steps illustrated with font-awesome icons.
+![Landing Page - Why a BnB](/documentation/readme_images/landing-why-bnb.png)
+
 
 ### User Account Pages
 
 **Sign Up**
 
-![header](docs/readme_images/features/signup.png)
+![Sign Up](/documentation/readme_images/sign-up.png)
 
 **Log In**
 
-![header](docs/readme_images/features/login.png)
+![Log In](/documentation/readme_images/login.png)
 
 **Log Out**
 
-![header](docs/readme_images/features/logout.png)
+![Log Out](/documentation/readme_images/logout.png)
 
-- Django allauth was installed and used to create the Sign up, Log in and Log out functionality. 
-- Success messages inform the user if they have logged in/ logged out successfully.
+- Django allauth was installed and used to create the Sign up, Log In and Log Out functionality and pages. 
 
-### Browse Recipes
+![Successful Log In](/documentation/readme_images/success-login.png)
+![Successful Log Out](/documentation/readme_images/success-logout.png)
 
-![header](docs/readme_images/features/browse_page.png)
+- Success messages inform the user if they have logged in and logged out successfully and are present on the site for 3 seconds before automatically disappearing.
 
-- This page displays all recipes with a status of published with the most recent recipes displayed first.
-- The recipe cards are paginated after every 8 recipes. 
-- Each card displays the recipe's image, Title and Cook Time. 
-- Clicking anywhere inside the recipe card will take you directly to that recipe's detailed page.
+### About Page
+**Get To Know Us Section**
 
-### Recipe Detail Page
-**Recipe Header Section**
+- In this section there is an image of a cottage in a vineyard on the left and a 'Get to Know Us' section on the right describing the BnB and some of the features a person would find upon visiting.
 
-![header](docs/readme_images/features/recipe_header.png)
+![About Page - Get to know us](/documentation/readme_images/about-know-us.png)
 
-The recipe header section at the top of the page shows the recipe image, title, author, prep time and cook time.
+**Customer Reviews Section**
+- This is a static section that shows four customer reviews of The Wine Garden BnB.
 
-**Recipe Action Buttons**
+![About Page - Customer Reviews](/documentation/readme_images/about-customer-reviews.png)
 
-The following buttons will display if the user is logged in:
+### Menu Page
+**Menu Section for non-authenticated and non-admin visitors**
 
-![header](docs/readme_images/features/buttons_not_author.png)
+- This page displays the breakfast banner and six categories of menu items. 
+- Non logged in visitors and non-admin users will see a static page with items, they will not be able to add, edit, or delete items.
 
-- Add to Meal Plan Button - Clicking on the button opens the Meal Plan Modal (see below).
-- Bookmark button - Clicking the outlined bookmark button renders the recipe 'bookmarked' by the user which will then fill the bookmark icon and add the recipe to the user's bookmarks page. Clicking the button again will remove the recipe from the user's bookmarks and turn the icon back to an outline.
+![Menu Page - non-admin users](/documentation/readme_images/bfast-menu1.png)
+![Menu Page - non-admin users](/documentation/readme_images/bfast-menu2.png)
 
-The following buttons will display if the user is logged in and is the recipe author:
+**Menu Section for admin users**
 
-![header](docs/readme_images/features/action_buttons.png)
+- The overall look of the page is the same. If a user is logged in as an Admin super user, they can add, edit and delete menu items.
 
-- Update Recipe Button - Clicking the button opens the update recipe form prepopulated with the current recipe details.
-- Delete Recipe Button - Clicking the button opens the confirm delete recipe page. 
+![Menu Page - non-admin users](/documentation/readme_images/bfast-menu1-authenticated.png)
+![Menu Page - non-admin users](/documentation/readme_images/bfast-menu2-authenticated.png)
 
-**Meal Plan Modal**
+- The 'Edit A Menu Item' appears with fields pre-filled in and the Admin user can change them and update the product card.
+
+![Menu Page - non-admin users](/documentation/readme_images/bfast-edit-item.png)
+
+- If the Admin user chooses to delete a menu item, they are asked if they're sure they want to delete that specific menu item. Once they click the 'Delete Item' button, the item is deleted permanently from the live site and the Django database.
+
+![Menu Page - non-admin users](/documentation/readme_images/bfast-delete-item.png)
+
+
+### Contact Us Page
+The Contact Us page includes a Google Map of a winery in existence in Iowa. Given that The Wine Garden BnB is not a real place, a substitute, Summerset Winery, was used for the purpose of this project. 
+
+![Contact Us Page - non-admin users](/documentation/readme_images/contact.png)
+
+- The page includes a contact form on the left-hand side that was implemented with [Email JS](https://www.emailjs.com/) and a Google Map on the right side.
+
+- Filling out the contact form will send a message to my personal in box. The user is alerted both after successfully filling out and submitting the form and if they need to fill in a field. All fields are obligatory. The success or error messages stay for three seconds and disappear automatically.
+
+![Contact Us Page - non-admin users](/documentation/readme_images/contact-success.png)
+
+![Contact Us Page - non-admin users](/documentation/readme_images/contact-error-fields.png)
+
+**Meal Plan Modal** START HERE
 
 ![header](docs/readme_images/features/mealplan_modal.png)
 
