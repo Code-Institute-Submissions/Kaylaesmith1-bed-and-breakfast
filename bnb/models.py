@@ -8,7 +8,7 @@ from datetime import date
 class Customer(models.Model):
     """
     CUSTOMER CONTACT FORM, allows site
-    visitors to write a message or query to 
+    visitors to write a message or query to
     the business owners.
     """
     first_name = models.CharField(max_length=50, blank=True)
@@ -101,8 +101,8 @@ class Room(models.Model):
 
 class Booking(models.Model):
     """
-    BOOKING ROOMS. Model uses the User Foreign Key 
-    so each booking is associated with a user. 
+    BOOKING ROOMS. Model uses the User Foreign Key
+    so each booking is associated with a user.
     User is authenticated but doesn't have to be Admin.
     """
 
