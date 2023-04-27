@@ -4,7 +4,7 @@ function sendMail(contactForm) {
         "from_lname": contactForm.lastname.value,
         "from_email": contactForm.emailaddress.value,
         "message": contactForm.message.value
-    })
+    });
     return false;
 }
 

@@ -47,10 +47,9 @@ All HTML pages were validated using the [W3C HTML Validator](https://validator.w
 </details>
 
 <details>
-  <summary>Menu Page (superuser) - FIX THIS</summary> 
+  <summary>Menu Page (superuser) - No errors</summary> 
   
-  <img src="docs/images/testing/my-recipes-page.png">
-
+  ![HTML Validation - Menu page](/documentation/validation/validator-menu-page-superuser.png)
 </details>
 <details>
   <summary>Add Menu Item Page - No errors</summary>
@@ -75,9 +74,9 @@ All HTML pages were validated using the [W3C HTML Validator](https://validator.w
 </details>
 
 <details>
-  <summary>Book A Room Page - FIX THIS AFTER USER ISSUES</summary> 
+  <summary>Book A Room Page - No errors</summary> 
   
-  ![HTML Validation - Add Booking page](/documentation/validation/validator-about-zz.png)
+  ![HTML Validation - Add Booking page](/documentation/validation/validator-add-booking.png)
 
 </details>
 
@@ -119,7 +118,7 @@ CSS codes used in the website were validated with [W3C CSS Validator](https://ji
 </details>
 
 ### JavaScript
-JavaScript codes used on the website were validated using [JSHint](https://jshint.com/). No errors were found, though there were a few warnings and undefined / unused variables. Please see below for explanations.
+JavaScript codes used on the website were validated using [JSHint](https://jshint.com/). No errors were found, though there were a few warnings regarding undefined / unused variables. Please see the image below for explanations.
 
 <details>
   <summary>JavaScript Codes - A few warnings that don't affect the functionality of the page. See explanations.</summary> 
@@ -127,106 +126,80 @@ JavaScript codes used on the website were validated using [JSHint](https://jshin
 ![JS Validation - Warnings](/documentation/validation/js-validator.png)
 </details>
 
-### Python - START HERE
+### Python
 Python codes used throughout the application were validated using [CI Python Linter](https://pep8ci.herokuapp.com/) and no issues or errors were found.
-Please see the results for each page.
+Please see the results for each page below.
 
-#### Happy Beans Project
+#### wine_garden_bnb App
 <details>
-  <summary>asgi.py - No issues or errors</summary> 
+  <summary>asgi.py - No errors</summary> 
   
-  <img src="docs/images/testing/asgi.png">
-
+![Python Validation](/documentation/validation/python-asgi.png)
 </details>
 
 <details>
-  <summary>settings.py - No issues or errors</summary> 
+  <summary>settings.py - No errors</summary> 
   
-  <img src="docs/images/testing/settings.png">
-
+![Python Validation](/documentation/validation/python-settings.png)
 </details>
 
-Note: `# noqa` was added to Django generated codes under `AUTH_PASSWORD_VALIDATORS` and also Cloudinary storage under `STATICFILES_STORAGE` for "line too long" errors to be ignored as these could not be shortened.
+Note: `# noqa` was added to Django generated codes under `AUTH_PASSWORD_VALIDATORS` and to Cloudinary storage under `STATICFILES_STORAGE` to combat the "line too long" errors that originally arose. `# noqa` forces these errors to be ignored as the text could not be shortened in the file.
 
 <details>
-  <summary>urls.py - No issues or errors</summary> 
+  <summary>urls.py - No errors</summary> 
   
-  <img src="docs/images/testing/urls-project.png">
-
+![Python Validation](/documentation/validation/python-urls.png)
 </details>
 
 <details>
-  <summary>wsgi.py - No issues or errors</summary> 
+  <summary>wsgi.py - No errors</summary> 
   
-  <img src="docs/images/testing/wsgi.png">
+![Python Validation](/documentation/validation/python-wsgi.png)
 
 </details>
 
-#### Recipe App
+#### bnb App
 <details>
-  <summary>admin.py - No issues or errors</summary> 
+  <summary>admin.py - No errors</summary> 
   
-  <img src="docs/images/testing/admin.png">
-
-</details>
-
-<details>
-  <summary>apps.py - No issues or errors</summary> 
-  
-  <img src="docs/images/testing/apps.png">
-
+![Python Validation](/documentation/validation/python-admin.png)
 </details>
 
 <details>
-  <summary>filters.py - No issues or errors</summary> 
+  <summary>apps.py - No errors</summary> 
   
-  <img src="docs/images/testing/filters.png">
-
+![Python Validation](/documentation/validation/python-apps.png)
 </details>
 
 <details>
-  <summary>forms.py - No issues or errors</summary> 
+  <summary>forms.py - No errors</summary> 
   
-  <img src="docs/images/testing/forms.png">
-
+![Python Validation](/documentation/validation/python-forms.png)
 </details>
 
 <details>
-  <summary>models.py - No issues or errors</summary> 
+  <summary>models.py - No errors</summary> 
   
-  <img src="docs/images/testing/models.png">
-
+![Python Validation](/documentation/validation/python-models.png)
 </details>
+Note: `# noqa` was added to line 94 to combat the "line too long" error that originally arose.
 
 <details>
-  <summary>urls.py - No issues or errors</summary> 
+  <summary>urls.py - No errors</summary> 
   
-  <img src="docs/images/testing/urls.png">
-
+![Python Validation](/documentation/validation/python-bnb-urls.png)
 </details>
+Note: `# noqa` was added to lines 3, 21 and 22 to combat the "line too long" errors that originally arose.
 
 <details>
-  <summary>validators.py - No issues or errors</summary> 
+  <summary>views.py - No errors</summary> 
   
-  <img src="docs/images/testing/validators.png">
+![Python Validation](/documentation/validation/python-views.png)
 
 </details>
+Note: `# noqa` was added to line 1 to combat the "line too long" error that originally arose.
 
-<details>
-  <summary>views.py - No issues or errors</summary> 
-  
-  <img src="docs/images/testing/views.png">
-
-</details>
-
-<details>
-  <summary>recipeapp_tags.py - No issues or errors</summary> 
-  
-  <img src="docs/images/testing/recipeapp-tags.png">
-
-</details>
-
-## Accessibility
+## Accessibility - START HERE
 [Wave Web Accessibility Evaluation Tools](https://wave.webaim.org/) were used to test accessibility. The only errors identified were for Crispy Form fields. Please see the results below for each page.
 
 <details>

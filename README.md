@@ -370,7 +370,7 @@ The Contact Us page includes a Google Map of a winery in existence in Iowa. Give
 
 ![Contact Us Page - non-admin users](/documentation/readme_images/contact-error-fields.png)
 
-**Meal Plan Modal** START HERE
+**Meal Plan Modal** START HERE (book a room page, my bookings)
 
 ![header](docs/readme_images/features/mealplan_modal.png)
 

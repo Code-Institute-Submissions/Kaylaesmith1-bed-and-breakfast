@@ -91,7 +91,7 @@ class Room(models.Model):
         ('Queen Bedroom', 'Queen Bedroom'),
     )
 
-    category = models.CharField(max_length=50, choices=ROOM_CATEGORIES, blank=True, null=True)
+    category = models.CharField(max_length=50, choices=ROOM_CATEGORIES, blank=True, null=True)  # noqa
     beds = models.IntegerField()
     capacity = models.IntegerField()
 
@@ -107,7 +107,6 @@ class Booking(models.Model):
     """
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, default=user.username)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    check_in = models.DateField(null=False, default=date(2023, 4, 25))
-    check_out = models.DateField(null=False, default=date(2023, 4, 28))
+    check_in = models.DateField(null=False, default=date(2023, 5, 21))
+    check_out = models.DateField(null=False, default=date(2023, 5, 28))

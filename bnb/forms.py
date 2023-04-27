@@ -28,6 +28,4 @@ class BookingForm(forms.ModelForm):
 
     class Meta:
         model = Booking
-        fields = '__all__'
-        # exclude = ('user',)
-        # fields = ['room', 'check_in', 'check_out']
+        fields = ['room', 'check_in', 'check_out']

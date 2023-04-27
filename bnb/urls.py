@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import create_customer, food_list, add_menu_item, update_menu_item, delete_menu_item, delete_booking, add_booking
+from .views import create_customer, food_list, add_menu_item, update_menu_item, delete_menu_item, delete_booking, add_booking  # noqa
 
 urlpatterns = [
     # OPEN NAV BAR PAGES
@@ -18,7 +18,7 @@ urlpatterns = [
     # ADD / EDIT / DELETE A BOOKING
     path('bookings/', add_booking, name='bookings'),
     path('my_bookings/', views.BookingListView.as_view(), name='my_bookings'),
-    path('edit_bookings/<booking_id>', views.edit_bookings, name='edit_bookings'),
-    path('booking_detail/', views.BookingDetail.as_view(), name='booking_detail'),
+    path('edit_bookings/<booking_id>', views.edit_bookings, name='edit_bookings'),  # noqa
+    path('booking_detail/', views.BookingDetail.as_view(), name='booking_detail'),  # noqa
     path('delete_booking/<booking_id>', delete_booking, name='delete_booking'),
     ]

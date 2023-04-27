@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse, redirect, get_object_or_404, get_list_or_404
+from django.shortcuts import render, reverse, redirect, get_object_or_404, get_list_or_404  # noqa
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import generic, View
@@ -163,6 +163,7 @@ def add_booking(request):
 
         form = BookingForm(request.POST, request.FILES)
         if form.is_valid():
+            form.instance.user = request.user
             form.save()
             messages.success(request, 'Booking added successfully')
             return redirect(reverse('my_bookings'))
