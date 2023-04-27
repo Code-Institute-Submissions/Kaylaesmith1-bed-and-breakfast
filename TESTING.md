@@ -200,26 +200,26 @@ Note: `# noqa` was added to lines 3, 21 and 22 to combat the "line too long" err
 Note: `# noqa` was added to line 1 to combat the "line too long" error that originally arose.
 
 ## Accessibility - START HERE
-[Wave Web Accessibility Evaluation Tools](https://wave.webaim.org/) were used to test accessibility. The only errors identified were for Crispy Form fields. Please see the results below for each page.
+[Wave Web Accessibility Evaluation Tools](https://wave.webaim.org/) were used to test accessibility. Please see the results below for each page.
 
 <details>
   <summary>Home Page - No errors</summary>
   
-  <img src="docs/images/testing/wave-home-page.png">
+![Wave Validation](/documentation/validation/wave-home.png)
 
 </details>
 
 <details>
   <summary>Sign Up Page - No errors</summary>
   
-  <img src="docs/images/testing/wave-signup-page.png">
+![Wave Validation](/documentation/validation/wave-signup.png)
 
 </details>
 
 <details>
   <summary>Log In Page - No errors</summary>
   
-  <img src="docs/images/testing/wave-login-page.png">
+![Wave Validation](/documentation/validation/wave-login.png)
 
 </details>
 
@@ -233,34 +233,34 @@ Note: `# noqa` was added to line 1 to combat the "line too long" error that orig
 
 
 <details>
-  <summary>Browse Recipes Page - No errors</summary>
+  <summary>About Page - No errors</summary>
   
   <img src="docs/images/testing/wave-browse-recipes.png">
 
 </details>
 
 <details>
-  <summary>My Favourites Page - No errors</summary> 
+  <summary>Contact Us Page - No errors</summary> 
   
   <img src="docs/images/testing/wave-my-favourites-page.png">
 
 </details>
 
 <details>
-  <summary>My Recipes Page - No errors</summary> 
+  <summary>Add A Booking Page - No errors</summary> 
   
   <img src="docs/images/testing/wave-my-recipes-page.png">
 
 </details>
 
 <details>
-  <summary>Update Comment Page - Missing form label error</summary> 
+  <summary>My Bookings Page - Missing form label error</summary> 
   
   <img src="docs/images/testing/wave-update-comment-page.png">
 
 </details>
 
-The error identified was a missing form label for the Crispy Form used in the Comment field. Since the error resulted from the Crispy Form codes, this was not addressed.
+The errors identified was a missing form label for the fields in the contact form. Since the error resulted from the Crispy Form codes, this was not addressed.
 
 <details>
   <summary>Post Recipe Page - No errors</summary> 

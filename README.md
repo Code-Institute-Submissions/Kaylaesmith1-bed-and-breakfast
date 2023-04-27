@@ -10,7 +10,7 @@ The site is targets users wanting to spend a few days away from home but not nec
 A link to the live site can be found here - [The Wine Garden BnB](https://wine-garden-bnb.herokuapp.com/)
 
 
-![Responsive site design]("")
+![Responsive site design](/documentation/readme_images/amiresponsive.png)
 
 
 ## Table of Contents

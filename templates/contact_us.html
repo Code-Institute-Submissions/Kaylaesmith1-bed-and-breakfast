@@ -28,19 +28,21 @@
                 <form onsubmit="return sendMail(this);" class="card-body">
                     <div class="row">
                         <div class="col-6">
-                            <div class="fields">First name</div>
-                            <input type="text" name="firstname" id="firstname" class="form-control" required>
+                            
+                            <label for="firstname" class="fields">First name</label>
+                           <input type="text" name="firstname" id="firstname" class="form-control" required>
+                        
                         </div>
                         <div class="col-6">
-                            <div class="fields">Last name</div>
+                            <label for="lastname" class="fields">Last name</label>
                             <input type="text" name="lastname" id="lastname" class="form-control" required>
                         </div>
                         <div class="col-12">
-                            <div class="fields">Email</div>
+                            <label for="email" class="fields">Email</label>
                             <input type="email" name="email" id="emailaddress" class="form-control" required>
                         </div>
                         <div class="col-12">
-                            <div class="fields">Message</div>
+                            <label for="message" class="fields">Message</label>
                             <textarea rows="5" name="message" id="message" class="form-control" required></textarea>
                         </div>
 
