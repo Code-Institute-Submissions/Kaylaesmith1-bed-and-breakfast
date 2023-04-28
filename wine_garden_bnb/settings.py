@@ -34,10 +34,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Then do: python manage.py collectstatic
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['wine-garden-bnb.herokuapp.com']
-# ALLOWED_HOSTS = ['localhost']
+# ALLOWED_HOSTS = ['wine-garden-bnb.herokuapp.com']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition

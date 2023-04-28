@@ -17,39 +17,40 @@ A link to the live site can be found here - [The Wine Garden BnB](https://wine-g
 
 
 - [The Wine Garden BnB](#the-wine-garden-bnb)
- * [User Experience (UX)](#user-experience-ux)
-   + [User Stories](#user-stories)
+ * [User Experience (UX)](#userexperience)
+   + [User Stories](#userstories)
    + [Design](#design)
-     - [Color Scheme](#color-scheme)
-     - [Imagse](#images)
+     - [Color Scheme](#colors)
+     - [Images](#images)
      - [Fonts](#fonts)
      - [Wireframes](#wireframes)
- * [Agile Methodology](#agile-methodology)
- * [Data Model](#data-model)
+ * [Agile Methodology](#agile)
+ * [Data Model](#datamodel)
  * [Testing](#testing)
- * [Security Features and Defensive Design](#security-features-and-defensive-design)
-   + [User Authentication](#user-authentication)
-   + [Form Validation](#form-validation)
-   + [Database Security](#database-security)
-   + [Custom error pages:](#custom-error-pages-)
+ * [Security Features and Defensive Design](#security)
+   + [User Authentication](#userauthentication)
+   + [Form Validation](#formvalidation)
+   + [Database Security](#databasesecurity)
+   + [Custom error pages:](#customerrorpages)
  * [Features](#features)
    + [Header](#header)
    + [Footer](#footer)
-   + [Home Page](#home-page)
-   + [User Account Pages](#user-account-pages)
-   + [Browse Recipes](#browse-recipes)
-   + [Recipe Detail Page](#recipe-detail-page)
-   + [Add Recipe Form](#add-recipe-form)
-   + [Update Recipe Form](#update-recipe-form)
-   + [Delete Recipe](#delete-recipe)
-   + [My Meal Plan](#my-meal-plan)
-   + [My Recipes Page](#my-recipes-page)
-   + [My Bookmarks Page](#my-bookmarks-page)
-   + [Error Pages](#error-pages)
-   + [Future Features](#future-features)
- * [Deployment - Heroku](#deployment---heroku)
- * [Forking this repository](#forking-this-repository)
- * [Cloning this repository](#cloning-this-repository)
+   + [Home Page](#homepage)
+   + [User Account Pages](#useraccount)
+   + [About Page](#about)
+   + [Menu Page](#menu)
+   + [Add Menu Item Form](#additem)
+   + [Edit Menu Item Form](#edititem)
+   + [Delete Menu Item](#deleteitem)
+   + [Contact Us Page](#contact)
+   + [Book A Room Page](#bookroom)
+   + [My Bookings Page](#mybookings)
+   + [Edit Bookings Page](#editbookings)
+   + [Delete A Booking Page](#deletebooking)
+   + [Future Features](#futurefeatures)
+ * [Deployment - Heroku](#deployment)
+ * [Forking this repository](#forkrepo)
+ * [Cloning this repository](#clonerepo)
  * [Languages](#languages)
  * [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
  * [Credits](#credits)
@@ -63,51 +64,66 @@ A link to the live site can be found here - [The Wine Garden BnB](https://wine-g
 A visitor The Wine Garden BnB website would likely be an adult looking to spend time away but who would also want all the amenities of home. This website provides information about a family-run business that meets those needs.
 
 
-### User Stories 
+### User Stories - DONE
 
 
-#### EPIC | Project Environment Setup
-#### As the developer, I can create a new project so that I can develop the website.
-- Create project (GitHub)
-- Install Django
-- Create env.py file with secure variables in .gitignore file
-- Test and ensure project works locally
+#### EPIC | Project Environment Setup -DONE
+As the developer, I can create a new project so that I can develop the website.
+#### USER STORIES
+- As the developer, I can create a new project on GitHub so that I am ready to start developing the website.
+- As the developer I can install Django and any other libraries needed so that I can start developing the website.
+- As the developer, I will create an env.py file with secure variables so that sensitive information is kept unpublished publicly.
+- As the developer, I can test the project locally so that I will be able to see any changes locally before pushing to GitHub / Heroku.
+
+#### EPIC | Landing Page -DONE 
+As the developer, I can design a functional, easy-to-use landing page so that users can easily navigate through pages and use the site.
+#### USER STORIES
+- As a user, I can contact the developer through social links so that learn more about their work or get questions answered.
+- As a user, I can use the website on all device sizes so that I can see the same information on small and large devices.
+- As a user, I can use the navigation bar so that I can view all pages of the website easily
+
+#### EPIC | Initial Deployment -DONE
+As the developer, I can deploy the app on Heroku so that users can view and interact with the site publicly.
+#### USER STORIES
+- As the developer I can deploy the app to Heroku so that I can ensure it works properly before heavily starting development on the site.
+- As the developer, I can link the GitHub repository to the Heroku app so that when I commit changes on GitHub they are reflected on Heroku automatically.
+
+#### EPIC | Website Aesthetics -DONE
+As the developer, I can design an aesthetically pleasing webpage so that users can easily navigate the site.
+#### USER STORIES
+- As the developer, I can use complimentary colors so that users can navigate the website easily.
+- As a user, I can see the favicon on the web tab so that know I'm on the BnB page.
+- As a user, I can click the logo of the website so that I can easily get back to the homepage.
+- As the developer I can create wireframes so I can plan the layout of the website.
 
 
-#### EPIC | Landing Page
-- 
+#### EPIC | User Account - DONE
+As the developer, I can create a register / login feature so users and create an account and login / logout.
+#### USER STORIES
+- As a user I can sign up, log in and log out so that I can see the features available to registered users.
 
 
-#### EPIC | Initial Deployment
-- As a Site User, I can input my favourite recipes onto the app through an easy to use interface so that I can share them with other users.
-- As a Site User, I can edit and delete recipes that I have created so that I can easily make changes without having to start over.
-- As a Site User I can view my recipes so that I can see and manage all recipes I have created in the one location.
-- As a Site User I can view my bookmarked recipes so I can find them easily in the one location.
+### EPIC | Site Administration & Booking -DONE
+As a site admin, I can manage all bookings and create, read, update and delete menu items so that I can control site bookings and the food / drink content.
+#### USER STORIES
+- As a user, I can create, read, update or delete food and drink items so that the menu is up to date.
+
+- As a logged in user, I can click the 'booking' button so that I can easily view and manage my booking.
 
 
-#### EPIC | Website Aesthetics
-- As a Site User, I can save other user's recipes to my bookmarks so that I can find them easily at a later date.
-- As a Site User, I can comment on other people's recipes so I can give my feedback.
-- As a Site User, I can edit and delete comments that I have created so that I can easily make changes if I have made a mistake.
+### EPIC | Testing & Documentation -DONE
+As the developer, I can concisely document my testing and deployment methods so assessors and other developers can understand the website from a technical standpoint.
+#### USER STORIES
+- As the developer, I can create a README.md file so that other developers and the assessors can have an in-depth look at the website's structure and programming.
+- As the developer, I can create a TESTING.md file so that the assessors can see the bugs and their solutions identified and the validation passed.
+- As the developer, I can concisely describe the Heroku deployment process so that others know how to deploy an app on Heroku.
 
+### EPIC | Error Pages - DONE
+As the developer, I can create status error pages so users will know if there is a problem.
+#### USER STORIES
+- As the developer I can create a 500 error page so that users will know if there are internal server errors.
+- As the developer I can create a 404 error page so that users will know when they've tried to access a page that doesn't exist.
 
-#### EPIC | User Account
-- 
-
-
-#### EPIC | Site Administration & Booking
-- As a Site Administrator, I can create, read, update and delete recipes, comments and meal plan items so that I can manage the app content.
-
-#### EPIC | Testing & Documentation
-- As a Site Administrator, I can create, read, update and delete recipes, comments and meal plan items so that I can manage the app content.
-
-#### EPIC | Error Pages
-- 
-
-
-#### User stories not yet implemented -- ARE THERE ANY ??
-
-The following user stories were not included within the scope of Portfolio Project 4. They are intended to be implemented in the future.
 
 ### Design -- DONE
 
@@ -137,7 +153,7 @@ Two different static images are included on the site depicting a homestead in a 
 #### Fonts -- DONE
 The 'Quicksand' font is the main font used on the page, while 'Montserrat' in a bolder weight was used for the navbar and 'Kanit' for other accent areas. The 'Sans-serif' font is noted as a backup and will be used in the event that the main fonts aren't imported correctly to the site. These font style were chosen for their ease of legibility and general letter spacing and were imported from [Google Fonts](https://fonts.google.com/).
 
-#### Wireframes
+#### Wireframes -DONE
 
 <details>
 
@@ -163,14 +179,14 @@ The 'Quicksand' font is the main font used on the page, while 'Montserrat' in a 
 
 <details>
 
-<summary>XX My Bookings XX</summary>
+<summary>My Bookings</summary>
 
-![My Bookings](XX)
+![My Bookings](documentation/wire_frames/booking.png)
 </details>
 
 <details>
 
-<summary>XX Menu XX</summary>
+<summary>Menu</summary>
 
 ![Menu](documentation/wire_frames/menu.png)
 </details>
@@ -199,26 +215,28 @@ The 'Quicksand' font is the main font used on the page, while 'Montserrat' in a 
 
 The agile methodology was used throughout project development. EPICS, user stories and the steps of the process are shown on [GitHub projects](https://github.com/users/Kaylaesmith1/projects/2/views/1).
 
-In total, there were 8 EPICs that encompassed all user stories, depending on subject matter. Each user story was created as an 'issue' that outlined the goal to implement and the acceptance criteria. Once these criteria were developed and met, the user story moved through the process to the 'done' column. When all user stories specfic to an EPIC were completed, the EPIC itself was moved to the 'done' column. 
+In total, there were eight EPICs that encompassed all user stories, depending on subject matter. Each user story was created as an 'issue' that outlined the goal to implement and the acceptance criteria. Once these criteria were developed and met, the user story moved through the process to the 'done' column. When all user stories specfic to an EPIC were completed, the EPIC itself was moved to the 'done' column. 
 
 Creating EPICs and user stories for this project facilitated a smooth working environment where both general and specific goals were visualized, more easily tackled and brought to fruition. 
 
-## Data Model -- FINISH THIS W NEW MODELS
+## Data Model DONE
 I used principles of Object-Oriented Programming throughout this project and Django’s Class-Based Generic Views. Django AllAuth was used for user authentication.
-
-A custom Menu model was made to incorporate CRUD functionality for admin users. This allows logged in, admin users to add, edit or delete a menu item, both from the live site and from the Django admin page.
 
 The Customer model displays a working contact form on the Contact Us page. [Email js](https://www.emailjs.com/) was also used to ensure queries are addressed. For the purpose of this project, the emails arrive in my personal inbox.
 
+A custom Menu model was made to incorporate CRUD functionality for admin superusers. This allows logged in, admin users to add, edit or delete a menu item, both from the live site and from the Django database via the Django admin page.
 
-The diagram below details the database schema.
+The Item model displays all menu items in the six chosen categories. The required fields are the name of the item, a slug field and a description.
 
-![Database Schema]() -- IS NECESSARY?
+The Room model has a list of the two rooms available to book, either the Master Bedroom or the Queen Bedroom. Logged in users can select one via a dropdown menu in the booking form on the Book A Room page.
+
+The Booking model is for the user to select the room, check in and check out dates. They are unable to select the user on the form. Once the room is booked, the user is the logged in person by default.
+
 
 ## Testing
 
-Details of all testing done can be viewed in depth in the [TESTING.md](https://github.com/Kaylaesmith1/bed-and-breakfast/blob/main/TESTING.md) documentation.
-## Security Features and Defensive Design - DO THIS
+Details of all testing done can be viewed in depth in the [TESTING.md](https://github.com/Kaylaesmith1/bed-and-breakfast/blob/main/TESTING.md) document.
+## Security Features and Defensive Design
 
 ### User Authentication - DONE
 
@@ -226,7 +244,7 @@ Details of all testing done can be viewed in depth in the [TESTING.md](https://g
 
 
 ### Form Validation - DONE
-All fields in the contact form are required. If a user attempts to submit the form without filling in all fields, a warning text will appear at the bottom of the form asking them to complete the fields. The form will not submit until all fields are filled in. Once this is done, a message will pop up that the form was submitted successfully.
+- All fields in the contact form are required. If a user attempts to submit the form without filling in all fields, a warning text will appear at the bottom of the form asking them to complete the fields. The form will not submit until all fields are filled in. Once this is done, a message will pop up that the form was submitted successfully.
 
 ### Database Security - DONE
 The database url and secret key are stored in the env.py file to prevent unwanted connections to the database. The env.py file was created before the initial push to GitHub.
@@ -281,9 +299,9 @@ Custom Error Pages were created to give the user more information on the error a
 
 ![Footer](/documentation/readme_images/footer-hover.png)
 
-### Home Page
+### Home Page - DONE
 
-**Call to Action Section** DONE
+**Call to Action Section**
 - The landing page includes a call to action section which encourages the user to book a room at The Wine Garden BnB. If the user is logged in, the message above the 'Book Now' button is, "Start planning your stay at The Wine Garden BnB". 
 
 ![Landing Page - Call to Action](/documentation/readme_images/landing-hero-image-authenticated.png)
@@ -299,7 +317,7 @@ Custom Error Pages were created to give the user more information on the error a
 ![Landing Page - Why a BnB](/documentation/readme_images/landing-why-bnb.png)
 
 
-### User Account Pages
+### User Account Pages DONE
 
 **Sign Up**
 
@@ -345,134 +363,86 @@ Custom Error Pages were created to give the user more information on the error a
 
 - The overall look of the page is the same. If a user is logged in as an Admin super user, they can add, edit and delete menu items.
 
-![Menu Page - non-admin users](/documentation/readme_images/bfast-menu1-authenticated.png)
-![Menu Page - non-admin users](/documentation/readme_images/bfast-menu2-authenticated.png)
+![Menu Page - Admin users](/documentation/readme_images/bfast-menu1-authenticated.png)
+![Menu Page - Admin users](/documentation/readme_images/bfast-menu2-authenticated.png)
 
 - The 'Edit A Menu Item' appears with fields pre-filled in and the Admin user can change them and update the product card.
 
-![Menu Page - non-admin users](/documentation/readme_images/bfast-edit-item.png)
+![Menu Page - Admin users](/documentation/readme_images/bfast-edit-item.png)
 
 - If the Admin user chooses to delete a menu item, they are asked if they're sure they want to delete that specific menu item. Once they click the 'Delete Item' button, the item is deleted permanently from the live site and the Django database.
 
-![Menu Page - non-admin users](/documentation/readme_images/bfast-delete-item.png)
+![Menu Page - Admin users](/documentation/readme_images/bfast-delete-item.png)
 
 
 ### Contact Us Page
 The Contact Us page includes a Google Map of a winery in existence in Iowa. Given that The Wine Garden BnB is not a real place, a substitute, Summerset Winery, was used for the purpose of this project. 
 
-![Contact Us Page - non-admin users](/documentation/readme_images/contact.png)
+![Contact Us Page](/documentation/readme_images/contact.png)
 
 - The page includes a contact form on the left-hand side that was implemented with [Email JS](https://www.emailjs.com/) and a Google Map on the right side.
 
 - Filling out the contact form will send a message to my personal in box. The user is alerted both after successfully filling out and submitting the form and if they need to fill in a field. All fields are obligatory. The success or error messages stay for three seconds and disappear automatically.
 
-![Contact Us Page - non-admin users](/documentation/readme_images/contact-success.png)
+![Contact Us Page](/documentation/readme_images/contact-success.png)
 
-![Contact Us Page - non-admin users](/documentation/readme_images/contact-error-fields.png)
+![Contact Us Page](/documentation/readme_images/contact-error-fields.png)
 
-**Meal Plan Modal** START HERE (book a room page, my bookings)
+### Book A Room
 
-![header](docs/readme_images/features/mealplan_modal.png)
+![Book A Room Page](/documentation/readme_images/book-a-room.png)
 
-- The meal plan modal includes a form which allows the user to select a day of the week.
-- Once the user clicks the add to meal plan button, the recipe is added to the user's meal plan for the selected day.
-- Only one recipe can be added per day so if a user already has a meal plan item for a particular day, adding another one will overwrite the existing one. 
-- The user receives a success message notifiying them that the recipe has been successfully added to their meal plan.
+- The Book A Room page is visible only to authenticated, logged in users.
+- The user fills out the form, selecting a room choice and the dates they want to book. 
+- The dates are static by default to show the formatting and the user can change to different dates.
+- Clicking 'Book Now' will take them to the My Bookings page where they will see their booking.
 
-**Recipe Details Section**
+### My Bookings
 
-![header](docs/readme_images/features/recipe_details.png)
+![My Bookings Page](/documentation/readme_images/my-bookings.png)
 
-- The main body of the page consists of the recipe description, ingredients, and method. 
+- The My Bookings page shows the bookings of the logged in user.
+- On each booking card, there are buttons to edit and delete the booking. 
+- Users can only delete their own bookings.
 
-**Comments Section**
+### Edit A Booking
 
-![header](docs/readme_images/features/comment.png)
+![Edit Bookings Page](/documentation/readme_images/edit-booking.png)
 
-![header](docs/readme_images/features/add_comment.png)
+- The Edit Your Booking card shows the specific booking the user wants to edit with the fields pre-populated.
+- They can change any of the fields and click 'Update' when finished.
+- Clicking 'Update' will save their changes and revert them back to the My Bookings page where they will see a message saying their booking was updated correctly.
+- The success message remains on the screen for three seconds before fading automatically. 
 
-- The comments section lists all comments left by users for that particular recipe.
-- Comments can only be left if a user is logged in. Any comments left by the user that is currently signed in can be updated or deleted using the buttons in the comment header. 
-    
-![header](docs/readme_images/features/edit_comment.png)
+![Edit Bookings Success](/documentation/readme_images/booking-updated.png)
 
-![header](docs/readme_images/features/delete_comment.png)
 
-- The user receives a success message notifying them that the comment has been successfully added, updated or deleted.
-- If a user tries to edit or delete a comment (by changing the url) without being signed in they are redirected to the log in page.
-- If a user tries to edit/delete another user's comment (by changing the url) they receive a custom 403 error.
+### Delete A Booking
 
-### Add Recipe Form
+![Delete A Booking Page](/documentation/readme_images/delete-booking.png)
 
-![header](docs/readme_images/features/add_recipe.png)
+- Logged in users can delete their own bookings by clicking the 'delete' button on the My Bookings page. 
+- They will be taken to the Delete Your Booking page and asked if they're sure they want to delete this specific booking.
+- Clicking 'Cancel' will revert them to the My Bookings page.
+- Clicking 'Delete Booking' will delete that booking permanently and take them back to the My Bookings page where they will see a message saying their booking was deleted successfully and they will no longer see that booking.
+- The success message remains on the screen for three seconds before fading automatically. 
 
-- If the user is logged in, then they can add a recipe by clicking the link on the navigation bar.
-- The form fields for 'Ingredients' and 'Method' include a WYSIWYG editor called Summernote to help the user format their content by adding bullet points, headings etc.
-- The user can upload a photo if they wish. If they choose not to, a default image displays as their recipe image.
-- The user can choose to publish the recipe now or save for later through a drop down menu. If they choose to 'save for later', the recipe will not appear on the Browse Recipe page but the user will be able to access it in their 'My Recipes' page and it will be labelled as 'DRAFT'.
-- Failing to fill out the recipe's Title, Description, Ingredients, or Method, results in the form failing and rendering a message stating which fields you have missed.
-- If a user tries to add a recipe (by changing the url) without being signed in they are redirected to the log in page.
-- The user will receive a success message notifying them that the recipe has been successfully added.
+![Delete Booking Success](/documentation/readme_images/booking-deleted.png)
 
-### Update Recipe Form
-
-![header](docs/readme_images/features/update_recipe.png)
-
-- If the user is logged in and is the author or the recipe they can choose to edit the recipe by clicking the edit button on the recipe detail page. 
-- The form opens with all fields populated with the original content.
-- If a user tries to update a recipe (by changing the url) without being signed in they are redirected to the log in page.
-- If a user tries to update another user's recipe (by changing the url) they receive a custom 403 error.
-- The user will receive a success message notifying them that the recipe has been successfully updated.
-
-### Delete Recipe
-
- ![header](docs/readme_images/features/delete_recipe.png)
-
-- If the user is logged in and is the author or the recipe they can choose to delete the recipe by clicking the delete button on the recipe detail page.  
-- The user is asked to confirm if they wish to delete the recipe or cancel.
-- The user will receive a success message notifying them that the recipe has been successfully deleted.
-
-### My Meal Plan
-
-![header](docs/readme_images/features/mealplan_page.png)
-
-- This page displays the logged in user's meal plan for the week.
-- The meal plan cards are ordered Monday to Sunday. 
-- If a user has added a recipe to their meal plan for a particular day, the card will display the recipe image and title. Clicking anywhere inside the meal plan card will take you directly to that recipe's detailed page.
-- If there is no meal plan for a particular day, that card will display a plus icon and the text "Add Recipe". Clicking anywhere inside the meal plan card will take you to the browse recipes page.
-- If a user tries to access this page (by changing the url) without being signed in they are redirected to the log in page.
-
-### My Recipes Page
-
-![header](docs/readme_images/features/myrecipes_page.png)
-
-- This page displays all recipes which the logged in user has created.
-- The recipe cards are paginated after every 8 recipes. 
-- Each card displays the recipe's image, Title and Cook Time. 
-- If the recipe is not yet published the word 'DRAFT' will appear in red next to the recipe title.
-- Clicking anywhere inside the recipes card will take you directly to that recipe's detailed page.
-- If a user tries to access this page (by changing the url) without being signed in they are redirected to the log in page.
-
-### My Bookmarks Page
-
-![header](docs/readme_images/features/my_bookmarks.png)
-
-- This page displays all recipes which the logged in user has added to their bookmarks.
-- Clicking anywhere inside the recipes card will take you directly to that recipe's detailed page.
-- If a user tries to access this page (by changing the url) without being signed in they are redirected to the log in page.
 
 ### Error Pages
 
 Custom Error Pages were created to give the user more information on the error and to guide them back to the site.
 
-![header](docs/readme_images/features/403_error.png)
+![Error 404](/documentation/readme_images/error-404.png)
 
-- 400 Bad Request - The Easy Eater is unable to handle this request.
-- 403 Page Forbidden - Looks like you're trying to access forbidden content. Please log out and sign in to the correct account.
-- 404 Page Not Found - The page you're looking for doesn't exist.
-- 500 Server Error - The Easy Eater is currently unable to handle this request
+- 404 Page Not Found - Sorry! The page you're looking for doesn't exist. Click below to return to the homepage.
 
-### Future Features
+![Error 500](/documentation/readme_images/error-500.png)
+
+- 500 Server Error - Sorry! The Wine Garden BnB can't handle this request at the moment. Please return to the home page.
+
+### Future Features - START HERE
 The following user stories were scoped out of the project due to time constraints and labelled as "Could Have" on the project board in Github. It is intended that these user stories will be implemented at a later date. 
 
 - As a Site User, I can export the ingredients from the recipes on my meal plan to a shopping list and remove the ones that are not necessary so that I can have all my required ingredients for the week in one place.
@@ -531,68 +501,73 @@ Add the following Config Vars in Heroku:
 
 The site is now live and operational.
 ## Forking this repository
-- Locate the repository at this link [The Easy Eater](https://github.com/AliOKeeffe/PP4_My_Meal_Planner).
+- Locate the repository at this link [The Wine Garden BnB](https://github.com/Kaylaesmith1/bed-and-breakfast).
 - At the top of the repository, on the right side of the page, select "Fork" from the buttons available. 
 - A copy of the repository is now created.
 
 ## Cloning this repository
 To clone this repository follow the below steps: 
 
-1. Locate the repository at this link [The Easy Eater](https://github.com/AliOKeeffe/PP4_My_Meal_Planner). 
+1. Locate the repository at this link [The Wine Garden BnB](https://github.com/Kaylaesmith1/bed-and-breakfast). 
 2. Under **'Code'**, see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the prefered cloning option, and then copy the link provided. 
 3. Open **Terminal**.
 4. In Terminal, change the current working directory to the desired location of the cloned directory.
 5. Type **'git clone'**, and then paste the URL copied from GitHub earlier. 
 6. Type **'Enter'** to create the local clone. 
 
-## Languages
+## Languages -DONE
 
 - Python
 - HTML
 - CSS
 - Javascript
 
-## Frameworks - Libraries - Programs Used
+## Frameworks - Libraries - Programs Used - DONE 
 - [Django](https://www.djangoproject.com/): Main python framework used in the development of this project
-- [Django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html): authentication library used to create the user accounts
-- [PostgreSQL](https://www.postgresql.org/) was used as the database for this project.
-- [Heroku](https://dashboard.heroku.com/login) - was used as the cloud based platform to deploy the site on.
-- [Responsinator](http://www.responsinator.com/) - Used to verify responsiveness of website on different devices.
-- [Balsamiq](https://balsamiq.com/) - Used to generate Wireframe images.
-- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - Used for overall development and tweaking, including testing responsiveness and performance.
-- [Font Awesome](https://fontawesome.com/) - Used for icons in information bar.
-- [GitHub](https://github.com/) - Used for version control and agile tool.
-- [Google Fonts](https://fonts.google.com/) - Used to import and alter fonts on the page.
+- [Django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html): Authentication library used to create user accounts
+- [PostgreSQL](https://www.postgresql.org/) Used as the database for this project.
+- [Heroku](https://dashboard.heroku.com/login) - Used as the cloud-based platform to deploy the site.
+- [Am I Responsive](https://amiresponsive.co.uk/) - Used to verify responsiveness of website on different devices.
+- [Figma](https://www.figma.com/) - Used to create wireframes for both desktop and mobile visuals.
+- [Favicon](https://favicon.io/) - Used to create the wine glass icon for the browser tab.
+- [Font Awesome](https://fontawesome.com/) - Used for icons on the home page and stars on the About page.
+- [GitHub](https://github.com/) - Used for version control and agile methodology.
+- [Google Fonts](https://fonts.google.com/) - Imported and used to change fonts on pages from default fonts.
 - [W3C](https://www.w3.org/) - Used for HTML & CSS Validation.
-- [PEP8 Online](http://pep8online.com/) - used to validate all the Python code
-- [Jshint](https://jshint.com/) - used to validate javascript
-- [Coolors](https://coolors.co/) - Used to create colour palette.
-- [Favicon](https://favicon.io/) - Used to create the favicon.
-- [Lucidchart](https://lucid.app/documents#/dashboard) - used to create the database schema design
-- [Grammerly](https://app.grammarly.com/) - used to proof read the README.md
-- [Summernote](https://summernote.org/): A WYSIWYG editor to allow users to edit their posts
-- [Techsini](https://techsini.com/multi-mockup/index.php) - Site mockup generator
-- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to manage Django Forms
-- [Cloudinary](https://cloudinary.com/): the image hosting service used to upload images
-- [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/): CSS Framework for developing responsiveness and styling
-- [Hatchful](https://hatchful.shopify.com/): Used to generate custom logo
-- [Tables Generator](https://www.tablesgenerator.com/markdown_tables): Used to convert excel testing tables to markdown
+- [PEP8 Online](https://pep8ci.herokuapp.com/#) - Used to validate all Python code pages in the project.
+- [Jshint](https://jshint.com/) - Used to validate the JavaScript page.
+- [Coolors](https://coolors.co/) - Used to create color scheme.
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) Used to manage Django Forms
+- [Cloudinary](https://cloudinary.com/): Used to upload all images used on the website.
+- [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/): CSS used for developing responsiveness and styling the website.
+- [Hatchful](https://hatchful.shopify.com/): Used to generate custom logo found on all pages.
+- [Wondershare](https://www.wondershare.com/): Used to style aspects of the logo (remove background).
+- [Canva](https://www.canva.com/): Used for page image banners (colored overlay and opacity)
+- [Google](https://www.google.com/): All images used were sourced from a Google search.
+- [EmailJS](https://www.emailjs.com/): Used to link the contact form to developer's personal email account.
+- [Pixelied](https://pixelied.com/features/photo-filters/convert-image-to-black-and-white): Used to convert image to black and white before using a colored overlay for banners on pages.
 
-## Credits
+## Credits -DONE
 
 - [W3Schools](https://www.w3schools.com/)
 - [Django Docs](https://docs.djangoproject.com/en/4.0/)
 - [Bootstrap 4.6 Docs](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
 - [Stack Overflow](https://stackoverflow.com/)
-- [Pexels](https://www.pexels.com/): All imagery on the site was sourced from Pexels.com
-- [BBC Goodfood](https://www.bbcgoodfood.com/): All recipe content was sourced from BBC Goodfood.
-- [Update View](https://pytutorial.com/django-updateview-example)
-- [Pagination](https://docs.djangoproject.com/en/2.2/topics/pagination/#using-paginator-in-a-view)
-- [AutoSlugField](https://django-extensions.readthedocs.io/en/latest/field_extensions.html)
 - [Code Institute - Blog Walkthrough Project](https://github.com/Code-Institute-Solutions/Django3blog)
-- [Ian Meigh - Custom Validator function](eateasy/validators.py)
+- [Ray's Bucktown](https://www.raysbucktownbandb.com/) - General layout and pages to include in the website. Banner idea on pages.
+- [Victoria's Vineyard](https://www.victoriasvineyardbnb.com/index.html) - Content and description of vineyard and BnB in an Iowa town.
+- [Grace Restaurant](https://github.com/GeorgianF/Grace-P4-CI) - Used as a template for menu features.
+- [The Non-Dairy Godmother](https://github.com/Martiless/nondairy-godmother) - Repository used as a template for my own editing and deleting bookings.
+- [YouTube Video for pop up messages](https://www.youtube.com/watch?v=lRrrLCrZDxI) - Used for contact form message pop ups on successful submission and errors.
+- [YouTube Video for updating an item / booking](https://www.youtube.com/watch?v=EX6Tt-ZW0so) - Used as a guide to implement CRUD functionality.
+- [YouTube Video for Django widget tweaks](https://www.youtube.com/watch?v=ynToND_xOAM) - implement widget tweaks in forms to add and edit menu items.
+- [YouTube Video for booking logic](https://www.youtube.com/watch?v=m7uVhLxT1AA&list=PL_6Ho1hjJirn8WbY4xfVUAlcn51E4cSbY&index=3)
 
-## Acknowledgments
 
-Many thanks to my mentor Antonio for his support and advice. Thanks to 
-The Code Institute slack community for their quick responses and very helpful feedback in particular Ian Meigh.
+## Acknowledgments - DONE
+
+Special thanks to the tutoring team, specifically Joshua who helped with the contact form, Sarah who helped with implementing CRUD functionality on the live site, and Oisin who helped fix the bug of being able to book a room under a different user.
+
+Ian_alumni from the slack channel was vital to my understanding of the pathway followed for my delete buttons and getting them to work correctly. He spent time in a call with me clarifying the urls and views pathways. Thank you, Ian!
+
+Lastly, thank you, too, to my mentor Harry for sharing his project and ideas about CRUD functionality. He gave clear, concise feedback on what needed to be fixed before project submission and complemented the work overall. 
