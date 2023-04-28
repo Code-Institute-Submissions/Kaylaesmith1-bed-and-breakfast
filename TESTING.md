@@ -316,6 +316,9 @@ Favicon | Display | Favicon is displayed correctly in the browser tab on all pag
 Title | Display | "About" is displayed in a banner as the title of the About page | PASS
 Title | Display | "Contact Us" is displayed in a banner as the title of the Contact Us page  | PASS
 Title | Display | "Breakfast" is displayed in a banner as the title of the Menu page  | PASS
+Title | Display | "Add A Menu Item" is displayed in a banner as the title of the Menu page  | PASS
+Title | Display | "Edit Menu Item" is displayed in a banner as the title of the Menu page  | PASS
+Title | Display | "Delete Menu Item" is displayed in a banner as the title of the Menu page  | PASS
 Title | Display | "Add A Booking" is displayed in a card on the booking page | PASS
 Title | Display | "Booking" is displayed in a banner as the title of the My Bookings page   | PASS
 Title | Display | "Edit Your Booking" is displayed in a card on the Edit Bookings page | PASS
