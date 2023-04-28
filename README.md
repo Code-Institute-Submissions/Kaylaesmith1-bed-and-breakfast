@@ -14,60 +14,77 @@ A link to the live site can be found here - [The Wine Garden BnB](https://wine-g
 
 
 ## Table of Contents
-
-
 - [The Wine Garden BnB](#the-wine-garden-bnb)
- * [User Experience (UX)](#userexperience)
-   + [User Stories](#userstories)
-   + [Design](#design)
-     - [Color Scheme](#colors)
-     - [Images](#images)
-     - [Fonts](#fonts)
-     - [Wireframes](#wireframes)
- * [Agile Methodology](#agile)
- * [Data Model](#datamodel)
- * [Testing](#testing)
- * [Security Features and Defensive Design](#security)
-   + [User Authentication](#userauthentication)
-   + [Form Validation](#formvalidation)
-   + [Database Security](#databasesecurity)
-   + [Custom error pages:](#customerrorpages)
- * [Features](#features)
-   + [Header](#header)
-   + [Footer](#footer)
-   + [Home Page](#homepage)
-   + [User Account Pages](#useraccount)
-   + [About Page](#about)
-   + [Menu Page](#menu)
-   + [Add Menu Item Form](#additem)
-   + [Edit Menu Item Form](#edititem)
-   + [Delete Menu Item](#deleteitem)
-   + [Contact Us Page](#contact)
-   + [Book A Room Page](#bookroom)
-   + [My Bookings Page](#mybookings)
-   + [Edit Bookings Page](#editbookings)
-   + [Delete A Booking Page](#deletebooking)
-   + [Future Features](#futurefeatures)
- * [Deployment - Heroku](#deployment)
- * [Forking this repository](#forkrepo)
- * [Cloning this repository](#clonerepo)
- * [Languages](#languages)
- * [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
- * [Credits](#credits)
- * [Acknowledgments](#acknowledgments)
-
+  * [Table of Contents](#table-of-contents)
+  * [User Experience (UX)](#user-experience--ux-)
+    + [User Stories](#user-stories)
+    + [EPIC | Project Environment Setup](#epic---project-environment-setup)
+      - [USER STORIES](#user-stories)
+    + [EPIC | Landing Page](#epic---landing-page)
+      - [USER STORIES](#user-stories-1)
+    + [EPIC | Initial Deployment](#epic---initial-deployment)
+      - [USER STORIES](#user-stories-2)
+    + [EPIC | Website Aesthetics](#epic---website-aesthetics)
+      - [USER STORIES](#user-stories-3)
+    + [EPIC | User Account](#epic---user-account)
+      - [USER STORIES](#user-stories-4)
+    + [EPIC | Site Administration & Booking](#epic---site-administration---booking)
+      - [USER STORIES](#user-stories-5)
+    + [EPIC | Testing & Documentation](#epic---testing---documentation)
+      - [USER STORIES](#user-stories-6)
+    + [EPIC | Error Pages](#epic---error-pages)
+      - [USER STORIES](#user-stories-7)
+    + [Design](#design)
+      - [Color Scheme](#color-scheme)
+      - [Imagery](#imagery)
+      - [Fonts](#fonts)
+      - [Wireframes](#wireframes)
+  * [Agile Methodology](#agile-methodology)
+  * [Data Model](#data-model)
+  * [Testing](#testing)
+  * [Security Features and Defensive Design](#security-features-and-defensive-design)
+    + [User Authentication](#user-authentication)
+    + [Form Validation](#form-validation)
+    + [Database Security](#database-security)
+    + [Custom error pages](#custom-error-pages)
+  * [Features](#features)
+    + [Header](#header)
+    + [Footer](#footer)
+    + [Home Page](#home-page)
+    + [User Account Pages](#user-account-pages)
+    + [About Page](#about-page)
+    + [Menu Page](#menu-page)
+    + [Contact Us Page](#contact-us-page)
+    + [Book A Room](#book-a-room)
+    + [My Bookings](#my-bookings)
+    + [Edit A Booking](#edit-a-booking)
+    + [Delete A Booking](#delete-a-booking)
+    + [Error Pages](#error-pages)
+    + [Future Features](#future-features)
+  * [Deployment - Heroku](#deployment---heroku)
+    + [Create a Heroku App:](#create-a-heroku-app-)
+    + [Attach the Postgres database:](#attach-the-postgres-database-)
+    + [Prepare the environment and settings.py file:](#prepare-the-environment-and-settingspy-file-)
+    + [Create files / directories](#create-files---directories)
+    + [Update Heroku Config Vars](#update-heroku-config-vars)
+    + [Deploy](#deploy)
+  * [Forking this repository](#forking-this-repository)
+  * [Cloning this repository](#cloning-this-repository)
+  * [Languages](#languages)
+  * [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
+  * [Credits](#credits)
+  * [Acknowledgments](#acknowledgments)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-## User Experience (UX)
 
+## User Experience (UX)
 
 A visitor The Wine Garden BnB website would likely be an adult looking to spend time away but who would also want all the amenities of home. This website provides information about a family-run business that meets those needs.
 
 
-### User Stories - DONE
+### User Stories
 
-
-#### EPIC | Project Environment Setup -DONE
+### EPIC | Project Environment Setup
 As the developer, I can create a new project so that I can develop the website.
 #### USER STORIES
 - As the developer, I can create a new project on GitHub so that I am ready to start developing the website.
@@ -75,20 +92,20 @@ As the developer, I can create a new project so that I can develop the website.
 - As the developer, I will create an env.py file with secure variables so that sensitive information is kept unpublished publicly.
 - As the developer, I can test the project locally so that I will be able to see any changes locally before pushing to GitHub / Heroku.
 
-#### EPIC | Landing Page -DONE 
+### EPIC | Landing Page 
 As the developer, I can design a functional, easy-to-use landing page so that users can easily navigate through pages and use the site.
 #### USER STORIES
 - As a user, I can contact the developer through social links so that learn more about their work or get questions answered.
 - As a user, I can use the website on all device sizes so that I can see the same information on small and large devices.
 - As a user, I can use the navigation bar so that I can view all pages of the website easily
 
-#### EPIC | Initial Deployment -DONE
+### EPIC | Initial Deployment
 As the developer, I can deploy the app on Heroku so that users can view and interact with the site publicly.
 #### USER STORIES
 - As the developer I can deploy the app to Heroku so that I can ensure it works properly before heavily starting development on the site.
 - As the developer, I can link the GitHub repository to the Heroku app so that when I commit changes on GitHub they are reflected on Heroku automatically.
 
-#### EPIC | Website Aesthetics -DONE
+### EPIC | Website Aesthetics
 As the developer, I can design an aesthetically pleasing webpage so that users can easily navigate the site.
 #### USER STORIES
 - As the developer, I can use complimentary colors so that users can navigate the website easily.
@@ -97,13 +114,13 @@ As the developer, I can design an aesthetically pleasing webpage so that users c
 - As the developer I can create wireframes so I can plan the layout of the website.
 
 
-#### EPIC | User Account - DONE
+### EPIC | User Account
 As the developer, I can create a register / login feature so users and create an account and login / logout.
 #### USER STORIES
 - As a user I can sign up, log in and log out so that I can see the features available to registered users.
 
 
-### EPIC | Site Administration & Booking -DONE
+### EPIC | Site Administration & Booking
 As a site admin, I can manage all bookings and create, read, update and delete menu items so that I can control site bookings and the food / drink content.
 #### USER STORIES
 - As a user, I can create, read, update or delete food and drink items so that the menu is up to date.
@@ -111,21 +128,21 @@ As a site admin, I can manage all bookings and create, read, update and delete m
 - As a logged in user, I can click the 'booking' button so that I can easily view and manage my booking.
 
 
-### EPIC | Testing & Documentation -DONE
+### EPIC | Testing & Documentation
 As the developer, I can concisely document my testing and deployment methods so assessors and other developers can understand the website from a technical standpoint.
 #### USER STORIES
 - As the developer, I can create a README.md file so that other developers and the assessors can have an in-depth look at the website's structure and programming.
 - As the developer, I can create a TESTING.md file so that the assessors can see the bugs and their solutions identified and the validation passed.
 - As the developer, I can concisely describe the Heroku deployment process so that others know how to deploy an app on Heroku.
 
-### EPIC | Error Pages - DONE
+### EPIC | Error Pages
 As the developer, I can create status error pages so users will know if there is a problem.
 #### USER STORIES
 - As the developer I can create a 500 error page so that users will know if there are internal server errors.
 - As the developer I can create a 404 error page so that users will know when they've tried to access a page that doesn't exist.
 
 
-### Design -- DONE
+### Design
 
 The website design is set in simple, paragraph form, which is intended to make it easier for the reader to navigate. The navigation bar is clear on each page, as is the footer and the pages are labelled with a 'banner' format thus ensuring users know where they are at all times. 
 
@@ -133,7 +150,7 @@ The website design is set in simple, paragraph form, which is intended to make i
 The color scheme was chosen to reflect a 'red wine' color and incorporate rich, earthy tones to encompass the vineyard theme.
 
 
-#### Color Scheme -- DONE
+#### Color Scheme
 The color palette was created using the palette generator [Coolers](https://coolors.co/).
 
 
@@ -146,14 +163,14 @@ All combinations of the colors used illustrate a contrast between background and
 ![Color Palette](/documentation/readme_images/color-palette.png)
 
 
-#### Imagery -- DONE
+#### Imagery
 Two different static images are included on the site depicting a homestead in a vineyard. Other images are used as the banner backgrounds on the About, Contact Us and Menu pages.
  
 
-#### Fonts -- DONE
+#### Fonts
 The 'Quicksand' font is the main font used on the page, while 'Montserrat' in a bolder weight was used for the navbar and 'Kanit' for other accent areas. The 'Sans-serif' font is noted as a backup and will be used in the event that the main fonts aren't imported correctly to the site. These font style were chosen for their ease of legibility and general letter spacing and were imported from [Google Fonts](https://fonts.google.com/).
 
-#### Wireframes -DONE
+#### Wireframes
 
 <details>
 
@@ -211,7 +228,7 @@ The 'Quicksand' font is the main font used on the page, while 'Montserrat' in a 
 ![Account logout](documentation/wire_frames/logout.png)
 </details>
 
-## Agile Methodology -- DONE
+## Agile Methodology
 
 The agile methodology was used throughout project development. EPICS, user stories and the steps of the process are shown on [GitHub projects](https://github.com/users/Kaylaesmith1/projects/2/views/1).
 
@@ -219,7 +236,7 @@ In total, there were eight EPICs that encompassed all user stories, depending on
 
 Creating EPICs and user stories for this project facilitated a smooth working environment where both general and specific goals were visualized, more easily tackled and brought to fruition. 
 
-## Data Model DONE
+## Data Model
 I used principles of Object-Oriented Programming throughout this project and Django’s Class-Based Generic Views. Django AllAuth was used for user authentication.
 
 The Customer model displays a working contact form on the Contact Us page. [Email js](https://www.emailjs.com/) was also used to ensure queries are addressed. For the purpose of this project, the emails arrive in my personal inbox.
@@ -238,20 +255,20 @@ The Booking model is for the user to select the room, check in and check out dat
 Details of all testing done can be viewed in depth in the [TESTING.md](https://github.com/Kaylaesmith1/bed-and-breakfast/blob/main/TESTING.md) document.
 ## Security Features and Defensive Design
 
-### User Authentication - DONE
+### User Authentication
 
 - Django's LoginRequiredMixin is used to ensure that any requests to access secure pages by non-authenticated or, in some cases, non-admin users, are redirected to the login page. 
 
 
-### Form Validation - DONE
+### Form Validation
 - All fields in the contact form are required. If a user attempts to submit the form without filling in all fields, a warning text will appear at the bottom of the form asking them to complete the fields. The form will not submit until all fields are filled in. Once this is done, a message will pop up that the form was submitted successfully.
 
-### Database Security - DONE
+### Database Security
 The database url and secret key are stored in the env.py file to prevent unwanted connections to the database. The env.py file was created before the initial push to GitHub.
 
 Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this site, barring the contact form.
 
-### Custom error pages: DONE
+### Custom error pages
 
 Custom Error Pages were created to give the user more information on the error and to provide them with buttons to guide them back to the site.
 
@@ -270,7 +287,7 @@ Custom Error Pages were created to give the user more information on the error a
 
 ![Header](/documentation/readme_images/navbar-logo.png)
 
-**Navigation Bar** DONE
+**Navigation Bar**
 
 - The navigation bar is present at the top of every page and includes all links to the other pages.
 - The My Account navigation link is a drop down menu that includes the Sign up and Log in links. 
@@ -290,7 +307,7 @@ Custom Error Pages were created to give the user more information on the error a
 ![Header](/documentation/readme_images/navbar-hover.png)
 
 
-### Footer - DONE
+### Footer
 - The footer section includes working links to GitHub, Twitter, Instagram and Facebook. Clicking each link will open a separate browser page to the login of that website, barring the GitHub icon, which opens to my personal GitHub page.
 
 ![Footer](/documentation/readme_images/footer.png)
@@ -299,7 +316,7 @@ Custom Error Pages were created to give the user more information on the error a
 
 ![Footer](/documentation/readme_images/footer-hover.png)
 
-### Home Page - DONE
+### Home Page
 
 **Call to Action Section**
 - The landing page includes a call to action section which encourages the user to book a room at The Wine Garden BnB. If the user is logged in, the message above the 'Book Now' button is, "Start planning your stay at The Wine Garden BnB". 
@@ -317,7 +334,7 @@ Custom Error Pages were created to give the user more information on the error a
 ![Landing Page - Why a BnB](/documentation/readme_images/landing-why-bnb.png)
 
 
-### User Account Pages DONE
+### User Account Pages
 
 **Sign Up**
 
@@ -442,27 +459,32 @@ Custom Error Pages were created to give the user more information on the error a
 
 - 500 Server Error - Sorry! The Wine Garden BnB can't handle this request at the moment. Please return to the home page.
 
-### Future Features - START HERE
-The following user stories were scoped out of the project due to time constraints and labelled as "Could Have" on the project board in Github. It is intended that these user stories will be implemented at a later date. 
+### Future Features
+A few features were thought about mid-project as aspects that could improve the UI/UX but that were not implemented in this version of the project, either due to time contraints or simply because they were suggestions from friends / family members during the final testing phase of the project.
 
-- As a Site User, I can export the ingredients from the recipes on my meal plan to a shopping list and remove the ones that are not necessary so that I can have all my required ingredients for the week in one place.
-- As a Site User, I can search and filter recipes so that I can find the one I want.
-Searching and filtering
+None were original user stories and were therefore not included anywhere in the project other than in this section. They are detailed below.
 
-Other potential features include:
-- Adding extra categories on the Meal Plan Item for breakfast, lunch, dinner and snacks so the user can plan out their meals for the full day rather than just for dinner.
-- Adding vegan and vegetarian labels to the recipe so the user can filter by these options.
+1. Email authentication for users on signing up. This would add another layer of authentication for users and would be an improvement on the overall website. 
+2. Have something on the My Bookings page even if you don’t have any bookings registered. As of now it's a page titled 'My bookings' but nothing is shown.
+![Empty bookings](/documentation/readme_images/empty-bookings.png)
+3. Incorporate a payment option, rates and pricing for booking. This is normally a feature of online hotel booking platforms. Taking credit card information could be a helpful aspect to implemente in the future.
+4. Add photos of menu items or some food items on the breakfast page. Perhaps clicking the menu item could open a photo of it and a description of ingredients in case the user had questions of what exactly it was.
+5. If a user cancels a booking, a pop up should appear with checkboxes as to why they cancelled. This could also be a form with a textarea field to be more specific.
+6. Perhaps include a 'Book Now' button somewhere no each page of the website to facilitate easy booking.
+7. The Admin user has access to all bookings from the live site. As of now, each user has access only to their bookings from the live website. It could be helpful for the Admin superuser to be able to access everyone's bookings and have CRUD functionality on them.
 
 ## Deployment - Heroku
 
-To deploy this page to Heroku from its GitHub repository, the following steps were taken:
+The following steps were taken to deploy the live website to Heroku from the GitHub repository:
 
-### Create the Heroku App:
-- Log in to [Heroku](https://dashboard.heroku.com/apps) or create an account.
-- On the main page click the button labelled New in the top right corner and from the drop-down menu select "Create New App".
-- Enter a unique and meaningful app name.
-- Next select your region.
-- Click on the Create App button.
+### Create a Heroku App:
+- Log into your [Heroku](https://dashboard.heroku.com/apps) account or create an account.
+- On the main page click the 'New' button at the top right corner and select 'Create New App' from the dropdown menu. 
+![Heroku Create App](/documentation/readme_images/heroku-create-new.png)
+- Enter in a unique app name
+- Select your region
+- Click 'Create App'
+![Heroku New App](/documentation/readme_images/heroku-create-app.png)
 
 ### Attach the Postgres database:
 - In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option.
@@ -473,18 +495,19 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
 - Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file. 
 - Update the settings.py file to import the env.py file and add the SECRETKEY and DATABASE_URL file paths.
 - Comment out the default database configuration.
-- Save files and make migrations.
-- Add Cloudinary URL to env.py
-- Add the cloudinary libraries to the list of installed apps.
+- Save all files and make migrations.
+- Add the Cloudinary URL to env.py
+- Add the Cloudinary libraries to the list of installed apps.
 - Add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
 - Link the file to the templates directory in Heroku.
 - Change the templates directory to TEMPLATES_DIR
 - Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost']
 
 ### Create files / directories
-- Create requirements.txt file
-- Create three directories in the main directory; media, storage and templates.
-- Create a file named "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi
+- Create a requirements.txt file
+- Create directories in the main directory; media, static and templates.
+- Create a "Procfile" in the main directory and add the following: web: gunicorn project_name.wsgi
+- Make sure the Procfile is capitalized and only has one line.
 
 ### Update Heroku Config Vars
 Add the following Config Vars in Heroku:
@@ -492,18 +515,20 @@ Add the following Config Vars in Heroku:
 - CLOUDINARY_URL
 - PORT = 8000
 - DISABLE_COLLECTSTATIC = 1
+- HEROKU_POSTGRESQL_OLIVE_URL value
+- DATABASE_URL value
 
 ### Deploy
-- NB: Ensure in Django settings, DEBUG is False
+- Make sure DEBUG = False in the settings.py
 - Go to the deploy tab on Heroku and connect to GitHub, then to the required repository. 
-- Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
-- Click View to view the deployed site.
+- Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the GitHub repository is updated.
+- Click 'Open App' to view the deployed live site.
 
 The site is now live and operational.
 ## Forking this repository
 - Locate the repository at this link [The Wine Garden BnB](https://github.com/Kaylaesmith1/bed-and-breakfast).
 - At the top of the repository, on the right side of the page, select "Fork" from the buttons available. 
-- A copy of the repository is now created.
+- This creates a copy of the repository
 
 ## Cloning this repository
 To clone this repository follow the below steps: 
@@ -512,17 +537,17 @@ To clone this repository follow the below steps:
 2. Under **'Code'**, see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the prefered cloning option, and then copy the link provided. 
 3. Open **Terminal**.
 4. In Terminal, change the current working directory to the desired location of the cloned directory.
-5. Type **'git clone'**, and then paste the URL copied from GitHub earlier. 
+5. Type **'git clone'**, and then paste the URL previously copied from GitHub. 
 6. Type **'Enter'** to create the local clone. 
 
-## Languages -DONE
+## Languages
 
 - Python
 - HTML
 - CSS
 - Javascript
 
-## Frameworks - Libraries - Programs Used - DONE 
+## Frameworks - Libraries - Programs Used 
 - [Django](https://www.djangoproject.com/): Main python framework used in the development of this project
 - [Django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html): Authentication library used to create user accounts
 - [PostgreSQL](https://www.postgresql.org/) Used as the database for this project.
@@ -547,7 +572,7 @@ To clone this repository follow the below steps:
 - [EmailJS](https://www.emailjs.com/): Used to link the contact form to developer's personal email account.
 - [Pixelied](https://pixelied.com/features/photo-filters/convert-image-to-black-and-white): Used to convert image to black and white before using a colored overlay for banners on pages.
 
-## Credits -DONE
+## Credits
 
 - [W3Schools](https://www.w3schools.com/)
 - [Django Docs](https://docs.djangoproject.com/en/4.0/)
@@ -564,7 +589,7 @@ To clone this repository follow the below steps:
 - [YouTube Video for booking logic](https://www.youtube.com/watch?v=m7uVhLxT1AA&list=PL_6Ho1hjJirn8WbY4xfVUAlcn51E4cSbY&index=3)
 
 
-## Acknowledgments - DONE
+## Acknowledgments
 
 Special thanks to the tutoring team, specifically Joshua who helped with the contact form, Sarah who helped with implementing CRUD functionality on the live site, and Oisin who helped fix the bug of being able to book a room under a different user.
 
