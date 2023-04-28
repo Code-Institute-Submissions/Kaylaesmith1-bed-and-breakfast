@@ -106,6 +106,7 @@ All HTML pages were validated using the [W3C HTML Validator](https://validator.w
   ![HTML Validation - Delete Booking page](/documentation/validation/validator-404-error-page.png)
 </details>
 
+
 ### CSS
 CSS codes used in the website were validated with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). No errors were found, though one warning was mentioned regarding importing style sheets. I imported Google Fonts. Both the passing validation and the warning can be seen below.
 
@@ -182,6 +183,7 @@ Note: `# noqa` was added to Django generated codes under `AUTH_PASSWORD_VALIDATO
   
 ![Python Validation](/documentation/validation/python-models.png)
 </details>
+
 Note: `# noqa` was added to line 94 to combat the "line too long" error that originally arose.
 
 <details>
@@ -189,6 +191,7 @@ Note: `# noqa` was added to line 94 to combat the "line too long" error that ori
   
 ![Python Validation](/documentation/validation/python-bnb-urls.png)
 </details>
+
 Note: `# noqa` was added to lines 3, 21 and 22 to combat the "line too long" errors that originally arose.
 
 <details>
@@ -197,9 +200,10 @@ Note: `# noqa` was added to lines 3, 21 and 22 to combat the "line too long" err
 ![Python Validation](/documentation/validation/python-views.png)
 
 </details>
+
 Note: `# noqa` was added to line 1 to combat the "line too long" error that originally arose.
 
-## Accessibility - START HERE
+## Accessibility
 [Wave Web Accessibility Evaluation Tools](https://wave.webaim.org/) were used to test accessibility. Please see the results below for each page.
 
 <details>
@@ -222,655 +226,105 @@ Note: `# noqa` was added to line 1 to combat the "line too long" error that orig
 ![Wave Validation](/documentation/validation/wave-login.png)
 
 </details>
-
-
+ 
 <details>
-  <summary>Log Out Page - No errors</summary>
+  <summary>About Page - XX</summary>
   
-  <img src="docs/images/testing/wave-logout-page.png">
-
-</details>
-
-
-<details>
-  <summary>About Page - No errors</summary>
-  
-  <img src="docs/images/testing/wave-browse-recipes.png">
-
+![Wave Validation](/documentation/validation/wave-.png)
 </details>
 
 <details>
-  <summary>Contact Us Page - No errors</summary> 
+  <summary>Menu Page - No errors</summary>
   
-  <img src="docs/images/testing/wave-my-favourites-page.png">
-
+![Wave Validation](/documentation/validation/wave-breakfast.png)
 </details>
+
+<details>
+  <summary>Add Menu Item Page - Missing form label error, see documentation</summary>
+
+![Wave Validation](/documentation/validation/wave-add-menu.png)
+</details>
+There are two missing form label errors due to crispy forms. Neither affect the fuctionality of the page and were therefore left as is.
+
+<details>
+  <summary>Edit Menu Item Page - Missing form label error, see documentation</summary>
+  
+![Wave Validation](/documentation/validation/wave-edit-menu.png)
+</details>
+There are two missing form label errors due to crispy forms. Neither affect the fuctionality of the page and were therefore left as is.
+
+<details>
+  <summary>Delete Menu Item Page - No errors</summary>
+  
+![Wave Validation](/documentation/validation/wave-delete-menu.png)
+</details>
+
+<details>
+  <summary>Contact Us Page -  Missing form label error, see documentation</summary> 
+  
+![Wave Validation](/documentation/validation/wave-contact.png)
+</details>
+One error was identified for a missing form label for the email field. This label is present and follows the same style as the other three fields in the form that are free of errors. This error does not affect the functionality of the form nor of the app overall.
 
 <details>
   <summary>Add A Booking Page - No errors</summary> 
   
-  <img src="docs/images/testing/wave-my-recipes-page.png">
+![Wave Validation](/documentation/validation/wave-add-booking.png)
 
 </details>
 
 <details>
-  <summary>My Bookings Page - Missing form label error</summary> 
+  <summary>My Bookings Page - No errors</summary> 
   
-  <img src="docs/images/testing/wave-update-comment-page.png">
-
-</details>
-
-The errors identified was a missing form label for the fields in the contact form. Since the error resulted from the Crispy Form codes, this was not addressed.
-
-<details>
-  <summary>Post Recipe Page - No errors</summary> 
-  
-  <img src="docs/images/testing/wave-post-recipe-page.png">
+![Wave Validation](/documentation/validation/wave-my-bookings.png)
 
 </details>
 
 <details>
-  <summary>Update Recipe Page - Empty link error</summary> 
+  <summary>Edit A Booking - No errors</summary> 
   
-  <img src="docs/images/testing/wave-update-recipe-page.png">
+![Wave Validation](/documentation/validation/wave-edit-booking.png)
 
 </details>
 
-The error identified was for an empty link for the current recipe image loaded. Since the error resulted from the Crispy Form codes, this was not addressed.
 <details>
-  <summary>Recipe Details Page - Missing form label error</summary> 
+  <summary>Delete A Booking - No errors</summary> 
   
-  <img src="docs/images/testing/wave-recipe-details-page.png">
-
-</details>
-
-The error identified was a missing form label for the Crispy Form used in the Comment field. Since the error resulted from the Crispy Form codes, this was not addressed.
-
-<details>
-  <summary>403 Error Page - No errors</summary> 
-  
-  <img src="docs/images/testing/wave-403-page.png">
+![Wave Validation](/documentation/validation/wave-delete-booking.png)
 
 </details>
 
 <details>
   <summary>404 Error Page - No errors</summary> 
   
-  <img src="docs/images/testing/wave-404-page.png">
-
+![Wave Validation](/documentation/validation/wave-404.png)
 </details>
 
-## Lighthouse
-Lighthouse in [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) was used to test accessibility and performance.
-Please see the results below for each page.
-
-<details>
-  <summary>Home Page</summary>
-  
-  Desktop:  
-  <img src="docs/images/testing/lh-home-page-desktop.png">
-
-  Mobile:  
-  <img src="docs/images/testing/lh-home-page-mobile.png">
-	
-</details>
-
-<details>
-  <summary>Sign Up Page</summary>
-  
-  Desktop:  
-  <img src="docs/images/testing/lh-sign-up-page-desktop.png">
-
-  Mobile:  
-  <img src="docs/images/testing/lh-sign-up-page-mobile.png">
-	
-</details>
-
-<details>
-  <summary>Log In Page</summary>
-  
-  Desktop:  
-  <img src="docs/images/testing/lh-log-in-page-desktop.png">
-
-  Mobile:  
-  <img src="docs/images/testing/lh-log-in-page-mobile.png">
-	
-</details>
-
-<details>
-  <summary>Log Out Page</summary>
-  
-  Desktop:  
-  <img src="docs/images/testing/lh-log-out-page-desktop.png">
-
-  Mobile:  
-  <img src="docs/images/testing/lh-log-out-page-mobile.png">
-	
-</details>
-
-<details>
-  <summary>Browse Recipes Page</summary>
-  
-  Desktop:  
-  <img src="docs/images/testing/lh-browse-recipe-desktop.png">
-
-  Mobile:  
-  <img src="docs/images/testing/lh-browse-recipe-mobile.png">
-	
-</details>
-
-<details>
-  <summary>My Favourites Page</summary>
-  
-  Desktop:  
-  <img src="docs/images/testing/lh-my-favourites-desktop.png">
-
-  Mobile:  
-  <img src="docs/images/testing/lh-my-favourites-mobile.png">
-	
-</details>
-
-<details>
-  <summary>My Recipes Page</summary>
-  
-  Desktop:  
-  <img src="docs/images/testing/lh-my-recipes-desktop.png">
-
-  Mobile:  
-  <img src="docs/images/testing/lh-my-recipes-mobile.png">
-	
-</details>
-
-<details>
-  <summary>Update Comment Page</summary>
-  
-  Desktop:  
-  <img src="docs/images/testing/lh-update-comment-desktop.png">
-
-  Mobile:  
-  <img src="docs/images/testing/lh-update-comment-mobile.png">
-	
-</details>
-
-<details>
-  <summary>Post Recipe Page</summary>
-  
-  Desktop:  
-  <img src="docs/images/testing/lh-post-recipe-desktop.png">
-
-  Mobile:  
-  <img src="docs/images/testing/lh-post-recipe-mobile.png">
-	
-</details>
-
-<details>
-  <summary>Update Recipe Page</summary>
-  
-  Desktop:  
-  <img src="docs/images/testing/lh-update-recipe-desktop.png">
-
-  Mobile:  
-  <img src="docs/images/testing/lh-update-recipe-mobile.png">
-	
-</details>
-
-<details>
-  <summary>Recipe Details Page</summary>
-  
-  Desktop:  
-  <img src="docs/images/testing/lh-recipe-details-page-desktop.png">
-
-  Mobile:  
-  <img src="docs/images/testing/lh-recipe-details-page-mobile.png">
-	
-</details>
-
-## Responsiveness
-Responsiveness was tested using [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) and no issues were found.
-This included the following devices:
-
-<details>
-  <summary>iPhone 5/SE</summary>
-
-  <img src="docs/images/testing/iphone-5-se.png" width=250>
-  
-</details>
-
-<details>
-  <summary>iPhone 6/7/8</summary>
-
-  <img src="docs/images/testing/iphone-6-7-8.png" width=300>
-  
-</details>
-
-<details>
-  <summary>iPhone 6/7/8 Plus</summary>
-
-  <img src="docs/images/testing/iphone-6-7-8-plus.png" width=300>
-  
-</details>
-
-<details>
-  <summary>iPhone SE</summary>
-
-  <img src="docs/images/testing/iphone-se.png" width=300>
-  
-</details>
-
-<details>
-  <summary>iPhone XR</summary>
-
-  <img src="docs/images/testing/iphone-xr.png" width=300>
-  
-</details>
-
-<details>
-  <summary>iPhone 12 Pro</summary>
-
-  <img src="docs/images/testing/iphone-12-pro.png" width=300>
-  
-</details>
-
-<details>
-  <summary>iPhone X</summary>
-
-  <img src="docs/images/testing/iphone-x.png" width=300>
-  
-</details>
-
-<details>
-  <summary>iPad Air</summary>
-
-  <img src="docs/images/testing/ipad-air.png" width=600>
-  
-</details>
-
-<details>
-  <summary>iPad Mini</summary>
-
-  <img src="docs/images/testing/ipad-mini.png" width=600>
-  
-</details>
-
-<details>
-  <summary>Samsung Galaxy S8+</summary>
-
-  <img src="docs/images/testing/galaxy-s8-plus.png" width=350>
-  
-</details>
-
-<details>
-  <summary>Samsung Galaxy S9+</summary>
-
-  <img src="docs/images/testing/galaxy-s9-plus.png" width=350>
-  
-</details>
-
-<details>
-  <summary>Samsung Galaxy S20 Ultra</summary>
-
-  <img src="docs/images/testing/galaxy-s20-ultra.png" width=350>
-  
-</details>
-
-<details>
-  <summary>Samsung Galaxy A51/71</summary>
-
-  <img src="docs/images/testing/galaxy-a51-71.png" width=350>
-  
-</details>
-
-<details>
-  <summary>Microsoft Surface Pro 7</summary>
-
-  <img src="docs/images/testing/surface-pro-7.png" width=600>
-  
-</details>
-
-<details>
-  <summary>Microsoft Surface Duo</summary>
-
-  <img src="docs/images/testing/surface-duo.png" width=500>
-  
-</details>
-
-<details>
-  <summary>Nest Hub</summary>
-
-  <img src="docs/images/testing/nest-hub.png">
-  
-</details>
-
-<details>
-  <summary>Nest Hub Max</summary>
-
-  <img src="docs/images/testing/nest-hub-max.png">
-  
-</details>
-
+## Browser Testing
+The Website was tested on Google Chrome, Firefox and Safari browsers. No functionality issues were noted, though the Get to Know Us section on the About page in Safari was slightly elongated when viewed on a MacBook Air laptop. This was not an issue when opened through Safari on an iphone.
 
 ## Device Testing
-The application was tested manually on the following devices and no issues were found:
-<details>
-  <summary>iPhone 12</summary>
-
-  <img src="docs/images/testing/device-iphone-12.jpeg" width=300>
-  
-</details>
-
-
-<details>
-  <summary>iPhone 11</summary>
-
-  <img src="docs/images/testing/device-iphone-11.jpeg" width=300>
-  
-</details>
-
-<details>
-  <summary>iPhone XR</summary>
-
-  <img src="docs/images/testing/device-iphone-xr.jpeg" width=300>
-  
-</details>
-
-<details>
-  <summary>iPhone 8</summary>
-
-  <img src="docs/images/testing/device-iphone-8.jpeg" width=250>
-  
-</details>
-
-<details>
-  <summary>iPad 8</summary>
-
-  <img src="docs/images/testing/device-ipad-8.jpeg" width=700>
-  
-</details>
-
-<details>
-  <summary>HP Elitebook 840</summary>
-
-  <img src="docs/images/testing/device-hp-elitebook-840.png">
-  
-</details>
-
-<details>
-  <summary>Dell XPS</summary>
-
-  <img src="docs/images/testing/device-dell-xps.png">
-  
-</details>
-
-
-## Browser Compatibility
-Browser compatibility was checked for the following browsers and no issues were found:
-<details>
-  <summary>Google Chrome</summary>
-
-  <img src="docs/images/testing/chrome.png">
-  
-</details>
-
-<details>
-  <summary>Microsoft Edge</summary>
-
-  <img src="docs/images/testing/edge.png">
-  
-</details>
-
-<details>
-  <summary>Apple Safari</summary>
-
-  <img src="docs/images/testing/safari.jpeg">
-  
-</details>
-
-<details>
-  <summary>Mozilla Firefox</summary>
-
-  <img src="docs/images/testing/firefox.png">
-  
-</details>
-
-<details>
-  <summary>Opera</summary>
-
-  <img src="docs/images/testing/opera.png">
-  
-</details>
-
-
-## User Stories Testing
-User stories were tested and addressed as follows.
-
-### **EPIC: User Account**
-* **_As a Site User, I can register an account so that I can access all the application's features._**
-
-  Sign Up button is available on the Home page as well as on the navigation bar for users who are not logged in already.   
-
-  <img src="docs/images/testing/us-account-registration-signup.png" width=800>  
-
-    Once the Sign Up button or link is clicked, users are directed to Sign Up page where they can register their details to log in and enable all the application's features.  
-
-    <img src="docs/images/testing/us-account-registration.png" width=800>  
-
-* **_As a Site User, I can log into my account so that all the application's features are available to me._**  
-
-  Log In link is available on the navigation bar for returning users who are not logged in already. Once they fill in their details, they are logged in to enable all the application's features. 
-
-  <img src="docs/images/testing/us-account-login.png" width=800>   
-
-* **_As a Site User, I can log out of my account so that I can keep my account secure._**  
-
-  Log Out link is available on the navigation bar for users who are already logged in.   
-
-  <img src="docs/images/testing/us-account-logout.png" width=800>  
-
-
-### **EPIC: Site Admin**
-* **_As a Site Admin, I can create, update and delete recipes and comments so that I can manage the contents of my application._**
-
-  The Admin role has full CRUD functionality for all recipes and comments from the admin panel so that all the contents can be managed from there.  
-
-  <img src="docs/images/testing/us-admin.png">  
-
-
-### **EPIC: Site Navigation**
-* **_As a Site User, I can understand the purpose of the application clearly so that I can decide whether the contents are right for me to sign up._**  
-
-  The landing page introduces the website explaining its purpose and benefits for signing up. This page also contains Sign Up button which directs users to Sign Up page.   
-
-  <img src="docs/images/testing/us-introduction.png" width=800>  
-
-* **_As a Site User, I can navigate the site intuitively so that I can easily find what I am looking for._**  
-
-  A navigation bar is available on every page, which is fixed at the top of the screen for ease of use and fully responsive to all screen sizes. This allows users to navigate through the site easily. The link for the current page is shown in green to visually indicate which page they are on.   
-
-  <img src="docs/images/testing/us-navbar.png" width=800>  
-
-* **_As a Site User, I can browse a paginated list of recipes so that I can easily select a recipe to view._**  
-
-  Browse Recipes page displays 12 recipe cards per page. Each card contains the recipe image, title, description and the number of likes. Users can easily browse through the recipes and select a recipe to view the full details by clicking anywhere on the card.   
-
-  <img src="docs/images/testing/us-browse-recipes.png" width=800>  
-
-* **_As a Site User, I can select a recipe from the list so that I can view the full details of a recipe._**  
-
-  Recipe cards are available on Browse Recipes, My Favourites and My Recipes pages. All these pages display 12 recipe cards per page. Once a recipe card is selected by clicking anywhere on the card, users are directed to the Recipe Details page, which displays the full details of the recipe.  
-
-  <img src="docs/images/testing/us-recipe-details.png" width=800>  
-
-* **_As a Site User, I can view the comments posted by others so that I can see the feedback and conversation for each recipe._**  
-
-  Comment section is available on Recipe Details page underneath the recipe, where comments are displayed in ascending order based on posting dates.  Users can view the feedback and conversation for each recipe here.  
-
-  <img src="docs/images/testing/us-comment.png" width=800>  
-
-* **_As a Site User, I can filter the recipes by a meal type so that I can view a list of recipes for the meal type._**  
-
-  A recipe filter is available on Browse Recipes page where users can select a meal type to view the recipes based on the chosen criteria.  
-
-  <img src="docs/images/testing/us-recipe-filters.png" width=800>  
-
-* **_As a Site User, I can filter the recipes by a main ingredient so that I can view a list of recipes using the main ingredient._**  
-
-  A recipe filter is available on Browse Recipes page where users can select a main ingredient to view the recipes based on the chosen criteria.  
-
-  <img src="docs/images/testing/us-recipe-filters.png" width=800>  
-
-* **_As a Site User, I can filter the recipes based on a difficulty level so that I can view a list of recipes suitable for my level._**  
-
-  A recipe filter is available on Browse Recipes page where users can select a difficulty level to view the recipes based on the chosen criteria.  
-
-  <img src="docs/images/testing/us-recipe-filters.png" width=800>  
-
-* **_As a Site User, I can see a custom error message when an HTTP error occurs so that I can understand why the error has occurred and easily navigate back to the website._**  
-
-  Custom HTML pages have been created for HTTP 400, 403, 404 and 500 errors. Each error page contains a link to the Home page as well as Browse Recipes page so that users can easily navigate back to the website.  
-
-  <img src="docs/images/testing/us-404-error.png" width=280>  
-
-
-### **EPIC: Recipe Management**
-* **_As a Site User, I can post my own recipe so that I can share it with others._**  
-
-  For logged-in users, Post a Recipe link is available from the navigation bar, which directs them to Post Recipe page. They can also access the page by selecting the Post a Recipe button on the Home page. 
-  
-  Users can fill in the form to share the recipe with others in the community. The form is easy to understand and users can opt to use bullet points for the ingredients and method to organise the contents.  
-
-  <img src="docs/images/testing/us-post-recipe.png" width=800>  
-  <img src="docs/images/testing/us-post-recipe-2.png" width=800>  
-  <img src="docs/images/testing/us-post-recipe-3.png" width=800>  
-
-* **_As a Site User, I can draft a recipe and save it so that I can return later and edit it._**  
-
-  For logged-in users, Post a Recipe link is available from the navigation bar, which directs them to Post Recipe page. Users can fill in the form but decide not to publish the recipe yet by selecting "Save as Draft" option in the form.  
-
-  <img src="docs/images/testing/us-save-as-draft.png" width=800>  
-
-    Saved drafts are then added to My Recipes page where they can return later and edit them. These drafts are marked with red [Draft] next to the title so that they can be easily identified.  
-
-    <img src="docs/images/testing/us-draft-recipe.png" width=800>  
-
-* **_As a Site User, I can edit the recipes that I posted so that I can make changes after it has been submitted._**  
-
-  Users can edit their own recipes from Recipe Details page. Edit button is available for the author of the recipe.   
-
-  <img src="docs/images/testing/us-update-recipe-button.png" width=350>  
-
-    Once the edit button is selected, users are directed to Update Recipe page. This is the same form as the Post Recipe form, but the original details are populated from the database. Users can easily update their recipes in this form and submit the changes.   
-
-    <img src="docs/images/testing/us-update-recipe.png" width=800>  
-
-* **_As a Site User, I can delete recipes that I posted so that I can remove them from the site._**  
-
-  Users can delete their own recipes from Recipe Details page. Delete button is available for the author of the recipe.  
-
-  <img src="docs/images/testing/us-update-recipe-button.png" width=350>  
-
-    When the delete button is selected, a modal opens up to confirm the deletion. Once confirmed, the recipe is deleted. 
-
-    <img src="docs/images/testing/us-delete-recipe-modal.png" width=420>  
-
-* **_As a Site User, I can view a list of recipes that I have posted or drafted so that I can manage them._**  
-
-  For logged-in users, My Recipes link is available from the navigation bar, which directs them to My Recipes page. Users can manage their own recipes from here by clicking anywhere on the recipe card, which directs them to the Recipe Details page.  
-
-  <img src="docs/images/testing/us-draft-recipe.png" width=800>  
-
-* **_As a Site User, I can see error messages when submitting a recipe form so that I understand how the errors can be resolved._**  
-
-  If there are any errors in the Post Recipe form, error messages are displayed. This aims to assist users in filling in the form correctly by explaining each error.  
-
-  <img src="docs/images/testing/us-form-validation.png" width=800>  
-  <img src="docs/images/testing/us-form-validation-2.png" width=800>  
-  <img src="docs/images/testing/us-form-validation-4.png" width=800>  
-
-    Error messages are also raised for empty strings to alert users as the form cannot be submitted with empty fields.
-    
-    <img src="docs/images/testing/us-form-validation-3.png" width=800>  
-    <img src="docs/images/testing/us-form-validation-4.png" width=800>  
-
-
-### **EPIC: Recipe Comments**  
-* **_As a Site User, I can comment on a recipe so that I can share my feedback and be involved in the conversation._**  
-
-  For logged-in users, a Comment Form is available beneath each recipe. Users can post their comments from here to leave feedback on the recipe or ask questions, or just communicate with others in the community.  
-
-  <img src="docs/images/testing/us-comment.png" width=800>  
-
-* **_As a Site User, I can edit the comment I posted so that I can make changes to my comments._**  
-
-  For the author of the comment, a vertical ellipsis is available next to the comment posting date. Users can select the edit button here, which directs them to Update Comment page where they can edit the comment.  
-
-  <img src="docs/images/testing/us-edit-comment.png" width=420>  
-
-* **_As a Site User, I can delete the comment I posted so that I can remove it from the comments section._**  
-
-  For the author of the comment, a vertical ellipsis is available next to the comment posting date. Users can select the delete button here, which opens a modal to confirm the deletion. Once confirmed, the comment is deleted.
-
-  <img src="docs/images/testing/us-delete-comment-modal.png" width=420>  
-
-
-### **EPIC: Recipe Likes**
-* **_As a Site User, I can view the number of likes for each recipe so that I can see the feedback from others._**  
-
-  The number of likes for each recipe is displayed in the recipe card on Browse Recipes, My Favourites and My Recipes pages. It is also displayed on the Recipe Details page for each page.  
-
-  <img src="docs/images/testing/us-nr-of-likes-recipe-card.png" width=350>     
-  <br>
-
-  <img src="docs/images/testing/us-nr-of-likes-recipe-details.png" width=350>  
-
-* **_As a Site User, I can view the list of my liked recipes so that I can easily go back to them within the site._**   
-
-  For logged-in users, My Favourites link is available from the navigation bar, which directs them to My Favourites page. Once a recipe is liked, the recipe is added to My Favourites page for the user so that they can easily find them when they need them.  
-
-  <img src="docs/images/testing/us-my-favourites.png" width=800>  
-
-* **_As a Site User, I can like a recipe so that I can interact with the content._**  
-
-  For logged-in users, the like button is available on Recipe Details page if they have not yet liked the recipe. The love heart with a plus sign is displayed here and the recipe can easily be liked by clicking on this icon.  
-
-  <img src="docs/images/testing/us-like-button.png" width=350>  
-
-* **_As a Site User, I can unlike a recipe so that I can remove it from my liked recipes._**  
-
-  For logged-in users, the unlike button is available on Recipe Details page if they have already liked the recipe. By clicking on the love heart icon, the recipe can be unliked.  
-
-  <img src="docs/images/testing/us-nr-of-likes-recipe-details.png" width=350>  
-
-## Automated Testing
-Automated tests were planned to be executed on the local SQLite database, however, due to an ArrayField used in the Recipe Model, it was not possible to run the tests in SQLite database as ArrayFields are specific to Postgres database and not supported in SQLite database.
-
-The issue was reviewed with a tutor and I was advised that ElphantSQL database would not support test databases being created for testing, so the tests were unable to be executed in the end. 
-
-I have however written codes to test the forms used in the application and these are in tests.py.
-
-<img src="docs/images/automated-tests.png" width=600>
-
-As automated tests cannot be run for the application, the decision was made to perform extensive manual testing for all the features of the application.
+The website was tested manually on a variety of devices, either personally by the site creator (Kayla Smith) or by friends and family members. Devices included laptop computers, iPhone8 plus, iPhoneXR, iPad and Android devices to ensure responsiveness on various screen sizes. The website performed as intended. Responsive design was also checked throughout all stages of development using Chrome developer tools through inspect.
 
 ## Features Testing
-Manual testing was performed using Google Chrome to verify that all the features functioned as expected and that no issues were found.
+Manual testing was done using Google Chrome to verify that all the features worked as designed. No issues were found. 
 
 ### Browser Tab
 Feature | Action | Expected Result | PASS/FAIL
 ---|---|---|---
-Favicon | Display | Favicon is displayed correctly in the browser tab | PASS
-Title | Display | "Home" is displayed as the title of the page for Home page | PASS
-Title | Display | "Browse Recipes" is displayed as the title of the page for Browse Recipes page | PASS
-Title | Display | The title of the recipe is displayed as the title of the page for each Recipe Details page | PASS
-Title | Display | "My Favourites" is displayed as the title of the page for My Favourites page | PASS
-Title | Display | "My Recipes" is displayed as the title of the page for My Recipes page | PASS
-Title | Display | "Post Recipe" is displayed as the title of the page for Post Recipe page | PASS
-Title | Display | "Update Recipe" is displayed as the title of the page for Update Recipe page | PASS
-Title | Display | "Update Comment" is displayed as the title of the page for Update Comment page | PASS
-Title | Display | "Sign Up" is displayed as the title of the page for Sign Up page | PASS
-Title | Display | "Log In" is displayed as the title of the page for Log In page | PASS
-Title | Display | "Log Out" is displayed as the title of the page for Log Out page | PASS
+Favicon | Display | Favicon is displayed correctly in the browser tab on all pages | PASS
+Title | Display | "About" is displayed in a banner as the title of the About page | PASS
+Title | Display | "Contact Us" is displayed in a banner as the title of the Contact Us page  | PASS
+Title | Display | "Breakfast" is displayed in a banner as the title of the Menu page  | PASS
+Title | Display | "Add A Booking" is displayed in a card on the booking page | PASS
+Title | Display | "Booking" is displayed in a banner as the title of the My Bookings page   | PASS
+Title | Display | "Edit Your Booking" is displayed in a card on the Edit Bookings page | PASS
+Title | Display | "Delete Your Booking" and 'are you sure' is displayed in a card on the Delete Booking page | PASS
+Title | Display | "Sign Up" is displayed on a card with a form to fill out on the Sign Up page | PASS
+Title | Display | "Log In" is displayed on a card on the Log In page | PASS
+Title | Display | "Log Out" is displayed on the Log Out page on a card with a button asking the user if they're sure | PASS
 
-### Navigation Bar
+### Navigation Bar - START HERE
 Feature | Action | Expected Result | PASS/FAIL
 ---|---|---|---
 Menu | Display | Links displayed side by side in the navigation bar for screen sizes with a minimum width of 1200px | PASS
