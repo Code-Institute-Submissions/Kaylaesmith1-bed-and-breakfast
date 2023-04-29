@@ -228,9 +228,9 @@ Note: `# noqa` was added to line 1 to combat the "line too long" error that orig
 </details>
  
 <details>
-  <summary>About Page - XX</summary>
+  <summary>About Page - No errors</summary>
   
-![Wave Validation](/documentation/validation/wave-.png)
+![Wave Validation](/documentation/validation/wave-about.png)
 </details>
 
 <details>
