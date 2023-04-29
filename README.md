@@ -252,6 +252,18 @@ The Booking model is for the user to select the room, check in and check out dat
 ## Testing
 
 Details of all testing done can be viewed in depth in the [TESTING.md](https://github.com/Kaylaesmith1/bed-and-breakfast/blob/main/TESTING.md) document.
+
+## Database Design
+An Entity Relationship Diagram was created using [Figma](https://www.figma.com/) to better visualize the relationships of variables between data structures. 
+
+Django-AllAuth was implemented for user authentication.
+
+Models dealing with menu items allow the superuser all CRUD functionality.
+
+Models dealing with booking a room use a ForeignKey for the user and room selection.
+
+![Database Schema](/documentation/readme_images/database-schema.png)
+
 ## Security Features and Defensive Design
 
 ### User Authentication
