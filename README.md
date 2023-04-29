@@ -86,7 +86,7 @@ A visitor The Wine Garden BnB website would likely be an adult looking to spend 
 
 ### EPIC | Project Environment Setup
 As the developer, I can create a new project so that I can develop the website.
-#### USER STORIES
+#### User Stories
 - As the developer, I can create a new project on GitHub so that I am ready to start developing the website.
 - As the developer I can install Django and any other libraries needed so that I can start developing the website.
 - As the developer, I will create an env.py file with secure variables so that sensitive information is kept unpublished publicly.
@@ -94,20 +94,20 @@ As the developer, I can create a new project so that I can develop the website.
 
 ### EPIC | Landing Page 
 As the developer, I can design a functional, easy-to-use landing page so that users can easily navigate through pages and use the site.
-#### USER STORIES
+#### User Stories
 - As a user, I can contact the developer through social links so that learn more about their work or get questions answered.
 - As a user, I can use the website on all device sizes so that I can see the same information on small and large devices.
 - As a user, I can use the navigation bar so that I can view all pages of the website easily
 
 ### EPIC | Initial Deployment
 As the developer, I can deploy the app on Heroku so that users can view and interact with the site publicly.
-#### USER STORIES
+#### User Stories
 - As the developer I can deploy the app to Heroku so that I can ensure it works properly before heavily starting development on the site.
 - As the developer, I can link the GitHub repository to the Heroku app so that when I commit changes on GitHub they are reflected on Heroku automatically.
 
 ### EPIC | Website Aesthetics
 As the developer, I can design an aesthetically pleasing webpage so that users can easily navigate the site.
-#### USER STORIES
+#### User Stories
 - As the developer, I can use complimentary colors so that users can navigate the website easily.
 - As a user, I can see the favicon on the web tab so that know I'm on the BnB page.
 - As a user, I can click the logo of the website so that I can easily get back to the homepage.
@@ -116,28 +116,27 @@ As the developer, I can design an aesthetically pleasing webpage so that users c
 
 ### EPIC | User Account
 As the developer, I can create a register / login feature so users and create an account and login / logout.
-#### USER STORIES
+#### User Stories
 - As a user I can sign up, log in and log out so that I can see the features available to registered users.
 
 
 ### EPIC | Site Administration & Booking
 As a site admin, I can manage all bookings and create, read, update and delete menu items so that I can control site bookings and the food / drink content.
-#### USER STORIES
+#### User Stories
 - As a user, I can create, read, update or delete food and drink items so that the menu is up to date.
-
 - As a logged in user, I can click the 'booking' button so that I can easily view and manage my booking.
 
 
 ### EPIC | Testing & Documentation
 As the developer, I can concisely document my testing and deployment methods so assessors and other developers can understand the website from a technical standpoint.
-#### USER STORIES
+#### User Stories
 - As the developer, I can create a README.md file so that other developers and the assessors can have an in-depth look at the website's structure and programming.
 - As the developer, I can create a TESTING.md file so that the assessors can see the bugs and their solutions identified and the validation passed.
 - As the developer, I can concisely describe the Heroku deployment process so that others know how to deploy an app on Heroku.
 
 ### EPIC | Error Pages
 As the developer, I can create status error pages so users will know if there is a problem.
-#### USER STORIES
+#### User Stories
 - As the developer I can create a 500 error page so that users will know if there are internal server errors.
 - As the developer I can create a 404 error page so that users will know when they've tried to access a page that doesn't exist.
 
@@ -467,7 +466,7 @@ None were original user stories and were therefore not included anywhere in the 
 1. Email authentication for users on signing up. This would add another layer of authentication for users and would be an improvement on the overall website. 
 2. Have something on the My Bookings page even if you don’t have any bookings registered. As of now it's a page titled 'My bookings' but nothing is shown.
 ![Empty bookings](/documentation/readme_images/empty-bookings.png)
-3. Incorporate a payment option, rates and pricing for booking. This is normally a feature of online hotel booking platforms. Taking credit card information could be a helpful aspect to implemente in the future.
+3. Incorporate a payment option, rates and pricing for booking. This is normally a feature of online hotel booking platforms. Taking credit card information could be a helpful aspect to implement in the future.
 4. Add photos of menu items or some food items on the breakfast page. Perhaps clicking the menu item could open a photo of it and a description of ingredients in case the user had questions of what exactly it was.
 5. If a user cancels a booking, a pop up should appear with checkboxes as to why they cancelled. This could also be a form with a textarea field to be more specific.
 6. Perhaps include a 'Book Now' button somewhere no each page of the website to facilitate easy booking.

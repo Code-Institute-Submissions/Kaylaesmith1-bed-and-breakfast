@@ -49,7 +49,7 @@ All HTML pages were validated using the [W3C HTML Validator](https://validator.w
 <details>
   <summary>Menu Page (superuser) - No errors</summary> 
   
-  ![HTML Validation - Menu page](/documentation/validation/validator-menu-page-superuser.png)
+  ![HTML Validation - Menu page](/documentation/validation/validator-menu-superuser.png)
 </details>
 <details>
   <summary>Add Menu Item Page - No errors</summary>
