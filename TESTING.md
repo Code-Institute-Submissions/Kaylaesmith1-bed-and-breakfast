@@ -488,55 +488,97 @@ Home Link | Click | Navigates to Home page with clickable button | PASS
 ## Bugs - START HERE
 ### Resolved Bugs
 
-* **Pagination for a Filtered List of Recipes**  
+* **Homepage breaks**  
 
-  ***Issue:***  
-When [Django filters](https://django-filter.readthedocs.io/en/stable/) were added to Browse Recipes page, the standard [Django pagination](https://docs.djangoproject.com/en/3.2/topics/pagination/) no longer worked.
-With the standard Django pagination, the filter criteria were no longer applied when navigating to another page and showed recipes that did not fall under the selected criteria.  
+  ***Bug:***  
+Homepage breaks over 991px, both in structure and font size. 
 
   ***Solution:***  
-While searching for a solution, I learnt that this is a common issue with Django filters. 
-Having reviewed many possible solutions to the issue, I decided to implement the solution found in [Django Filter and Pagination](https://www.youtube.com/watch?v=dkJ3uqkdCcY) tutorial.
-This solution uses [QueryString Template Tags](https://simpleisbetterthancomplex.com/snippet/2016/08/22/dealing-with-querystring-parameters.html) and works with Django filters.
-RecipeList view codes and pagination codes for Browse Recipes page were updated to incorporate this solution for the Django filters.  
+There was a transition in CSS that was erroenous and causing the 'layout breakage' at 991px. That portion of the CSS was removed.
 
-  Please click on the image to watch the GIF as auto looping is turned off to minimise distraction.  
-  *Note: These recipes were created with filter categories in their titles to demonstrate the functionality of the filters.  
+  Font size was changed using media queries for the hero image and text layout. Both issues are solved now.
 
-  <img src="docs/images/testing/recipe-filter-pagination.gif">
 
-* **Positioning of Remember Me Box**  
+* **Contact Form 'uncaught reference error'**  
 
-  ***Issue:***  
-  The "Remember Me" box on Log In page was initially horizontally centralised with the rest of the contents.
-  During the manual testing on iPhone 11, it was noted that the box was positioned to the left, although this was not the case in Chrome Dev Tools.
-  It appeared the issue resulted from how Apple Safari rendered the codes.   
+  ***Bug:***  
+  Though the form submitted correctly and, to my knowledge, the overall functionality of the form was unaffected, there was an error in the console. After speaking with my mentor, Harry, I was advised that leaving this error would cause the project to fail.   
 
-    <img src="docs/images/testing/remember-me-box-before-fix.jpeg" width=300>  
+  ![Bug-ref error](/documentation/readme_images/BUG-uncaught-ref-error.png)
+  ![Bug-ref error fixed](/documentation/readme_images/BUG-uncaught-ref-fixed.png)
+
 
     ***Solution:***  
-    CSS codes were added to target the "Remember Me" box and moved to the right of the "Remember Me" text.
-    The text and the box are now centralised together. 
-    I felt that this was a more appropriate position for the box.  
+    In lne 37 of my email.js file, I had the form resetting fields after submission. Removing this line of code (commented out in the screenshot above) solved the problem and did not affect the functionality of the contact form.  
 
-    <img src="docs/images/testing/remember-me-box-after-fix.jpeg" width=300>
+* **Menu items not added**  
+
+  ***Bug:***  
+  Menu items were not being added to the database from the livesite.   
+
+
+    ***Solution:***  
+    After speaking to Ian_alumni on slack, he mentioned adding the 'Item' model to my admin site to make sure they appear on the page. This solved the problem as I was originally calling the wrong model. Speaking with colleagues on slack and on tutoring resolved the problem.
+
+* **Never getting to the 'Are you sure' page**  
+
+  ***Bug:***  
+  Clicking the delete button does not take the user to the 'are you sure you want to delete' page.
+
+
+    ***Solution:***  
+    I had been calling the url ‘friendly name’ incorrectly. Once I understood that and changed the url pathway, the problem was fixed and everything worked as designed.
+
+
+* **Able to book a room as another user**  
+
+  ***Bug:***  
+  A logged-in user can book a room under any other logged in user via the dropdown menu on the Book A Room page. 
+  
+    ***Solution:***  
+    Oisin from tutoring alerted me to adding line 166 of code to my views.py file and changing line 31 to line 32 of my forms.py file. After making these changes, screen shots three and four below are not visible, rather the user cannot choose a User field when filling out this form. The User field is automatically filled in as the user they're logged in as.
+    
+    ![BUG](/documentation/readme_images/BUG-user-booking-form.png)
+    ![BUG](/documentation/readme_images/BUG-user-code-added.png)
+    ![BUG](/documentation/readme_images/BUG-user-field-dropdown.png)
+    ![BUG](/documentation/readme_images/BUG-user-field-removed.png)
+
+
+* **Wave validation not working on authenticated pages**  
+
+  ***Bug:***  
+  Any page put through the Wave validation tool would not show up if it was a page only an authenticated user could enter (CRUD menu functionality, all booking pages). 
+  
+    ***Solution:***  
+    I downloaded the Chrome extension for Wave and used that for authenticated pages. This solved the problem and I was able to include all pages' Wave validation in the TESTING.md document.
+
+
 ### Unresolved Bugs
 
-* **Integrity Error for Slug Key Value Violation**   
+* **Double booking**   
 
-  ***Issue:***  
-During the manual testing, when a recipe titled "Bob" was submitted in the deployed site, server error 500 occurred.
-The error in the development environment showed that it was caused by the duplicate key value as there was already a slug value "Bob" existing in the database and the slug key value must be unique.  
+  ***Bug:***  
+Users can double book rooms.  
 
-  <img src="docs/images/testing/server-error-500.png" width=700>  
-
-  In the admin panel, it was verified that there was indeed a recipe titled "Bob" saved as a draft by a user. When the draft recipe was deleted from the database, the error no longer occurred.  
+  ![BUG](/documentation/readme_images/BUG-double-booking.png)  
 
   ***Status:***  
-Post Recipe form prevents a recipe entry with the same title as an existing recipe and raises an error.  
+I noticed this bug when I was running booking tests for CRUD functionality. I looked through some resources for creating an availability form or having some way to check room availability based on DateTimeFields.
 
-  <img src="docs/images/testing/no-server-error.png" width=500>   
+  This is an aspect that could be implemented in future versions of this project to make it more realistic and 'real world ready'.  
 
-    Attempts were made to recreate the error to investigate the issue further, however, I was never able to recreate the error. Since the error could not be recreated, this bug was not addressed.  
 
-There are no other known bugs.
+* **Midnight booking time by default**   
+
+  ***Bug:***  
+Check in and check out times are midnight by default.  
+
+  ![BUG](/documentation/readme_images/BUG-booking-time.png)  
+
+  ***Status:***  
+Originally I had created an availability form that checked room availability based on check-in and check-out times. I was unable to get that form working correctly and opted to change my DateTimeField to a DateField so users could not choose a time, just a calendar date. 
+
+  The default time still appears as midnight for both fields. Like the double booking bug mentioned above, this is something that would have to be rectified if and when this application is launched in a real world scenario. For the scope of this project, I left the default times as midnight.
+  
+
+To my knowledge, there are no other bugs.
